@@ -1,0 +1,30 @@
+﻿@page "/"
+
+
+@code{
+    public bool dialogIsOpen { get; set; } = false;
+
+    public void shownotify()
+    {
+    }
+}
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<button @onclick="@(e => { dialogIsOpen = true; })">oi</button>
+
+<MatBlazor.MatDialog @bind-IsOpen="@dialogIsOpen">
+    <MatBlazor.MatDialogTitle>Hi</MatBlazor.MatDialogTitle>
+    <MatBlazor.MatDialogContent>
+        <p>What's your favorite animal?</p>
+
+        <button @onclick="shownotify">oi</button>
+    </MatBlazor.MatDialogContent>
+    <MatBlazor.MatDialogActions>
+
+    </MatBlazor.MatDialogActions>
+</MatBlazor.MatDialog>

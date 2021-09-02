@@ -1,0 +1,20 @@
+﻿@namespace MatBlazor
+@inherits BaseMatDialog
+
+<div class="@ClassMapper.AsString()"
+     style="@StyleMapper.AsString()"
+     @ref="Ref"
+     
+     @attributes="Attributes"
+     Id="@Id"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+        <div class="@SurfaceClassMapper.AsString()" style="@SurfaceStyleMapper.AsString()">
+            @ChildContent
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>

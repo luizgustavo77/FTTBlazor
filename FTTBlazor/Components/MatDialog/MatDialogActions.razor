@@ -1,0 +1,22 @@
+﻿@namespace MatBlazor
+@using Microsoft.AspNetCore.Components
+@inherits BaseMatDomComponent
+
+<footer class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref"  @attributes="Attributes" Id="@Id">
+    @ChildContent
+</footer>
+
+
+@code
+{
+
+    [Parameter]
+    public  RenderFragment ChildContent { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        ClassMapper.Add("mdc-dialog__actions");
+    }
+
+}
