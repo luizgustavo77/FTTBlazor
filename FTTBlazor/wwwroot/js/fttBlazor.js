@@ -908,13 +908,13 @@
     "use strict";
 
     function i(t, n) {
-        if (t) return t[e.matBlazorInstance] = n
+        if (t) return t[e.FTTBlazorInstance] = n
     }
     Object.defineProperty(e, "__esModule", {
         value: !0
-    }), e.MatBlazorComponent = e.setMatBlazorInstance = e.getMatBlazorInstance = e.matBlazorInstance = void 0, e.matBlazorInstance = "$matBlazorInstance", e.getMatBlazorInstance = function (t) {
-        if (t) return t[e.matBlazorInstance]
-    }, e.setMatBlazorInstance = i, e.MatBlazorComponent = function (t) {
+    }), e.FTTBlazorComponent = e.setFTTBlazorInstance = e.getFTTBlazorInstance = e.FTTBlazorInstance = void 0, e.FTTBlazorInstance = "$FTTBlazorInstance", e.getFTTBlazorInstance = function (t) {
+        if (t) return t[e.FTTBlazorInstance]
+    }, e.setFTTBlazorInstance = i, e.FTTBlazorComponent = function (t) {
         i(this.ref = t, this)
     }
 }, function (t, e, n) {
@@ -4732,18 +4732,18 @@
     }), e.MatMenu = void 0, e.init = function (t) {
         try {
             var e = new r(t);
-            o(e), t.matBlazorRef = e
+            o(e), t.FTTBlazorRef = e
         } catch (t) {
             throw t
         }
     }, e.setAnchorElement = function (t, e) {
-        t.matBlazorRef.setAnchorElement(e)
+        t.FTTBlazorRef.setAnchorElement(e)
     }, e.open = function (t) {
-        t.matBlazorRef.open = !0
+        t.FTTBlazorRef.open = !0
     }, e.close = function (t) {
-        t.matBlazorRef.open = !1
+        t.FTTBlazorRef.open = !1
     }, e.setState = function (t, e) {
-        t.matBlazorRef.open = e
+        t.FTTBlazorRef.open = e
     }, e.hoistMenuToBody = o;
     var i = n(124);
     n(7);
@@ -5809,7 +5809,7 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t) {
-        t.matBlazorRef = new i.MDCRipple(t)
+        t.FTTBlazorRef = new i.MDCRipple(t)
     };
     var i = n(3)
 }, function (t, e, n) {
@@ -6510,7 +6510,7 @@
             for (var n in t) Object.prototype.hasOwnProperty.call(t, n) && (e[n] = t[n]);
         return e.default = t, e
     }
-    window.matBlazor = {
+    window.FTTBlazor = {
         matAutocompleteList: v,
         matButton: i,
         matCheckbox: r,
@@ -6553,14 +6553,14 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        var n = (0, o.setMatBlazorInstance)(t, {
+        var n = (0, o.setFTTBlazorInstance)(t, {
             ref: t,
             componentRef: e,
             checkbox: null
         });
         n.checkbox = new r.MDCCheckbox(n.componentRef), new i.MDCFormField(n.ref).input = n.checkbox
     }, e.setIndeterminate = function (t, e) {
-        (0, o.getMatBlazorInstance)(t).checkbox.indeterminate = e
+        (0, o.getFTTBlazorInstance)(t).checkbox.indeterminate = e
     };
     var i = n(39),
         r = n(102),
@@ -7387,15 +7387,15 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.MatSelect = void 0, e.init = function (t, e, n, i) {
-        t.__matBlazor_component = new a(t, e, n, i)
+        t.__FTTBlazor_component = new a(t, e, n, i)
     }, e.getValid = function (t) {
-        return t.__matBlazor_component.select.valid
+        return t.__FTTBlazor_component.select.valid
     }, e.setValid = function (t, e) {
-        t.__matBlazor_component.select.valid = e
+        t.__FTTBlazor_component.select.valid = e
     }, e.getValue = function (t) {
-        return t.__matBlazor_component.select.value
+        return t.__FTTBlazor_component.select.value
     }, e.setValue = function (t, e) {
-        t.__matBlazor_component.select.value = e
+        t.__FTTBlazor_component.select.value = e
     };
     var i, r = n(117),
         o = ((i = n(26)) && i.__esModule, n(69)),
@@ -8574,7 +8574,7 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        t.matBlazorRef = new i.MDCChip(t), t.matBlazorRef.shouldRemoveOnTrailingIconClick = !1, t.addEventListener("MDCChip:interaction", (function (t) {
+        t.FTTBlazorRef = new i.MDCChip(t), t.FTTBlazorRef.shouldRemoveOnTrailingIconClick = !1, t.addEventListener("MDCChip:interaction", (function (t) {
             e.invokeMethodAsync("MatChipInteractionHandler", t.detail.chipId)
         })), t.addEventListener("MDCChip:trailingIconInteraction", (function (t) {
             e.invokeMethodAsync("MatChipTrailingIconInteractionHandler", t.detail.chipId)
@@ -8860,7 +8860,7 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        t.matBlazorRef = new i.MDCChipSetFoundation(t)
+        t.FTTBlazorRef = new i.MDCChipSetFoundation(t)
     };
     var i = n(29)
 }, function (t, e, n) {
@@ -9145,11 +9145,11 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        t.matBlazorRef = new i.MDCDrawer(t), t.addEventListener("MDCDrawer:closed", (function () {
+        t.FTTBlazorRef = new i.MDCDrawer(t), t.addEventListener("MDCDrawer:closed", (function () {
             e.invokeMethodAsync("ClosedHandler")
         }))
     }, e.setOpened = function (t, e) {
-        t.matBlazorRef.open = e
+        t.FTTBlazorRef.open = e
     };
     var i = n(147)
 }, function (t, e, n) {
@@ -9323,11 +9323,11 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t) {
-        t.matBlazorRef = new i.MDCLinearProgress(t)
+        t.FTTBlazorRef = new i.MDCLinearProgress(t)
     }, e.setProgress = function (t, e) {
-        t.matBlazorRef.progress = e
+        t.FTTBlazorRef.progress = e
     }, e.setBuffer = function (t, e) {
-        t.matBlazorRef.buffer = e
+        t.FTTBlazorRef.buffer = e
     };
     var i = n(153)
 }, function (t, e, n) {
@@ -9500,9 +9500,9 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t) {
-        t.matBlazorRef = new i.MDCCircularProgress(t)
+        t.FTTBlazorRef = new i.MDCCircularProgress(t)
     }, e.setProgress = function (t, e) {
-        t.matBlazorRef.progress = e
+        t.FTTBlazorRef.progress = e
     };
     var i = n(157)
 }, function (t, e, n) {
@@ -9609,15 +9609,15 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        t.matBlazorRef = new i.MDCDialog(t), t.addEventListener("MDCDialog:closed", (function () {
+        t.FTTBlazorRef = new i.MDCDialog(t), t.addEventListener("MDCDialog:closed", (function () {
             e.invokeMethodAsync("MatDialogClosedHandler")
         })), t.addEventListener("MDCDialog:opened", (function () {
             e.invokeMethodAsync("MatDialogOpenedHandler")
         }))
     }, e.setIsOpen = function (t, e) {
-        e ? t.matBlazorRef.open() : t.matBlazorRef.close()
+        e ? t.FTTBlazorRef.open() : t.FTTBlazorRef.close()
     }, e.setCanBeClosed = function (t, e) {
-        e ? (t.matBlazorRef.escapeKeyAction = "close", t.matBlazorRef.scrimClickAction = "close") : (t.matBlazorRef.escapeKeyAction = "", t.matBlazorRef.scrimClickAction = "")
+        e ? (t.FTTBlazorRef.escapeKeyAction = "close", t.FTTBlazorRef.scrimClickAction = "close") : (t.FTTBlazorRef.escapeKeyAction = "", t.FTTBlazorRef.scrimClickAction = "")
     };
     var i = n(160)
 }, function (t, e, n) {
@@ -9842,11 +9842,11 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        t.matBlazorRef = new i.MDCSnackbar(t), t.matBlazorRef.timeoutMs = -1, t.addEventListener("MDCSnackbar:closed", (function () {
+        t.FTTBlazorRef = new i.MDCSnackbar(t), t.FTTBlazorRef.timeoutMs = -1, t.addEventListener("MDCSnackbar:closed", (function () {
             e.invokeMethodAsync("MatSnackbarClosedHandler")
         }))
     }, e.setIsOpen = function (t, e) {
-        e ? t.matBlazorRef.open() : t.matBlazorRef.close()
+        e ? t.FTTBlazorRef.open() : t.FTTBlazorRef.close()
     };
     var i = n(164)
 }, function (t, e, n) {
@@ -10966,7 +10966,7 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.open = function (t, e, n, i) {
-        var a = (0, o.setMatBlazorInstance)(t, {
+        var a = (0, o.setFTTBlazorInstance)(t, {
             ref: t,
             flatpickrInputRef: e,
             cmp: n,
@@ -12075,8 +12075,8 @@
     e.init = function (t, e, n, i) {
         new s(t, e, n, i)
     };
-    var r = e.matTooltipRefKey = "$matBlazor.matTooltipRef",
-        o = e.matTooltipTargetRefKey = "$matBlazor.matTooltipTargetRef",
+    var r = e.matTooltipRefKey = "$FTTBlazor.matTooltipRef",
+        o = e.matTooltipTargetRefKey = "$FTTBlazor.matTooltipTargetRef",
         a = e.TooltipPosition = {
             top: "Top",
             right: "Right",
@@ -12325,7 +12325,7 @@
                     }))
                 }))
             }, e
-        }(c.MatBlazorComponent);
+        }(c.FTTBlazorComponent);
 
     function l(t) {
         return new Promise((function (e, n) {
@@ -12344,7 +12344,7 @@
             return a(this, (function (r) {
                 switch (r.label) {
                     case 0:
-                        return r.trys.push([0, 2, , 3]), [4, c.getMatBlazorInstance(t).readDataAsync(e, n, i)];
+                        return r.trys.push([0, 2, , 3]), [4, c.getFTTBlazorInstance(t).readDataAsync(e, n, i)];
                     case 1:
                         return [2, r.sent()];
                     case 2:
@@ -12395,7 +12395,7 @@
                 return n.table = new a.MDCDataTable(e), n
             }
             return r(e, t), e
-        }(o.MatBlazorComponent);
+        }(o.FTTBlazorComponent);
     e.init = function (t) {
         new s(t)
     }

@@ -17,14 +17,14 @@ Welcome to your new app.
 
 <button @onclick="@(e => { dialogIsOpen = true; })">oi</button>
 
-<MatBlazor.MatDialog @bind-IsOpen="@dialogIsOpen">
-    <MatBlazor.MatDialogTitle>Hi</MatBlazor.MatDialogTitle>
-    <MatBlazor.MatDialogContent>
+<FTTBlazorComponent.Dialog @bind-IsOpen="@dialogIsOpen">
+    <FTTBlazorComponent.DialogTitle>Hi</FTTBlazorComponent.DialogTitle>
+    <FTTBlazorComponent.DialogContent>
         <p>What's your favorite animal?</p>
 
         <button @onclick="shownotify">oi</button>
-    </MatBlazor.MatDialogContent>
-    <MatBlazor.MatDialogActions>
+    </FTTBlazorComponent.DialogContent>
+    <FTTBlazorComponent.DialogActions>
 
-    </MatBlazor.MatDialogActions>
-</MatBlazor.MatDialog>
+    </FTTBlazorComponent.DialogActions>
+</FTTBlazorComponent.Dialog>

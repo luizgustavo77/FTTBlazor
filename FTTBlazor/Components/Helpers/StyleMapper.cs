@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace MatBlazor
+namespace FTTBlazorComponent
 {
     public class StyleMapper : BaseMapper
     {

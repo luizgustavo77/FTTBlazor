@@ -4,23 +4,21 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MatBlazor
+namespace FTTBlazorComponent
 {
-    public abstract class BaseMatComponent : ComponentBase, IDisposable
+    public abstract class BaseComponent : ComponentBase, IDisposable
     {
-        [Parameter]
-        public ForwardRef RefBack { get; set; }
+        [Inject]
+        protected IJSRuntime Js { get; set; }
 
         protected bool Rendered { get; private set; }
 
+        protected bool Disposed { get; private set; }
+
+        [Parameter]
+        public ForwardRef RefBack { get; set; }
 
         private readonly Queue<Func<Task>> afterRenderCallQueue = new Queue<Func<Task>>();
-
-        protected void CallAfterRender(Func<Task> action)
-        {
-            afterRenderCallQueue.Enqueue(action);
-        }
-
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
@@ -28,7 +26,7 @@ namespace MatBlazor
             await base.OnAfterRenderAsync(firstRender);
             if (firstRender)
             {
-                await OnFirstAfterRenderAsync();
+                await Task.CompletedTask;
             }
 
             if (afterRenderCallQueue.Count > 0)
@@ -48,42 +46,15 @@ namespace MatBlazor
             }
         }
 
-        protected virtual Task OnFirstAfterRenderAsync()
+        protected void CallAfterRender(Func<Task> action)
         {
-            return Task.CompletedTask;
-        }
-
-        protected BaseMatComponent()
-        {
+            afterRenderCallQueue.Enqueue(action);
         }
 
         public virtual void Dispose()
         {
             Disposed = true;
         }
-
-        protected bool Disposed { get; private set; }
-
-        public void InvokeStateHasChanged()
-        {
-            InvokeAsync(() =>
-            {
-                try
-                {
-                    if (!Disposed)
-                    {
-                        StateHasChanged();
-                    }
-                }
-                catch (Exception)
-                {
-                }
-            });
-        }
-
-
-        [Inject]
-        protected IJSRuntime Js { get; set; }
 
         protected async Task<T> JsInvokeAsync<T>(string code, params object[] args)
         {
@@ -98,10 +69,6 @@ namespace MatBlazor
             }
         }
 
-        #region Hack to fix https: //github.com/aspnet/AspNetCore/issues/11159
-
-        public static object CreateDotNetObjectRefSyncObj = new object();
-
         protected DotNetObjectReference<T> CreateDotNetObjectRef<T>(T value) where T : class
         {
             return DotNetObjectReference.Create(value);
@@ -111,7 +78,5 @@ namespace MatBlazor
         {
             value?.Dispose();
         }
-
-        #endregion
     }
 }

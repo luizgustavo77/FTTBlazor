@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace MatBlazor
+namespace FTTBlazorComponent
 {
     public class ForwardRef : ForwardRef<ElementReference>
     {
@@ -10,13 +10,6 @@ namespace MatBlazor
     public class ForwardRef<T>
     {
         private T _current;
-
-        public T Current
-        {
-            get => _current;
-            set => Set(value);
-        }
-
 
         public void Set(T value)
         {

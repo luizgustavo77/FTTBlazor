@@ -2,18 +2,25 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace MatBlazor
+namespace FTTBlazorComponent
 {
-    /// <summary>
-    /// Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.
-    /// </summary>
-    public class BaseMatDialog : BaseMatDomComponent
+    public class BaseDialog : BaseDomComponent
     {
-        public const bool CanBeClosedDefault = true;
+        [JSInvokable]
+        public async Task MatDialogClosedHandler()
+        {
+            _isOpen = false;
+            await IsOpenChanged.InvokeAsync(false);
+            StateHasChanged();
+        }
 
-        // true is the mdc default
-        private bool _canBeClosed = CanBeClosedDefault;
-        private bool _isOpen;
+        [JSInvokable]
+        public async Task MatDialogOpenedHandler()
+        {
+            _isOpen = true;
+            await IsOpenChanged.InvokeAsync(true);
+            StateHasChanged();
+        }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
@@ -29,21 +36,15 @@ namespace MatBlazor
                     _isOpen = value;
                     CallAfterRender(async () =>
                     {
-                        await JsInvokeAsync<object>("matBlazor.matDialog.setIsOpen", Ref, value);
+                        await JsInvokeAsync<object>("FTTBlazor.matDialog.setIsOpen", Ref, value);
                     });
                 }
             }
         }
 
-        /// <summary>
-        /// Event occurs when the dialog is opened or closed.
-        /// </summary>
         [Parameter]
         public EventCallback<bool> IsOpenChanged { get; set; }
 
-        /// <summary>
-        /// Indicates if the user is able to close the dialog via Escape or click on the Scrim.
-        /// </summary>
         [Parameter]
         public bool CanBeClosed
         {
@@ -56,16 +57,10 @@ namespace MatBlazor
                 _canBeClosed = value;
                 CallAfterRender(async () =>
                 {
-                    await JsInvokeAsync<object>("matBlazor.matDialog.setCanBeClosed", Ref, value);
+                    await JsInvokeAsync<object>("FTTBlazor.matDialog.setCanBeClosed", Ref, value);
                 });
             }
         }
-
-        private DotNetObjectReference<BaseMatDialog> dotNetObjectRef;
-
-
-        protected ClassMapper SurfaceClassMapper { get; } = new ClassMapper();
-        protected StyleMapper SurfaceStyleMapper { get; } = new StyleMapper();
 
         [Parameter]
         public string SurfaceClass { get; set; }
@@ -73,8 +68,19 @@ namespace MatBlazor
         [Parameter]
         public string SurfaceStyle { get; set; }
 
+        public const bool CanBeClosedDefault = true;
 
-        public BaseMatDialog()
+        private bool _canBeClosed = CanBeClosedDefault;
+
+        private bool _isOpen;
+
+        private DotNetObjectReference<BaseDialog> dotNetObjectRef;
+
+        protected ClassMapper SurfaceClassMapper { get; } = new ClassMapper();
+
+        protected StyleMapper SurfaceStyleMapper { get; } = new StyleMapper();
+
+        public BaseDialog()
         {
             SurfaceClassMapper
                 .Add("mdc-dialog__surface")
@@ -87,7 +93,7 @@ namespace MatBlazor
             CallAfterRender(async () =>
             {
                 dotNetObjectRef ??= CreateDotNetObjectRef(this);
-                await JsInvokeAsync<object>("matBlazor.matDialog.init", Ref, dotNetObjectRef);
+                await JsInvokeAsync<object>("FTTBlazor.matDialog.init", Ref, dotNetObjectRef);
             });
         }
 
@@ -95,22 +101,6 @@ namespace MatBlazor
         {
             base.Dispose();
             DisposeDotNetObjectRef(dotNetObjectRef);
-        }
-
-        [JSInvokable]
-        public async Task MatDialogClosedHandler()
-        {
-            _isOpen = false;
-            await IsOpenChanged.InvokeAsync(false);
-            StateHasChanged();
-        }
-
-        [JSInvokable]
-        public async Task MatDialogOpenedHandler()
-        {
-            _isOpen = true;
-            await IsOpenChanged.InvokeAsync(true);
-            StateHasChanged();
         }
     }
 }

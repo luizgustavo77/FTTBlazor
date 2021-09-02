@@ -1,11 +1,9 @@
-﻿@namespace MatBlazor
+﻿@namespace FTTBlazorComponent
 @using Microsoft.AspNetCore.Components
-@inherits BaseMatDomComponent
-
-<footer class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref"  @attributes="Attributes" Id="@Id">
+@inherits BaseDomComponent
+<h2 class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref"  @attributes="Attributes" Id="@Id">
     @ChildContent
-</footer>
-
+</h2>
 
 @code
 {
@@ -16,7 +14,7 @@
     protected async override Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        ClassMapper.Add("mdc-dialog__actions");
+        ClassMapper.Add("mdc-dialog__title");
     }
 
 }

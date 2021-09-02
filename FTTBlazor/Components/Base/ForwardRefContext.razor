@@ -1,7 +1,5 @@
-﻿@namespace MatBlazor
+﻿@namespace FTTBlazorComponent
 @typeparam TRef
-
-@ChildContent(_context)
 
 @code
 {
@@ -10,3 +8,5 @@
     [Parameter]
     public RenderFragment<ForwardRef<TRef>> ChildContent { get; set; }
 }
+
+@ChildContent(_context)
