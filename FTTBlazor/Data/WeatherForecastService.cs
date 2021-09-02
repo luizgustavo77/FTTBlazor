@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Data
+namespace FTTBlazor.Client.Data
 {
     public class WeatherForecastService
     {

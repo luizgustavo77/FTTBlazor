@@ -1,6 +1,6 @@
 using System;
 
-namespace FTTBlazor.Data
+namespace FTTBlazor.Client.Data
 {
     public class WeatherForecast
     {
