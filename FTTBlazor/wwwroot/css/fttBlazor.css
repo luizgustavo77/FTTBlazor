@@ -2,35 +2,35 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 :root {
-    --mdc-theme-primary: #6200ee;
-    --mdc-theme-secondary: #018786;
-    --mdc-theme-background: #fff;
-    --mdc-theme-surface: #fff;
-    --mdc-theme-error: #b00020;
-    --mdc-theme-on-primary: #fff;
-    --mdc-theme-on-secondary: #fff;
-    --mdc-theme-on-surface: #000;
-    --mdc-theme-on-error: #fff;
-    --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
-    --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
-    --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
-    --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
-    --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
-    --mdc-theme-text-primary-on-dark: white;
-    --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
-    --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
-    --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
-    --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5)
+    --ftt-blazor-theme-primary: #6200ee;
+    --ftt-blazor-theme-secondary: #018786;
+    --ftt-blazor-theme-background: #fff;
+    --ftt-blazor-theme-surface: #fff;
+    --ftt-blazor-theme-error: #b00020;
+    --ftt-blazor-theme-on-primary: #fff;
+    --ftt-blazor-theme-on-secondary: #fff;
+    --ftt-blazor-theme-on-surface: #000;
+    --ftt-blazor-theme-on-error: #fff;
+    --ftt-blazor-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+    --ftt-blazor-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+    --ftt-blazor-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
+    --ftt-blazor-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
+    --ftt-blazor-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
+    --ftt-blazor-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+    --ftt-blazor-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+    --ftt-blazor-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+    --ftt-blazor-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+    --ftt-blazor-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+    --ftt-blazor-theme-text-primary-on-dark: white;
+    --ftt-blazor-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+    --ftt-blazor-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+    --ftt-blazor-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+    --ftt-blazor-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5)
 }
 
 
 /*CSS DO DIALOG*/
-.mdc-dialog, .mdc-dialog__scrim {
+.ftt-blazor-dialog, .ftt-blazor-dialog__scrim {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,67 +41,67 @@
     height: 100%
 }
 
-.mdc-dialog {
+.ftt-blazor-dialog {
     display: none;
     z-index: 7
 }
 
-    .mdc-dialog .mdc-dialog__surface {
+    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
         background-color: #fff;
-        background-color: var(--mdc-theme-surface, #fff)
+        background-color: var(--ftt-blazor-theme-surface, #fff)
     }
 
-    .mdc-dialog .mdc-dialog__scrim {
+    .ftt-blazor-dialog .ftt-blazor-dialog__scrim {
         background-color: rgba(0,0,0,.32)
     }
 
-    .mdc-dialog .mdc-dialog__title {
+    .ftt-blazor-dialog .ftt-blazor-dialog__title {
         color: rgba(0,0,0,.87)
     }
 
-    .mdc-dialog .mdc-dialog__content {
+    .ftt-blazor-dialog .ftt-blazor-dialog__content {
         color: rgba(0,0,0,.6)
     }
 
-    .mdc-dialog.mdc-dialog--scrollable .mdc-dialog__title, .mdc-dialog.mdc-dialog--scrollable .mdc-dialog__actions {
+    .ftt-blazor-dialog.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__title, .ftt-blazor-dialog.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__actions {
         border-color: rgba(0,0,0,.12)
     }
 
-    .mdc-dialog .mdc-dialog__content {
+    .ftt-blazor-dialog .ftt-blazor-dialog__content {
         padding: 20px 24px 20px 24px
     }
 
-    .mdc-dialog .mdc-dialog__surface {
+    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
         min-width: 280px
     }
 
 @media(max-width: 592px) {
-    .mdc-dialog .mdc-dialog__surface {
+    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
         max-width: calc(100vw - 32px)
     }
 }
 
 @media(min-width: 592px) {
-    .mdc-dialog .mdc-dialog__surface {
+    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
         max-width: 560px
     }
 }
 
-.mdc-dialog .mdc-dialog__surface {
+.ftt-blazor-dialog .ftt-blazor-dialog__surface {
     max-height: calc(100% - 32px)
 }
 
-.mdc-dialog .mdc-dialog__surface {
+.ftt-blazor-dialog .ftt-blazor-dialog__surface {
     border-radius: 4px;
-    border-radius: var(--mdc-shape-medium, 4px)
+    border-radius: var(--ftt-blazor-shape-medium, 4px)
 }
 
-.mdc-dialog__scrim {
+.ftt-blazor-dialog__scrim {
     opacity: 0;
     z-index: -1
 }
 
-.mdc-dialog__container {
+.ftt-blazor-dialog__container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -113,7 +113,7 @@
     pointer-events: none
 }
 
-.mdc-dialog__surface {
+.ftt-blazor-dialog__surface {
     position: relative;
     box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0,0,0,.12);
     display: flex;
@@ -127,38 +127,38 @@
     overflow-y: auto
 }
 
-    .mdc-dialog__surface
-    .mdc-elevation-overlay {
+    .ftt-blazor-dialog__surface
+    .ftt-blazor-elevation-overlay {
         width: 100%;
         height: 100%;
         top: 0;
         left: 0
     }
 
-.mdc-dialog[dir=rtl] .mdc-dialog__surface, [dir=rtl] .mdc-dialog .mdc-dialog__surface {
+.ftt-blazor-dialog[dir=rtl] .ftt-blazor-dialog__surface, [dir=rtl] .ftt-blazor-dialog .ftt-blazor-dialog__surface {
     text-align: right
 }
 
-.mdc-dialog__title {
+.ftt-blazor-dialog__title {
     display: block;
     margin-top: 0;
     line-height: normal;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-family: Roboto, sans-serif;
-    font-family: var(--mdc-typography-headline6-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+    font-family: var(--ftt-blazor-typography-headline6-font-family, var(--ftt-blazor-typography-font-family, Roboto, sans-serif));
     font-size: 1.25rem;
-    font-size: var(--mdc-typography-headline6-font-size, 1.25rem);
+    font-size: var(--ftt-blazor-typography-headline6-font-size, 1.25rem);
     line-height: 2rem;
-    line-height: var(--mdc-typography-headline6-line-height, 2rem);
+    line-height: var(--ftt-blazor-typography-headline6-line-height, 2rem);
     font-weight: 500;
-    font-weight: var(--mdc-typography-headline6-font-weight, 500);
+    font-weight: var(--ftt-blazor-typography-headline6-font-weight, 500);
     letter-spacing: 0.0125em;
-    letter-spacing: var(--mdc-typography-headline6-letter-spacing, 0.0125em);
+    letter-spacing: var(--ftt-blazor-typography-headline6-letter-spacing, 0.0125em);
     text-decoration: inherit;
-    text-decoration: var(--mdc-typography-headline6-text-decoration, inherit);
+    text-decoration: var(--ftt-blazor-typography-headline6-text-decoration, inherit);
     text-transform: inherit;
-    text-transform: var(--mdc-typography-headline6-text-transform, inherit);
+    text-transform: var(--ftt-blazor-typography-headline6-text-transform, inherit);
     position: relative;
     flex-shrink: 0;
     box-sizing: border-box;
@@ -167,7 +167,7 @@
     border-bottom: 1px solid transparent
 }
 
-    .mdc-dialog__title::before {
+    .ftt-blazor-dialog__title::before {
         display: inline-block;
         width: 0;
         height: 40px;
@@ -175,31 +175,31 @@
         vertical-align: 0
     }
 
-.mdc-dialog[dir=rtl] .mdc-dialog__title, [dir=rtl] .mdc-dialog .mdc-dialog__title {
+.ftt-blazor-dialog[dir=rtl] .ftt-blazor-dialog__title, [dir=rtl] .ftt-blazor-dialog .ftt-blazor-dialog__title {
     text-align: right
 }
 
-.mdc-dialog--scrollable .mdc-dialog__title {
+.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__title {
     padding-bottom: 15px
 }
 
-.mdc-dialog__content {
+.ftt-blazor-dialog__content {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-family: Roboto, sans-serif;
-    font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+    font-family: var(--ftt-blazor-typography-body1-font-family, var(--ftt-blazor-typography-font-family, Roboto, sans-serif));
     font-size: 1rem;
-    font-size: var(--mdc-typography-body1-font-size, 1rem);
+    font-size: var(--ftt-blazor-typography-body1-font-size, 1rem);
     line-height: 1.5rem;
-    line-height: var(--mdc-typography-body1-line-height, 1.5rem);
+    line-height: var(--ftt-blazor-typography-body1-line-height, 1.5rem);
     font-weight: 400;
-    font-weight: var(--mdc-typography-body1-font-weight, 400);
+    font-weight: var(--ftt-blazor-typography-body1-font-weight, 400);
     letter-spacing: 0.03125em;
-    letter-spacing: var(--mdc-typography-body1-letter-spacing, 0.03125em);
+    letter-spacing: var(--ftt-blazor-typography-body1-letter-spacing, 0.03125em);
     text-decoration: inherit;
-    text-decoration: var(--mdc-typography-body1-text-decoration, inherit);
+    text-decoration: var(--ftt-blazor-typography-body1-text-decoration, inherit);
     text-transform: inherit;
-    text-transform: var(--mdc-typography-body1-text-transform, inherit);
+    text-transform: var(--ftt-blazor-typography-body1-text-transform, inherit);
     flex-grow: 1;
     box-sizing: border-box;
     margin: 0;
@@ -207,32 +207,32 @@
     -webkit-overflow-scrolling: touch
 }
 
-    .mdc-dialog__content > :first-child {
+    .ftt-blazor-dialog__content > :first-child {
         margin-top: 0
     }
 
-    .mdc-dialog__content > :last-child {
+    .ftt-blazor-dialog__content > :last-child {
         margin-bottom: 0
     }
 
-.mdc-dialog__title + .mdc-dialog__content {
+.ftt-blazor-dialog__title + .ftt-blazor-dialog__content {
     padding-top: 0
 }
 
-.mdc-dialog--scrollable .mdc-dialog__title + .mdc-dialog__content {
+.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__title + .ftt-blazor-dialog__content {
     padding-top: 8px;
     padding-bottom: 8px
 }
 
-.mdc-dialog__content .mdc-list:first-child:last-child {
+.ftt-blazor-dialog__content .ftt-blazor-list:first-child:last-child {
     padding: 6px 0 0
 }
 
-.mdc-dialog--scrollable .mdc-dialog__content .mdc-list:first-child:last-child {
+.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__content .ftt-blazor-list:first-child:last-child {
     padding: 0
 }
 
-.mdc-dialog__actions {
+.ftt-blazor-dialog__actions {
     display: flex;
     position: relative;
     flex-shrink: 0;
@@ -246,71 +246,71 @@
     border-top: 1px solid transparent
 }
 
-.mdc-dialog--stacked .mdc-dialog__actions {
+.ftt-blazor-dialog--stacked .ftt-blazor-dialog__actions {
     flex-direction: column;
     align-items: flex-end
 }
 
-.mdc-dialog__button {
+.ftt-blazor-dialog__button {
     margin-left: 8px;
     margin-right: 0;
     max-width: 100%;
     text-align: right
 }
 
-    [dir=rtl] .mdc-dialog__button, .mdc-dialog__button[dir=rtl] {
+    [dir=rtl] .ftt-blazor-dialog__button, .ftt-blazor-dialog__button[dir=rtl] {
         margin-left: 0;
         margin-right: 8px
     }
 
-    .mdc-dialog__button:first-child {
+    .ftt-blazor-dialog__button:first-child {
         margin-left: 0;
         margin-right: 0
     }
 
-        [dir=rtl] .mdc-dialog__button:first-child, .mdc-dialog__button:first-child[dir=rtl] {
+        [dir=rtl] .ftt-blazor-dialog__button:first-child, .ftt-blazor-dialog__button:first-child[dir=rtl] {
             margin-left: 0;
             margin-right: 0
         }
 
-.mdc-dialog[dir=rtl] .mdc-dialog__button, [dir=rtl] .mdc-dialog .mdc-dialog__button {
+.ftt-blazor-dialog[dir=rtl] .ftt-blazor-dialog__button, [dir=rtl] .ftt-blazor-dialog .ftt-blazor-dialog__button {
     text-align: left
 }
 
-.mdc-dialog--stacked .mdc-dialog__button:not(:first-child) {
+.ftt-blazor-dialog--stacked .ftt-blazor-dialog__button:not(:first-child) {
     margin-top: 12px
 }
 
-.mdc-dialog--open, .mdc-dialog--opening, .mdc-dialog--closing {
+.ftt-blazor-dialog--open, .ftt-blazor-dialog--opening, .ftt-blazor-dialog--closing {
     display: flex
 }
 
-    .mdc-dialog--opening .mdc-dialog__scrim {
+    .ftt-blazor-dialog--opening .ftt-blazor-dialog__scrim {
         transition: opacity 150ms linear
     }
 
-    .mdc-dialog--opening .mdc-dialog__container {
+    .ftt-blazor-dialog--opening .ftt-blazor-dialog__container {
         transition: opacity 75ms linear,transform 150ms 0ms cubic-bezier(0, 0, 0.2, 1)
     }
 
-    .mdc-dialog--closing .mdc-dialog__scrim, .mdc-dialog--closing .mdc-dialog__container {
+    .ftt-blazor-dialog--closing .ftt-blazor-dialog__scrim, .ftt-blazor-dialog--closing .ftt-blazor-dialog__container {
         transition: opacity 75ms linear
     }
 
-    .mdc-dialog--closing .mdc-dialog__container {
+    .ftt-blazor-dialog--closing .ftt-blazor-dialog__container {
         transform: none
     }
 
-    .mdc-dialog--open .mdc-dialog__scrim {
+    .ftt-blazor-dialog--open .ftt-blazor-dialog__scrim {
         opacity: 1
     }
 
-    .mdc-dialog--open .mdc-dialog__container {
+    .ftt-blazor-dialog--open .ftt-blazor-dialog__container {
         transform: none;
         opacity: 1
     }
 
-.mdc-dialog-scroll-lock {
+.ftt-blazor-dialog-scroll-lock {
     overflow: hidden
 }
 

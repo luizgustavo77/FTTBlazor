@@ -871,13 +871,13 @@
         function (t) {
             t[t.TOP_LEFT = 0] = "TOP_LEFT", t[t.TOP_RIGHT = 4] = "TOP_RIGHT", t[t.BOTTOM_LEFT = 1] = "BOTTOM_LEFT", t[t.BOTTOM_RIGHT = 5] = "BOTTOM_RIGHT", t[t.TOP_START = 8] = "TOP_START", t[t.TOP_END = 12] = "TOP_END", t[t.BOTTOM_START = 9] = "BOTTOM_START", t[t.BOTTOM_END = 13] = "BOTTOM_END"
         }(r || (e.Corner = r = {})), e.cssClasses = {
-            ANCHOR: "mdc-menu-surface--anchor",
-            ANIMATING_CLOSED: "mdc-menu-surface--animating-closed",
-            ANIMATING_OPEN: "mdc-menu-surface--animating-open",
-            FIXED: "mdc-menu-surface--fixed",
-            IS_OPEN_BELOW: "mdc-menu-surface--is-open-below",
-            OPEN: "mdc-menu-surface--open",
-            ROOT: "mdc-menu-surface"
+            ANCHOR: "ftt-blazor-menu-surface--anchor",
+            ANIMATING_CLOSED: "ftt-blazor-menu-surface--animating-closed",
+            ANIMATING_OPEN: "ftt-blazor-menu-surface--animating-open",
+            FIXED: "ftt-blazor-menu-surface--fixed",
+            IS_OPEN_BELOW: "ftt-blazor-menu-surface--is-open-below",
+            OPEN: "ftt-blazor-menu-surface--open",
+            ROOT: "ftt-blazor-menu-surface"
         }, e.strings = o, e.numbers = {
             TRANSITION_OPEN_DURATION: 120,
             TRANSITION_CLOSE_DURATION: 75,
@@ -889,20 +889,20 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        FIXED_CLASS: "mdc-top-app-bar--fixed",
-        FIXED_SCROLLED_CLASS: "mdc-top-app-bar--fixed-scrolled",
-        SHORT_CLASS: "mdc-top-app-bar--short",
-        SHORT_COLLAPSED_CLASS: "mdc-top-app-bar--short-collapsed",
-        SHORT_HAS_ACTION_ITEM_CLASS: "mdc-top-app-bar--short-has-action-item"
+        FIXED_CLASS: "ftt-blazor-top-app-bar--fixed",
+        FIXED_SCROLLED_CLASS: "ftt-blazor-top-app-bar--fixed-scrolled",
+        SHORT_CLASS: "ftt-blazor-top-app-bar--short",
+        SHORT_COLLAPSED_CLASS: "ftt-blazor-top-app-bar--short-collapsed",
+        SHORT_HAS_ACTION_ITEM_CLASS: "ftt-blazor-top-app-bar--short-has-action-item"
     }, e.numbers = {
         DEBOUNCE_THROTTLE_RESIZE_TIME_MS: 100,
         MAX_TOP_APP_BAR_HEIGHT: 128
     }, e.strings = {
-        ACTION_ITEM_SELECTOR: ".mdc-top-app-bar__action-item",
+        ACTION_ITEM_SELECTOR: ".ftt-blazor-top-app-bar__action-item",
         NAVIGATION_EVENT: "MDCTopAppBar:nav",
-        NAVIGATION_ICON_SELECTOR: ".mdc-top-app-bar__navigation-icon",
-        ROOT_SELECTOR: ".mdc-top-app-bar",
-        TITLE_SELECTOR: ".mdc-top-app-bar__title"
+        NAVIGATION_ICON_SELECTOR: ".ftt-blazor-top-app-bar__navigation-icon",
+        ROOT_SELECTOR: ".ftt-blazor-top-app-bar",
+        TITLE_SELECTOR: ".ftt-blazor-top-app-bar__title"
     }
 }, function (t, e, n) {
     "use strict";
@@ -923,13 +923,13 @@
         value: !0
     });
     var i = {
-        LIST_ITEM_ACTIVATED_CLASS: "mdc-list-item--activated",
-        LIST_ITEM_CLASS: "mdc-list-item",
-        LIST_ITEM_DISABLED_CLASS: "mdc-list-item--disabled",
-        LIST_ITEM_SELECTED_CLASS: "mdc-list-item--selected",
-        LIST_ITEM_TEXT_CLASS: "mdc-list-item__text",
-        LIST_ITEM_PRIMARY_TEXT_CLASS: "mdc-list-item__primary-text",
-        ROOT: "mdc-list"
+        LIST_ITEM_ACTIVATED_CLASS: "ftt-blazor-list-item--activated",
+        LIST_ITEM_CLASS: "ftt-blazor-list-item",
+        LIST_ITEM_DISABLED_CLASS: "ftt-blazor-list-item--disabled",
+        LIST_ITEM_SELECTED_CLASS: "ftt-blazor-list-item--selected",
+        LIST_ITEM_TEXT_CLASS: "ftt-blazor-list-item__text",
+        LIST_ITEM_PRIMARY_TEXT_CLASS: "ftt-blazor-list-item__primary-text",
+        ROOT: "ftt-blazor-list"
     },
         r = {
             ACTION_EVENT: "MDCList:action",
@@ -1257,14 +1257,14 @@
         function (t) {
             t[t.NONE = 0] = "NONE", t[t.LIST_ROOT = 1] = "LIST_ROOT", t[t.FIRST_ITEM = 2] = "FIRST_ITEM", t[t.LAST_ITEM = 3] = "LAST_ITEM"
         }(i || (e.DefaultFocusState = i = {})), e.cssClasses = {
-            MENU_SELECTED_LIST_ITEM: "mdc-menu-item--selected",
-            MENU_SELECTION_GROUP: "mdc-menu__selection-group",
-            ROOT: "mdc-menu"
+            MENU_SELECTED_LIST_ITEM: "ftt-blazor-menu-item--selected",
+            MENU_SELECTION_GROUP: "ftt-blazor-menu__selection-group",
+            ROOT: "ftt-blazor-menu"
         }, e.strings = {
             ARIA_CHECKED_ATTR: "aria-checked",
             ARIA_DISABLED_ATTR: "aria-disabled",
             CHECKBOX_SELECTOR: 'input[type="checkbox"]',
-            LIST_SELECTOR: ".mdc-list",
+            LIST_SELECTOR: ".ftt-blazor-list",
             SELECTED_EVENT: "MDCMenu:selected"
         }, e.numbers = {
             FOCUS_ROOT_INDEX: -1
@@ -1297,18 +1297,18 @@
         t.PRIMARY = "primary", t.TRAILING = "trailing", t.NONE = "none"
     }(r || (e.EventSource = r = {}));
     var o = e.strings = {
-        ADDED_ANNOUNCEMENT_ATTRIBUTE: "data-mdc-chip-added-announcement",
+        ADDED_ANNOUNCEMENT_ATTRIBUTE: "data-ftt-blazor-chip-added-announcement",
         ARIA_CHECKED: "aria-checked",
         ARROW_DOWN_KEY: "ArrowDown",
         ARROW_LEFT_KEY: "ArrowLeft",
         ARROW_RIGHT_KEY: "ArrowRight",
         ARROW_UP_KEY: "ArrowUp",
         BACKSPACE_KEY: "Backspace",
-        CHECKMARK_SELECTOR: ".mdc-chip__checkmark",
+        CHECKMARK_SELECTOR: ".ftt-blazor-chip__checkmark",
         DELETE_KEY: "Delete",
         END_KEY: "End",
         ENTER_KEY: "Enter",
-        ENTRY_ANIMATION_NAME: "mdc-chip-entry",
+        ENTRY_ANIMATION_NAME: "ftt-blazor-chip-entry",
         HOME_KEY: "Home",
         IE_ARROW_DOWN_KEY: "Down",
         IE_ARROW_LEFT_KEY: "Left",
@@ -1316,32 +1316,32 @@
         IE_ARROW_UP_KEY: "Up",
         IE_DELETE_KEY: "Del",
         INTERACTION_EVENT: "MDCChip:interaction",
-        LEADING_ICON_SELECTOR: ".mdc-chip__icon--leading",
+        LEADING_ICON_SELECTOR: ".ftt-blazor-chip__icon--leading",
         NAVIGATION_EVENT: "MDCChip:navigation",
-        PRIMARY_ACTION_SELECTOR: ".mdc-chip__primary-action",
-        REMOVED_ANNOUNCEMENT_ATTRIBUTE: "data-mdc-chip-removed-announcement",
+        PRIMARY_ACTION_SELECTOR: ".ftt-blazor-chip__primary-action",
+        REMOVED_ANNOUNCEMENT_ATTRIBUTE: "data-ftt-blazor-chip-removed-announcement",
         REMOVAL_EVENT: "MDCChip:removal",
         SELECTION_EVENT: "MDCChip:selection",
         SPACEBAR_KEY: " ",
         TAB_INDEX: "tabindex",
-        TRAILING_ACTION_SELECTOR: ".mdc-chip-trailing-action",
+        TRAILING_ACTION_SELECTOR: ".ftt-blazor-chip-trailing-action",
         TRAILING_ICON_INTERACTION_EVENT: "MDCChip:trailingIconInteraction",
-        TRAILING_ICON_SELECTOR: ".mdc-chip__icon--trailing"
+        TRAILING_ICON_SELECTOR: ".ftt-blazor-chip__icon--trailing"
     },
         a = (e.cssClasses = {
-            CHECKMARK: "mdc-chip__checkmark",
-            CHIP_EXIT: "mdc-chip--exit",
-            DELETABLE: "mdc-chip--deletable",
-            EDITABLE: "mdc-chip--editable",
-            EDITING: "mdc-chip--editing",
-            HIDDEN_LEADING_ICON: "mdc-chip__icon--leading-hidden",
-            LEADING_ICON: "mdc-chip__icon--leading",
-            PRIMARY_ACTION: "mdc-chip__primary-action",
-            PRIMARY_ACTION_FOCUSED: "mdc-chip--primary-action-focused",
-            SELECTED: "mdc-chip--selected",
-            TEXT: "mdc-chip__text",
-            TRAILING_ACTION: "mdc-chip__trailing-action",
-            TRAILING_ICON: "mdc-chip__icon--trailing"
+            CHECKMARK: "ftt-blazor-chip__checkmark",
+            CHIP_EXIT: "ftt-blazor-chip--exit",
+            DELETABLE: "ftt-blazor-chip--deletable",
+            EDITABLE: "ftt-blazor-chip--editable",
+            EDITING: "ftt-blazor-chip--editing",
+            HIDDEN_LEADING_ICON: "ftt-blazor-chip__icon--leading-hidden",
+            LEADING_ICON: "ftt-blazor-chip__icon--leading",
+            PRIMARY_ACTION: "ftt-blazor-chip__primary-action",
+            PRIMARY_ACTION_FOCUSED: "ftt-blazor-chip--primary-action-focused",
+            SELECTED: "ftt-blazor-chip--selected",
+            TEXT: "ftt-blazor-chip__text",
+            TRAILING_ACTION: "ftt-blazor-chip__trailing-action",
+            TRAILING_ICON: "ftt-blazor-chip__icon--trailing"
         }, e.navigationKeys = new Set);
     a.add(o.ARROW_LEFT_KEY), a.add(o.ARROW_RIGHT_KEY), a.add(o.ARROW_DOWN_KEY), a.add(o.ARROW_UP_KEY), a.add(o.END_KEY), a.add(o.HOME_KEY), a.add(o.IE_ARROW_LEFT_KEY), a.add(o.IE_ARROW_RIGHT_KEY), a.add(o.IE_ARROW_DOWN_KEY), a.add(o.IE_ARROW_UP_KEY);
     var s = e.jumpChipKeys = new Set;
@@ -1481,28 +1481,28 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ANIM_CHECKED_INDETERMINATE: "mdc-checkbox--anim-checked-indeterminate",
-        ANIM_CHECKED_UNCHECKED: "mdc-checkbox--anim-checked-unchecked",
-        ANIM_INDETERMINATE_CHECKED: "mdc-checkbox--anim-indeterminate-checked",
-        ANIM_INDETERMINATE_UNCHECKED: "mdc-checkbox--anim-indeterminate-unchecked",
-        ANIM_UNCHECKED_CHECKED: "mdc-checkbox--anim-unchecked-checked",
-        ANIM_UNCHECKED_INDETERMINATE: "mdc-checkbox--anim-unchecked-indeterminate",
-        BACKGROUND: "mdc-checkbox__background",
-        CHECKED: "mdc-checkbox--checked",
-        CHECKMARK: "mdc-checkbox__checkmark",
-        CHECKMARK_PATH: "mdc-checkbox__checkmark-path",
-        DISABLED: "mdc-checkbox--disabled",
-        INDETERMINATE: "mdc-checkbox--indeterminate",
-        MIXEDMARK: "mdc-checkbox__mixedmark",
-        NATIVE_CONTROL: "mdc-checkbox__native-control",
-        ROOT: "mdc-checkbox",
-        SELECTED: "mdc-checkbox--selected",
-        UPGRADED: "mdc-checkbox--upgraded"
+        ANIM_CHECKED_INDETERMINATE: "ftt-blazor-checkbox--anim-checked-indeterminate",
+        ANIM_CHECKED_UNCHECKED: "ftt-blazor-checkbox--anim-checked-unchecked",
+        ANIM_INDETERMINATE_CHECKED: "ftt-blazor-checkbox--anim-indeterminate-checked",
+        ANIM_INDETERMINATE_UNCHECKED: "ftt-blazor-checkbox--anim-indeterminate-unchecked",
+        ANIM_UNCHECKED_CHECKED: "ftt-blazor-checkbox--anim-unchecked-checked",
+        ANIM_UNCHECKED_INDETERMINATE: "ftt-blazor-checkbox--anim-unchecked-indeterminate",
+        BACKGROUND: "ftt-blazor-checkbox__background",
+        CHECKED: "ftt-blazor-checkbox--checked",
+        CHECKMARK: "ftt-blazor-checkbox__checkmark",
+        CHECKMARK_PATH: "ftt-blazor-checkbox__checkmark-path",
+        DISABLED: "ftt-blazor-checkbox--disabled",
+        INDETERMINATE: "ftt-blazor-checkbox--indeterminate",
+        MIXEDMARK: "ftt-blazor-checkbox__mixedmark",
+        NATIVE_CONTROL: "ftt-blazor-checkbox__native-control",
+        ROOT: "ftt-blazor-checkbox",
+        SELECTED: "ftt-blazor-checkbox--selected",
+        UPGRADED: "ftt-blazor-checkbox--upgraded"
     }, e.strings = {
         ARIA_CHECKED_ATTR: "aria-checked",
         ARIA_CHECKED_INDETERMINATE_VALUE: "mixed",
         DATA_INDETERMINATE_ATTR: "data-indeterminate",
-        NATIVE_CONTROL_SELECTOR: ".mdc-checkbox__native-control",
+        NATIVE_CONTROL_SELECTOR: ".ftt-blazor-checkbox__native-control",
         TRANSITION_STATE_CHECKED: "checked",
         TRANSITION_STATE_INDETERMINATE: "indeterminate",
         TRANSITION_STATE_INIT: "init",
@@ -1552,28 +1552,28 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        DISABLED: "mdc-text-field--disabled",
-        FOCUSED: "mdc-text-field--focused",
-        FULLWIDTH: "mdc-text-field--fullwidth",
-        HELPER_LINE: "mdc-text-field-helper-line",
-        INVALID: "mdc-text-field--invalid",
-        LABEL_FLOATING: "mdc-text-field--label-floating",
-        NO_LABEL: "mdc-text-field--no-label",
-        OUTLINED: "mdc-text-field--outlined",
-        ROOT: "mdc-text-field",
-        TEXTAREA: "mdc-text-field--textarea",
-        WITH_LEADING_ICON: "mdc-text-field--with-leading-icon",
-        WITH_TRAILING_ICON: "mdc-text-field--with-trailing-icon"
+        DISABLED: "ftt-blazor-text-field--disabled",
+        FOCUSED: "ftt-blazor-text-field--focused",
+        FULLWIDTH: "ftt-blazor-text-field--fullwidth",
+        HELPER_LINE: "ftt-blazor-text-field-helper-line",
+        INVALID: "ftt-blazor-text-field--invalid",
+        LABEL_FLOATING: "ftt-blazor-text-field--label-floating",
+        NO_LABEL: "ftt-blazor-text-field--no-label",
+        OUTLINED: "ftt-blazor-text-field--outlined",
+        ROOT: "ftt-blazor-text-field",
+        TEXTAREA: "ftt-blazor-text-field--textarea",
+        WITH_LEADING_ICON: "ftt-blazor-text-field--with-leading-icon",
+        WITH_TRAILING_ICON: "ftt-blazor-text-field--with-trailing-icon"
     }, e.strings = {
         ARIA_CONTROLS: "aria-controls",
-        INPUT_SELECTOR: ".mdc-text-field__input",
-        LABEL_SELECTOR: ".mdc-floating-label",
-        LEADING_ICON_SELECTOR: ".mdc-text-field__icon--leading",
-        LINE_RIPPLE_SELECTOR: ".mdc-line-ripple",
-        OUTLINE_SELECTOR: ".mdc-notched-outline",
-        PREFIX_SELECTOR: ".mdc-text-field__affix--prefix",
-        SUFFIX_SELECTOR: ".mdc-text-field__affix--suffix",
-        TRAILING_ICON_SELECTOR: ".mdc-text-field__icon--trailing"
+        INPUT_SELECTOR: ".ftt-blazor-text-field__input",
+        LABEL_SELECTOR: ".ftt-blazor-floating-label",
+        LEADING_ICON_SELECTOR: ".ftt-blazor-text-field__icon--leading",
+        LINE_RIPPLE_SELECTOR: ".ftt-blazor-line-ripple",
+        OUTLINE_SELECTOR: ".ftt-blazor-notched-outline",
+        PREFIX_SELECTOR: ".ftt-blazor-text-field__affix--prefix",
+        SUFFIX_SELECTOR: ".ftt-blazor-text-field__affix--suffix",
+        TRAILING_ICON_SELECTOR: ".ftt-blazor-text-field__icon--trailing"
     }, e.numbers = {
         LABEL_SCALE: .75
     }, e.VALIDATION_ATTR_WHITELIST = ["pattern", "min", "max", "required", "step", "minlength", "maxlength"], e.ALWAYS_FLOAT_TYPES = ["color", "date", "datetime-local", "month", "range", "time", "week"]
@@ -1700,7 +1700,7 @@
                 this.unlisten("keydown", this.handleKeydown_), this.unlisten("click", this.handleClick_), this.unlisten("focusin", this.focusInEventListener_), this.unlisten("focusout", this.focusOutEventListener_)
             }, e.prototype.layout = function () {
                 var t = this.root.getAttribute(a.strings.ARIA_ORIENTATION);
-                this.vertical = t !== a.strings.ARIA_ORIENTATION_HORIZONTAL, [].slice.call(this.root.querySelectorAll(".mdc-list-item:not([tabindex])")).forEach((function (t) {
+                this.vertical = t !== a.strings.ARIA_ORIENTATION_HORIZONTAL, [].slice.call(this.root.querySelectorAll(".ftt-blazor-list-item:not([tabindex])")).forEach((function (t) {
                     t.setAttribute("tabindex", "-1")
                 })), [].slice.call(this.root.querySelectorAll(a.strings.FOCUSABLE_CHILD_ELEMENTS)).forEach((function (t) {
                     return t.setAttribute("tabindex", "-1")
@@ -2081,29 +2081,29 @@
         value: !0
     });
     var i = {
-        ACTIVATED: "mdc-select--activated",
-        DISABLED: "mdc-select--disabled",
-        FOCUSED: "mdc-select--focused",
-        INVALID: "mdc-select--invalid",
-        MENU_INVALID: "mdc-select__menu--invalid",
-        OUTLINED: "mdc-select--outlined",
-        REQUIRED: "mdc-select--required",
-        ROOT: "mdc-select",
-        SELECTED_ITEM_CLASS: "mdc-list-item--selected",
-        WITH_LEADING_ICON: "mdc-select--with-leading-icon"
+        ACTIVATED: "ftt-blazor-select--activated",
+        DISABLED: "ftt-blazor-select--disabled",
+        FOCUSED: "ftt-blazor-select--focused",
+        INVALID: "ftt-blazor-select--invalid",
+        MENU_INVALID: "ftt-blazor-select__menu--invalid",
+        OUTLINED: "ftt-blazor-select--outlined",
+        REQUIRED: "ftt-blazor-select--required",
+        ROOT: "ftt-blazor-select",
+        SELECTED_ITEM_CLASS: "ftt-blazor-list-item--selected",
+        WITH_LEADING_ICON: "ftt-blazor-select--with-leading-icon"
     },
         r = {
             ARIA_CONTROLS: "aria-controls",
             ARIA_SELECTED_ATTR: "aria-selected",
             CHANGE_EVENT: "MDCSelect:change",
-            LABEL_SELECTOR: ".mdc-floating-label",
-            LEADING_ICON_SELECTOR: ".mdc-select__icon",
-            LINE_RIPPLE_SELECTOR: ".mdc-line-ripple",
-            MENU_SELECTOR: ".mdc-select__menu",
-            OUTLINE_SELECTOR: ".mdc-notched-outline",
+            LABEL_SELECTOR: ".ftt-blazor-floating-label",
+            LEADING_ICON_SELECTOR: ".ftt-blazor-select__icon",
+            LINE_RIPPLE_SELECTOR: ".ftt-blazor-line-ripple",
+            MENU_SELECTOR: ".ftt-blazor-select__menu",
+            OUTLINE_SELECTOR: ".ftt-blazor-notched-outline",
             SELECTED_ITEM_SELECTOR: "." + i.SELECTED_ITEM_CLASS,
-            SELECTED_TEXT_SELECTOR: ".mdc-select__selected-text",
-            SELECT_ANCHOR_SELECTOR: ".mdc-select__anchor",
+            SELECTED_TEXT_SELECTOR: ".ftt-blazor-select__selected-text",
+            SELECT_ANCHOR_SELECTOR: ".ftt-blazor-select__anchor",
             VALUE_ATTR: "data-value"
         };
     e.cssClasses = i, e.strings = r, e.numbers = {
@@ -2316,14 +2316,14 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ACTIVE: "mdc-slider--active",
-        DISABLED: "mdc-slider--disabled",
-        DISCRETE: "mdc-slider--discrete",
-        FOCUS: "mdc-slider--focus",
-        HAS_TRACK_MARKER: "mdc-slider--display-markers",
-        IN_TRANSIT: "mdc-slider--in-transit",
-        IS_DISCRETE: "mdc-slider--discrete",
-        DISABLE_TOUCH_ACTION: "mdc-slider--disable-touch-action"
+        ACTIVE: "ftt-blazor-slider--active",
+        DISABLED: "ftt-blazor-slider--disabled",
+        DISCRETE: "ftt-blazor-slider--discrete",
+        FOCUS: "ftt-blazor-slider--focus",
+        HAS_TRACK_MARKER: "ftt-blazor-slider--display-markers",
+        IN_TRANSIT: "ftt-blazor-slider--in-transit",
+        IS_DISCRETE: "ftt-blazor-slider--discrete",
+        DISABLE_TOUCH_ACTION: "ftt-blazor-slider--disable-touch-action"
     }, e.strings = {
         ARIA_DISABLED: "aria-disabled",
         ARIA_VALUEMAX: "aria-valuemax",
@@ -2331,11 +2331,11 @@
         ARIA_VALUENOW: "aria-valuenow",
         CHANGE_EVENT: "MDCSlider:change",
         INPUT_EVENT: "MDCSlider:input",
-        PIN_VALUE_MARKER_SELECTOR: ".mdc-slider__pin-value-marker",
+        PIN_VALUE_MARKER_SELECTOR: ".ftt-blazor-slider__pin-value-marker",
         STEP_DATA_ATTR: "data-step",
-        THUMB_CONTAINER_SELECTOR: ".mdc-slider__thumb-container",
-        TRACK_MARKER_CONTAINER_SELECTOR: ".mdc-slider__track-marker-container",
-        TRACK_SELECTOR: ".mdc-slider__track"
+        THUMB_CONTAINER_SELECTOR: ".ftt-blazor-slider__thumb-container",
+        TRACK_MARKER_CONTAINER_SELECTOR: ".ftt-blazor-slider__track-marker-container",
+        TRACK_SELECTOR: ".ftt-blazor-slider__track"
     }, e.numbers = {
         PAGE_FACTOR: 4
     }
@@ -2871,21 +2871,21 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        CLOSING: "mdc-snackbar--closing",
-        OPEN: "mdc-snackbar--open",
-        OPENING: "mdc-snackbar--opening"
+        CLOSING: "ftt-blazor-snackbar--closing",
+        OPEN: "ftt-blazor-snackbar--open",
+        OPENING: "ftt-blazor-snackbar--opening"
     }, e.strings = {
-        ACTION_SELECTOR: ".mdc-snackbar__action",
-        ARIA_LIVE_LABEL_TEXT_ATTR: "data-mdc-snackbar-label-text",
+        ACTION_SELECTOR: ".ftt-blazor-snackbar__action",
+        ARIA_LIVE_LABEL_TEXT_ATTR: "data-ftt-blazor-snackbar-label-text",
         CLOSED_EVENT: "MDCSnackbar:closed",
         CLOSING_EVENT: "MDCSnackbar:closing",
-        DISMISS_SELECTOR: ".mdc-snackbar__dismiss",
-        LABEL_SELECTOR: ".mdc-snackbar__label",
+        DISMISS_SELECTOR: ".ftt-blazor-snackbar__dismiss",
+        LABEL_SELECTOR: ".ftt-blazor-snackbar__label",
         OPENED_EVENT: "MDCSnackbar:opened",
         OPENING_EVENT: "MDCSnackbar:opening",
         REASON_ACTION: "action",
         REASON_DISMISS: "dismiss",
-        SURFACE_SELECTOR: ".mdc-snackbar__surface"
+        SURFACE_SELECTOR: ".ftt-blazor-snackbar__surface"
     }, e.numbers = {
         DEFAULT_AUTO_DISMISS_TIMEOUT_MS: 5e3,
         INDETERMINATE: -1,
@@ -2959,27 +2959,27 @@
         value: !0
     });
     var i = e.cssClasses = {
-        CELL: "mdc-data-table__cell",
-        CELL_NUMERIC: "mdc-data-table__cell--numeric",
-        CONTENT: "mdc-data-table__content",
-        HEADER_CELL: "mdc-data-table__header-cell",
-        HEADER_CELL_LABEL: "mdc-data-table__header-cell-label",
-        HEADER_CELL_SORTED: "mdc-data-table__header-cell--sorted",
-        HEADER_CELL_SORTED_DESCENDING: "mdc-data-table__header-cell--sorted-descending",
-        HEADER_CELL_WITH_SORT: "mdc-data-table__header-cell--with-sort",
-        HEADER_CELL_WRAPPER: "mdc-data-table__header-cell-wrapper",
-        HEADER_ROW: "mdc-data-table__header-row",
-        HEADER_ROW_CHECKBOX: "mdc-data-table__header-row-checkbox",
-        IN_PROGRESS: "mdc-data-table--in-progress",
-        PROGRESS_INDICATOR: "mdc-data-table__progress-indicator",
-        ROOT: "mdc-data-table",
-        ROW: "mdc-data-table__row",
-        ROW_CHECKBOX: "mdc-data-table__row-checkbox",
-        ROW_SELECTED: "mdc-data-table__row--selected",
-        SORT_ICON_BUTTON: "mdc-data-table__sort-icon-button",
-        SORT_STATUS_LABEL: "mdc-data-table__sort-status-label",
-        PAGINATION_ROWS_PER_PAGE_SELECT: "mdc-data-table__pagination-rows-per-page-select",
-        PAGINATION_ROWS_PER_PAGE_LABEL: "mdc-data-table__pagination-rows-per-page-label"
+        CELL: "ftt-blazor-data-table__cell",
+        CELL_NUMERIC: "ftt-blazor-data-table__cell--numeric",
+        CONTENT: "ftt-blazor-data-table__content",
+        HEADER_CELL: "ftt-blazor-data-table__header-cell",
+        HEADER_CELL_LABEL: "ftt-blazor-data-table__header-cell-label",
+        HEADER_CELL_SORTED: "ftt-blazor-data-table__header-cell--sorted",
+        HEADER_CELL_SORTED_DESCENDING: "ftt-blazor-data-table__header-cell--sorted-descending",
+        HEADER_CELL_WITH_SORT: "ftt-blazor-data-table__header-cell--with-sort",
+        HEADER_CELL_WRAPPER: "ftt-blazor-data-table__header-cell-wrapper",
+        HEADER_ROW: "ftt-blazor-data-table__header-row",
+        HEADER_ROW_CHECKBOX: "ftt-blazor-data-table__header-row-checkbox",
+        IN_PROGRESS: "ftt-blazor-data-table--in-progress",
+        PROGRESS_INDICATOR: "ftt-blazor-data-table__progress-indicator",
+        ROOT: "ftt-blazor-data-table",
+        ROW: "ftt-blazor-data-table__row",
+        ROW_CHECKBOX: "ftt-blazor-data-table__row-checkbox",
+        ROW_SELECTED: "ftt-blazor-data-table__row--selected",
+        SORT_ICON_BUTTON: "ftt-blazor-data-table__sort-icon-button",
+        SORT_STATUS_LABEL: "ftt-blazor-data-table__sort-status-label",
+        PAGINATION_ROWS_PER_PAGE_SELECT: "ftt-blazor-data-table__pagination-rows-per-page-select",
+        PAGINATION_ROWS_PER_PAGE_LABEL: "ftt-blazor-data-table__pagination-rows-per-page-label"
     },
         r = e.attributes = {
             ARIA_SELECTED: "aria-selected",
@@ -3057,18 +3057,18 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        BG_FOCUSED: "mdc-ripple-upgraded--background-focused",
-        FG_ACTIVATION: "mdc-ripple-upgraded--foreground-activation",
-        FG_DEACTIVATION: "mdc-ripple-upgraded--foreground-deactivation",
-        ROOT: "mdc-ripple-upgraded",
-        UNBOUNDED: "mdc-ripple-upgraded--unbounded"
+        BG_FOCUSED: "ftt-blazor-ripple-upgraded--background-focused",
+        FG_ACTIVATION: "ftt-blazor-ripple-upgraded--foreground-activation",
+        FG_DEACTIVATION: "ftt-blazor-ripple-upgraded--foreground-deactivation",
+        ROOT: "ftt-blazor-ripple-upgraded",
+        UNBOUNDED: "ftt-blazor-ripple-upgraded--unbounded"
     }, e.strings = {
-        VAR_FG_SCALE: "--mdc-ripple-fg-scale",
-        VAR_FG_SIZE: "--mdc-ripple-fg-size",
-        VAR_FG_TRANSLATE_END: "--mdc-ripple-fg-translate-end",
-        VAR_FG_TRANSLATE_START: "--mdc-ripple-fg-translate-start",
-        VAR_LEFT: "--mdc-ripple-left",
-        VAR_TOP: "--mdc-ripple-top"
+        VAR_FG_SCALE: "--ftt-blazor-ripple-fg-scale",
+        VAR_FG_SIZE: "--ftt-blazor-ripple-fg-size",
+        VAR_FG_TRANSLATE_END: "--ftt-blazor-ripple-fg-translate-end",
+        VAR_FG_TRANSLATE_START: "--ftt-blazor-ripple-fg-translate-start",
+        VAR_LEFT: "--ftt-blazor-ripple-left",
+        VAR_TOP: "--ftt-blazor-ripple-top"
     }, e.numbers = {
         DEACTIVATION_TIMEOUT_MS: 225,
         FG_DEACTIVATION_MS: 150,
@@ -3163,9 +3163,9 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ROOT: "mdc-form-field"
+        ROOT: "ftt-blazor-form-field"
     }, e.strings = {
-        LABEL_SELECTOR: ".mdc-form-field > label"
+        LABEL_SELECTOR: ".ftt-blazor-form-field > label"
     }
 }, function (t, e, n) {
     "use strict";
@@ -3708,13 +3708,13 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        NO_LABEL: "mdc-notched-outline--no-label",
-        OUTLINE_NOTCHED: "mdc-notched-outline--notched",
-        OUTLINE_UPGRADED: "mdc-notched-outline--upgraded"
+        NO_LABEL: "ftt-blazor-notched-outline--no-label",
+        OUTLINE_NOTCHED: "ftt-blazor-notched-outline--notched",
+        OUTLINE_UPGRADED: "ftt-blazor-notched-outline--upgraded"
     }, e.numbers = {
         NOTCH_ELEMENT_PADDING: 8
     }, e.strings = {
-        NOTCH_ELEMENT_SELECTOR: ".mdc-notched-outline__notch"
+        NOTCH_ELEMENT_SELECTOR: ".ftt-blazor-notched-outline__notch"
     }
 }, function (t, e, n) {
     "use strict";
@@ -3753,7 +3753,7 @@
         value: !0
     });
     var i = {
-        ROOT: "mdc-text-field-character-counter"
+        ROOT: "ftt-blazor-text-field-character-counter"
     },
         r = {
             ROOT_SELECTOR: "." + i.ROOT
@@ -4032,9 +4032,9 @@
         value: !0
     });
     var i = {
-        HELPER_TEXT_PERSISTENT: "mdc-text-field-helper-text--persistent",
-        HELPER_TEXT_VALIDATION_MSG: "mdc-text-field-helper-text--validation-msg",
-        ROOT: "mdc-text-field-helper-text"
+        HELPER_TEXT_PERSISTENT: "ftt-blazor-text-field-helper-text--persistent",
+        HELPER_TEXT_VALIDATION_MSG: "ftt-blazor-text-field-helper-text--validation-msg",
+        ROOT: "ftt-blazor-text-field-helper-text"
     },
         r = {
             ARIA_HIDDEN: "aria-hidden",
@@ -4165,7 +4165,7 @@
         ICON_EVENT: "MDCTextField:icon",
         ICON_ROLE: "button"
     }, e.cssClasses = {
-        ROOT: "mdc-text-field__icon"
+        ROOT: "ftt-blazor-text-field__icon"
     }
 }, function (t, e, n) {
     "use strict";
@@ -4212,10 +4212,10 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.strings = {
-        NATIVE_CONTROL_SELECTOR: ".mdc-radio__native-control"
+        NATIVE_CONTROL_SELECTOR: ".ftt-blazor-radio__native-control"
     }, e.cssClasses = {
-        DISABLED: "mdc-radio--disabled",
-        ROOT: "mdc-radio"
+        DISABLED: "ftt-blazor-radio--disabled",
+        ROOT: "ftt-blazor-radio"
     }
 }, function (t, e, n) {
     "use strict";
@@ -4605,8 +4605,8 @@
         ARIA_HIDDEN: "aria-hidden",
         ROLE: "role"
     }, e.cssClasses = {
-        HELPER_TEXT_VALIDATION_MSG: "mdc-select-helper-text--validation-msg",
-        HELPER_TEXT_VALIDATION_MSG_PERSISTENT: "mdc-select-helper-text--validation-msg-persistent"
+        HELPER_TEXT_VALIDATION_MSG: "ftt-blazor-select-helper-text--validation-msg",
+        HELPER_TEXT_VALIDATION_MSG_PERSISTENT: "ftt-blazor-select-helper-text--validation-msg-persistent"
     }
 }, function (t, e, n) {
     "use strict";
@@ -5061,12 +5061,12 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        CHECKED: "mdc-switch--checked",
-        DISABLED: "mdc-switch--disabled"
+        CHECKED: "ftt-blazor-switch--checked",
+        DISABLED: "ftt-blazor-switch--disabled"
     }, e.strings = {
         ARIA_CHECKED_ATTR: "aria-checked",
-        NATIVE_CONTROL_SELECTOR: ".mdc-switch__native-control",
-        RIPPLE_SURFACE_SELECTOR: ".mdc-switch__thumb-underlay"
+        NATIVE_CONTROL_SELECTOR: ".ftt-blazor-switch__native-control",
+        RIPPLE_SURFACE_SELECTOR: ".ftt-blazor-switch__thumb-underlay"
     }
 }, function (t, e, n) {
     "use strict";
@@ -5397,10 +5397,10 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.strings = {
-        CHIP_SELECTOR: ".mdc-chip"
+        CHIP_SELECTOR: ".ftt-blazor-chip"
     }, e.cssClasses = {
-        CHOICE: "mdc-chip-set--choice",
-        FILTER: "mdc-chip-set--filter"
+        CHOICE: "ftt-blazor-chip-set--choice",
+        FILTER: "ftt-blazor-chip-set--filter"
     }
 }, function (t, e, n) {
     "use strict";
@@ -5467,7 +5467,7 @@
             var t = this.getFocusableElements(this.root);
             this.elFocusedBeforeTrapFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null, this.wrapTabFocus(this.root, t), this.options.skipInitialFocus || this.focusInitialElement(t, this.options.initialFocusEl)
         }, t.prototype.releaseFocus = function () {
-            [].slice.call(this.root.querySelectorAll(".mdc-dom-focus-sentinel")).forEach((function (t) {
+            [].slice.call(this.root.querySelectorAll(".ftt-blazor-dom-focus-sentinel")).forEach((function (t) {
                 t.parentElement.removeChild(t)
             })), this.elFocusedBeforeTrapFocus && this.elFocusedBeforeTrapFocus.focus()
         }, t.prototype.wrapTabFocus = function (t, e) {
@@ -5483,7 +5483,7 @@
         }, t.prototype.getFocusableElements = function (t) {
             return [].slice.call(t.querySelectorAll("[autofocus], [tabindex], a, input, textarea, select, button")).filter((function (t) {
                 var e = "true" === t.getAttribute("aria-disabled") || null != t.getAttribute("disabled") || null != t.getAttribute("hidden") || "true" === t.getAttribute("aria-hidden"),
-                    n = 0 <= t.tabIndex && 0 < t.getBoundingClientRect().width && !t.classList.contains("mdc-dom-focus-sentinel") && !e,
+                    n = 0 <= t.tabIndex && 0 < t.getBoundingClientRect().width && !t.classList.contains("ftt-blazor-dom-focus-sentinel") && !e,
                     i = !1;
                 if (n) {
                     var r = getComputedStyle(t);
@@ -5493,7 +5493,7 @@
             }))
         }, t.prototype.createSentinel = function () {
             var t = document.createElement("div");
-            return t.setAttribute("tabindex", "0"), t.setAttribute("aria-hidden", "true"), t.classList.add("mdc-dom-focus-sentinel"), t
+            return t.setAttribute("tabindex", "0"), t.setAttribute("aria-hidden", "true"), t.classList.add("ftt-blazor-dom-focus-sentinel"), t
         }, t
     }();
     e.FocusTrap = i
@@ -5502,18 +5502,18 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ANIMATE: "mdc-drawer--animate",
-        CLOSING: "mdc-drawer--closing",
-        DISMISSIBLE: "mdc-drawer--dismissible",
-        MODAL: "mdc-drawer--modal",
-        OPEN: "mdc-drawer--open",
-        OPENING: "mdc-drawer--opening",
-        ROOT: "mdc-drawer"
+        ANIMATE: "ftt-blazor-drawer--animate",
+        CLOSING: "ftt-blazor-drawer--closing",
+        DISMISSIBLE: "ftt-blazor-drawer--dismissible",
+        MODAL: "ftt-blazor-drawer--modal",
+        OPEN: "ftt-blazor-drawer--open",
+        OPENING: "ftt-blazor-drawer--opening",
+        ROOT: "ftt-blazor-drawer"
     }, e.strings = {
-        APP_CONTENT_SELECTOR: ".mdc-drawer-app-content",
+        APP_CONTENT_SELECTOR: ".ftt-blazor-drawer-app-content",
         CLOSE_EVENT: "MDCDrawer:closed",
         OPEN_EVENT: "MDCDrawer:opened",
-        SCRIM_SELECTOR: ".mdc-drawer-scrim"
+        SCRIM_SELECTOR: ".ftt-blazor-drawer-scrim"
     }
 }, function (t, e, n) {
     "use strict";
@@ -5612,10 +5612,10 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        INDETERMINATE_CLASS: "mdc-circular-progress--indeterminate",
-        CLOSED_CLASS: "mdc-circular-progress--closed"
+        INDETERMINATE_CLASS: "ftt-blazor-circular-progress--indeterminate",
+        CLOSED_CLASS: "ftt-blazor-circular-progress--closed"
     }, e.strings = {
-        DETERMINATE_CIRCLE_SELECTOR: ".mdc-circular-progress__determinate-circle",
+        DETERMINATE_CIRCLE_SELECTOR: ".ftt-blazor-circular-progress__determinate-circle",
         ARIA_VALUENOW: "aria-valuenow",
         RADIUS: "r",
         STROKE_DASHOFFSET: "stroke-dashoffset"
@@ -5760,28 +5760,28 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        CLOSING: "mdc-dialog--closing",
-        OPEN: "mdc-dialog--open",
-        OPENING: "mdc-dialog--opening",
-        SCROLLABLE: "mdc-dialog--scrollable",
-        SCROLL_LOCK: "mdc-dialog-scroll-lock",
-        STACKED: "mdc-dialog--stacked"
+        CLOSING: "ftt-blazor-dialog--closing",
+        OPEN: "ftt-blazor-dialog--open",
+        OPENING: "ftt-blazor-dialog--opening",
+        SCROLLABLE: "ftt-blazor-dialog--scrollable",
+        SCROLL_LOCK: "ftt-blazor-dialog-scroll-lock",
+        STACKED: "ftt-blazor-dialog--stacked"
     }, e.strings = {
-        ACTION_ATTRIBUTE: "data-mdc-dialog-action",
-        BUTTON_DEFAULT_ATTRIBUTE: "data-mdc-dialog-button-default",
-        BUTTON_SELECTOR: ".mdc-dialog__button",
+        ACTION_ATTRIBUTE: "data-ftt-blazor-dialog-action",
+        BUTTON_DEFAULT_ATTRIBUTE: "data-ftt-blazor-dialog-button-default",
+        BUTTON_SELECTOR: ".ftt-blazor-dialog__button",
         CLOSED_EVENT: "MDCDialog:closed",
         CLOSE_ACTION: "close",
         CLOSING_EVENT: "MDCDialog:closing",
-        CONTAINER_SELECTOR: ".mdc-dialog__container",
-        CONTENT_SELECTOR: ".mdc-dialog__content",
+        CONTAINER_SELECTOR: ".ftt-blazor-dialog__container",
+        CONTENT_SELECTOR: ".ftt-blazor-dialog__content",
         DESTROY_ACTION: "destroy",
-        INITIAL_FOCUS_ATTRIBUTE: "data-mdc-dialog-initial-focus",
+        INITIAL_FOCUS_ATTRIBUTE: "data-ftt-blazor-dialog-initial-focus",
         OPENED_EVENT: "MDCDialog:opened",
         OPENING_EVENT: "MDCDialog:opening",
-        SCRIM_SELECTOR: ".mdc-dialog__scrim",
-        SUPPRESS_DEFAULT_PRESS_SELECTOR: ["textarea", ".mdc-menu .mdc-list-item"].join(", "),
-        SURFACE_SELECTOR: ".mdc-dialog__surface"
+        SCRIM_SELECTOR: ".ftt-blazor-dialog__scrim",
+        SUPPRESS_DEFAULT_PRESS_SELECTOR: ["textarea", ".ftt-blazor-menu .ftt-blazor-list-item"].join(", "),
+        SURFACE_SELECTOR: ".ftt-blazor-dialog__surface"
     }, e.numbers = {
         DIALOG_ANIMATION_CLOSE_TIME_MS: 75,
         DIALOG_ANIMATION_OPEN_TIME_MS: 150
@@ -5907,12 +5907,12 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ANIMATING: "mdc-tab-scroller--animating",
-        SCROLL_AREA_SCROLL: "mdc-tab-scroller__scroll-area--scroll",
-        SCROLL_TEST: "mdc-tab-scroller__test"
+        ANIMATING: "ftt-blazor-tab-scroller--animating",
+        SCROLL_AREA_SCROLL: "ftt-blazor-tab-scroller__scroll-area--scroll",
+        SCROLL_TEST: "ftt-blazor-tab-scroller__test"
     }, e.strings = {
-        AREA_SELECTOR: ".mdc-tab-scroller__scroll-area",
-        CONTENT_SELECTOR: ".mdc-tab-scroller__scroll-content"
+        AREA_SELECTOR: ".ftt-blazor-tab-scroller__scroll-area",
+        CONTENT_SELECTOR: ".ftt-blazor-tab-scroller__scroll-content"
     }
 }, function (t, e, n) {
     "use strict";
@@ -6999,10 +6999,10 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        LABEL_FLOAT_ABOVE: "mdc-floating-label--float-above",
-        LABEL_REQUIRED: "mdc-floating-label--required",
-        LABEL_SHAKE: "mdc-floating-label--shake",
-        ROOT: "mdc-floating-label"
+        LABEL_FLOAT_ABOVE: "ftt-blazor-floating-label--float-above",
+        LABEL_REQUIRED: "ftt-blazor-floating-label--required",
+        LABEL_SHAKE: "ftt-blazor-floating-label--shake",
+        ROOT: "ftt-blazor-floating-label"
     }
 }, function (t, e, n) {
     "use strict";
@@ -7061,8 +7061,8 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        LINE_RIPPLE_ACTIVE: "mdc-line-ripple--active",
-        LINE_RIPPLE_DEACTIVATING: "mdc-line-ripple--deactivating"
+        LINE_RIPPLE_ACTIVE: "ftt-blazor-line-ripple--active",
+        LINE_RIPPLE_DEACTIVATING: "ftt-blazor-line-ripple--deactivating"
     }
 }, function (t, e, n) {
     "use strict";
@@ -7226,7 +7226,7 @@
     }), e.MatNumericUpDownField = void 0, e.init = function (t) {
         new r(t)
     }, e.clearAndInvalid = function (t) {
-        t.getElementsByTagName("input")[0].value = "", t.classList.add("mdc-text-field--invalid")
+        t.getElementsByTagName("input")[0].value = "", t.classList.add("ftt-blazor-text-field--invalid")
     }, e.setValue = function (t, e) {
         t.getElementsByTagName("input")[0].value = e
     };
@@ -8769,7 +8769,7 @@
                     t.destroy()
                 })), this.unlisten(l, this.handleChipInteraction_), this.unlisten(d, this.handleChipSelection_), this.unlisten(f, this.handleChipRemoval_), this.unlisten(p, this.handleChipNavigation_), t.prototype.destroy.call(this)
             }, e.prototype.addChip = function (t) {
-                t.id = t.id || "mdc-chip-" + ++_, this.chips_.push(this.chipFactory_(t))
+                t.id = t.id || "ftt-blazor-chip-" + ++_, this.chips_.push(this.chipFactory_(t))
             }, e.prototype.getDefaultFoundation = function () {
                 var t = this,
                     e = {
@@ -8807,7 +8807,7 @@
                 return new c.MDCChipSetFoundation(e)
             }, e.prototype.instantiateChips_ = function (t) {
                 return [].slice.call(this.root.querySelectorAll(h)).map((function (e) {
-                    return e.id = e.id || "mdc-chip-" + ++_, t(e)
+                    return e.id = e.id || "ftt-blazor-chip-" + ++_, t(e)
                 }))
             }, e.prototype.findChipIndex_ = function (t) {
                 for (var e = 0; e < this.chips_.length; e++)
@@ -9069,7 +9069,7 @@
     }, e.setSelectedIndex = function (t, e) {
         t.$list.foundation.setSelectedIndex(e)
     }, e.confirmSelection = function (t) {
-        var e = t.querySelector(".mdc-list-item--selected");
+        var e = t.querySelector(".ftt-blazor-list-item--selected");
         e && function (t, e) {
             var n = document.createEvent("MouseEvents");
             n.initEvent.apply(n, function (t) {
@@ -9484,14 +9484,14 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        CLOSED_CLASS: "mdc-linear-progress--closed",
-        INDETERMINATE_CLASS: "mdc-linear-progress--indeterminate",
-        REVERSED_CLASS: "mdc-linear-progress--reversed"
+        CLOSED_CLASS: "ftt-blazor-linear-progress--closed",
+        INDETERMINATE_CLASS: "ftt-blazor-linear-progress--indeterminate",
+        REVERSED_CLASS: "ftt-blazor-linear-progress--reversed"
     }, e.strings = {
         ARIA_VALUENOW: "aria-valuenow",
-        BUFFER_BAR_SELECTOR: ".mdc-linear-progress__buffer-bar",
+        BUFFER_BAR_SELECTOR: ".ftt-blazor-linear-progress__buffer-bar",
         FLEX_BASIS: "flex-basis",
-        PRIMARY_BAR_SELECTOR: ".mdc-linear-progress__primary-bar"
+        PRIMARY_BAR_SELECTOR: ".ftt-blazor-linear-progress__primary-bar"
     }
 }, function (t, e, n) {
     "use strict";
@@ -10103,7 +10103,7 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.init = function (t, e) {
-        var n = t.getElementsByClassName("mdc-tab-scroller");
+        var n = t.getElementsByClassName("ftt-blazor-tab-scroller");
         n && n.length && new i.MDCTabScroller(n[0])
     }, n(168);
     var i = n(89)
@@ -10234,7 +10234,7 @@
                 return [].slice.call(this.root.querySelectorAll(u.TAB_SELECTOR))
             }, e.prototype.instantiateTabs_ = function (t) {
                 return this.getTabElements_().map((function (e) {
-                    return e.id = e.id || "mdc-tab-" + ++l, t(e)
+                    return e.id = e.id || "ftt-blazor-tab-" + ++l, t(e)
                 }))
             }, e.prototype.instantiateTabScroller_ = function (t) {
                 var e = this.root.querySelector(u.TAB_SCROLLER_SELECTOR);
@@ -10728,11 +10728,11 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ACTIVE: "mdc-tab-indicator--active",
-        FADE: "mdc-tab-indicator--fade",
-        NO_TRANSITION: "mdc-tab-indicator--no-transition"
+        ACTIVE: "ftt-blazor-tab-indicator--active",
+        FADE: "ftt-blazor-tab-indicator--fade",
+        NO_TRANSITION: "ftt-blazor-tab-indicator--no-transition"
     }, e.strings = {
-        CONTENT_SELECTOR: ".mdc-tab-indicator__content"
+        CONTENT_SELECTOR: ".ftt-blazor-tab-indicator__content"
     }
 }, function (t, e, n) {
     "use strict";
@@ -10762,14 +10762,14 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.cssClasses = {
-        ACTIVE: "mdc-tab--active"
+        ACTIVE: "ftt-blazor-tab--active"
     }, e.strings = {
         ARIA_SELECTED: "aria-selected",
-        CONTENT_SELECTOR: ".mdc-tab__content",
+        CONTENT_SELECTOR: ".ftt-blazor-tab__content",
         INTERACTED_EVENT: "MDCTab:interacted",
-        RIPPLE_SELECTOR: ".mdc-tab__ripple",
+        RIPPLE_SELECTOR: ".ftt-blazor-tab__ripple",
         TABINDEX: "tabIndex",
-        TAB_INDICATOR_SELECTOR: ".mdc-tab-indicator"
+        TAB_INDICATOR_SELECTOR: ".ftt-blazor-tab-indicator"
     }
 }, function (t, e, n) {
     "use strict";
@@ -10956,8 +10956,8 @@
         HOME_KEY: "Home",
         SPACE_KEY: "Space",
         TAB_ACTIVATED_EVENT: "MDCTabBar:activated",
-        TAB_SCROLLER_SELECTOR: ".mdc-tab-scroller",
-        TAB_SELECTOR: ".mdc-tab"
+        TAB_SCROLLER_SELECTOR: ".ftt-blazor-tab-scroller",
+        TAB_SELECTOR: ".ftt-blazor-tab"
     }
 }, function (t, e, n) {
     "use strict";

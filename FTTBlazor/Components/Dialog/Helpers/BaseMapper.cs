@@ -21,11 +21,5 @@ namespace FTTBlazor
             m.Items.Add(funcName);
             return m;
         }
-
-        public static T If<T>(this T m, string name, Func<bool> func) where T : BaseMapper
-        {
-            m.Items.Add(() => func() ? name : null);
-            return m;
-        }
     }
 }

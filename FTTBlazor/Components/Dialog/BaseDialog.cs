@@ -83,13 +83,13 @@ namespace FTTBlazor
         public BaseDialog()
         {
             SurfaceClassMapper
-                .Add("mdc-dialog__surface")
+                .Add("ftt-blazor-dialog__surface")
                 .Get(() => SurfaceClass);
 
             SurfaceStyleMapper
                 .Get(() => SurfaceStyle);
 
-            ClassMapper.Add("mdc-dialog");
+            ClassMapper.Add("ftt-blazor-dialog");
             CallAfterRender(async () =>
             {
                 dotNetObjectRef ??= CreateDotNetObjectRef(this);

@@ -6,7 +6,6 @@ namespace FTTBlazor
     {
     }
 
-
     public class ForwardRef<T>
     {
         private T _current;
