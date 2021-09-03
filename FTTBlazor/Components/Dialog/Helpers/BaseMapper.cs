@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FTTBlazorComponent
+namespace FTTBlazor
 {
     public class BaseMapper
     {
@@ -19,6 +19,12 @@ namespace FTTBlazorComponent
         public static T Get<T>(this T m, Func<string> funcName) where T : BaseMapper
         {
             m.Items.Add(funcName);
+            return m;
+        }
+
+        public static T If<T>(this T m, string name, Func<bool> func) where T : BaseMapper
+        {
+            m.Items.Add(() => func() ? name : null);
             return m;
         }
     }

@@ -912,9 +912,9 @@
     }
     Object.defineProperty(e, "__esModule", {
         value: !0
-    }), e.FTTBlazorComponent = e.setFTTBlazorInstance = e.getFTTBlazorInstance = e.FTTBlazorInstance = void 0, e.FTTBlazorInstance = "$FTTBlazorInstance", e.getFTTBlazorInstance = function (t) {
+    }), e.FTTBlazor = e.setFTTBlazorInstance = e.getFTTBlazorInstance = e.FTTBlazorInstance = void 0, e.FTTBlazorInstance = "$FTTBlazorInstance", e.getFTTBlazorInstance = function (t) {
         if (t) return t[e.FTTBlazorInstance]
-    }, e.setFTTBlazorInstance = i, e.FTTBlazorComponent = function (t) {
+    }, e.setFTTBlazorInstance = i, e.FTTBlazor = function (t) {
         i(this.ref = t, this)
     }
 }, function (t, e, n) {
@@ -6524,7 +6524,7 @@
         matChip: f,
         matChipSet: p,
         matAppBar: h,
-        matIconButton: _,
+        IconButton: _,
         matList: m,
         matDrawer: g,
         matMenu: C,
@@ -6532,9 +6532,9 @@
         matElevation: E,
         matProgressBar: b,
         matProgressCircle: A,
-        matDialog: T,
+        Dialog: T,
         matLayoutGrid: I,
-        matRipple: O,
+        Ripple: O,
         matSnackbar: S,
         matTabBar: D,
         matDatePicker: M,
@@ -9029,12 +9029,12 @@
     "use strict";
     Object.defineProperty(e, "__esModule", {
         value: !0
-    }), e.MatIconButton = void 0, e.init = function (t) {
+    }), e.IconButton = void 0, e.init = function (t) {
         new r(t)
     };
     var i = n(16);
     n(37);
-    var r = e.MatIconButton = function () {
+    var r = e.IconButton = function () {
         function t(e) {
             ! function (t, e) {
                 if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
@@ -9610,9 +9610,9 @@
         value: !0
     }), e.init = function (t, e) {
         t.FTTBlazorRef = new i.MDCDialog(t), t.addEventListener("MDCDialog:closed", (function () {
-            e.invokeMethodAsync("MatDialogClosedHandler")
+            e.invokeMethodAsync("DialogClosedHandler")
         })), t.addEventListener("MDCDialog:opened", (function () {
-            e.invokeMethodAsync("MatDialogOpenedHandler")
+            e.invokeMethodAsync("DialogOpenedHandler")
         }))
     }, e.setIsOpen = function (t, e) {
         e ? t.FTTBlazorRef.open() : t.FTTBlazorRef.close()
@@ -12325,7 +12325,7 @@
                     }))
                 }))
             }, e
-        }(c.FTTBlazorComponent);
+        }(c.FTTBlazor);
 
     function l(t) {
         return new Promise((function (e, n) {
@@ -12395,7 +12395,7 @@
                 return n.table = new a.MDCDataTable(e), n
             }
             return r(e, t), e
-        }(o.FTTBlazorComponent);
+        }(o.FTTBlazor);
     e.init = function (t) {
         new s(t)
     }

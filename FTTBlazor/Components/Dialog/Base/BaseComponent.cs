@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FTTBlazorComponent
+namespace FTTBlazor
 {
     public abstract class BaseComponent : ComponentBase, IDisposable
     {
@@ -49,6 +49,28 @@ namespace FTTBlazorComponent
         protected void CallAfterRender(Func<Task> action)
         {
             afterRenderCallQueue.Enqueue(action);
+        }
+
+        protected virtual Task OnFirstAfterRenderAsync()
+        {
+            return Task.CompletedTask;
+        }
+
+        public void InvokeStateHasChanged()
+        {
+            InvokeAsync(() =>
+            {
+                try
+                {
+                    if (!Disposed)
+                    {
+                        StateHasChanged();
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            });
         }
 
         public virtual void Dispose()

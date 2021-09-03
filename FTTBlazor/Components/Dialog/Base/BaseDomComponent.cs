@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FTTBlazorComponent
+namespace FTTBlazor
 {
     public abstract class BaseDomComponent : BaseComponent
     {
@@ -11,6 +11,9 @@ namespace FTTBlazorComponent
 
         [Parameter(CaptureUnmatchedValues = true)]
         public Dictionary<string, object> Attributes { get; set; }
+
+        [Parameter]
+        public string Class { get; set; }
 
         private ElementReference _ref;
 

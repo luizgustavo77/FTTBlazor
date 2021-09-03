@@ -2,12 +2,12 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace FTTBlazorComponent
+namespace FTTBlazor
 {
     public class BaseDialog : BaseDomComponent
     {
         [JSInvokable]
-        public async Task MatDialogClosedHandler()
+        public async Task DialogClosedHandler()
         {
             _isOpen = false;
             await IsOpenChanged.InvokeAsync(false);
@@ -15,7 +15,7 @@ namespace FTTBlazorComponent
         }
 
         [JSInvokable]
-        public async Task MatDialogOpenedHandler()
+        public async Task DialogOpenedHandler()
         {
             _isOpen = true;
             await IsOpenChanged.InvokeAsync(true);
@@ -36,7 +36,7 @@ namespace FTTBlazorComponent
                     _isOpen = value;
                     CallAfterRender(async () =>
                     {
-                        await JsInvokeAsync<object>("FTTBlazor.matDialog.setIsOpen", Ref, value);
+                        await JsInvokeAsync<object>("FTTBlazor.Dialog.setIsOpen", Ref, value);
                     });
                 }
             }
@@ -57,7 +57,7 @@ namespace FTTBlazorComponent
                 _canBeClosed = value;
                 CallAfterRender(async () =>
                 {
-                    await JsInvokeAsync<object>("FTTBlazor.matDialog.setCanBeClosed", Ref, value);
+                    await JsInvokeAsync<object>("FTTBlazor.Dialog.setCanBeClosed", Ref, value);
                 });
             }
         }
@@ -93,7 +93,7 @@ namespace FTTBlazorComponent
             CallAfterRender(async () =>
             {
                 dotNetObjectRef ??= CreateDotNetObjectRef(this);
-                await JsInvokeAsync<object>("FTTBlazor.matDialog.init", Ref, dotNetObjectRef);
+                await JsInvokeAsync<object>("FTTBlazor.Dialog.init", Ref, dotNetObjectRef);
             });
         }
 

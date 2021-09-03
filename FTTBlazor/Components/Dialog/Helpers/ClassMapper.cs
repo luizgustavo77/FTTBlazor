@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace FTTBlazorComponent
+namespace FTTBlazor
 {
     public class ClassMapper : BaseMapper
     {
