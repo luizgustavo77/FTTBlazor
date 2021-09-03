@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-@*@inject ToastService toastService*@
+@inject ToastService toastService
 
 @code{
     public bool dialogIsOpen { get; set; } = false;
@@ -15,10 +15,10 @@ Welcome to your new app.
 
 <button @onclick="@(e => { dialogIsOpen = true; })">oi</button>
 
-@*<button class="btn btn-info" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">Info Toast</button>
+<button class="btn btn-info" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">Info Toast</button>
 <button class="btn btn-success" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", ToastEnum.Success))">Success Toast</button>
 <button class="btn btn-warning" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", ToastEnum.Warning))">Warning Toast</button>
-<button class="btn btn-danger" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">Error Toast</button>*@
+<button class="btn btn-danger" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">Error Toast</button>
 
 <FTTBlazor.Dialog @bind-IsOpen="@dialogIsOpen">
     <FTTBlazor.DialogTitle>Hi</FTTBlazor.DialogTitle>

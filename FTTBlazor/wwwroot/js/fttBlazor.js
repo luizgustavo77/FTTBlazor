@@ -5465,7 +5465,6 @@
         }
         return t.prototype.trapFocus = function () {
             var t = this.getFocusableElements(this.root);
-            if (0 === t.length) throw new Error("FocusTrap: Element must have at least one focusable child.");
             this.elFocusedBeforeTrapFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null, this.wrapTabFocus(this.root, t), this.options.skipInitialFocus || this.focusInitialElement(t, this.options.initialFocusEl)
         }, t.prototype.releaseFocus = function () {
             [].slice.call(this.root.querySelectorAll(".mdc-dom-focus-sentinel")).forEach((function (t) {
@@ -5481,7 +5480,6 @@
             })), t.insertBefore(n, t.children[0]), t.appendChild(i)
         }, t.prototype.focusInitialElement = function (t, e) {
             var n = 0;
-            e && (n = Math.max(t.indexOf(e), 0)), t[n].focus()
         }, t.prototype.getFocusableElements = function (t) {
             return [].slice.call(t.querySelectorAll("[autofocus], [tabindex], a, input, textarea, select, button")).filter((function (t) {
                 var e = "true" === t.getAttribute("aria-disabled") || null != t.getAttribute("disabled") || null != t.getAttribute("hidden") || "true" === t.getAttribute("aria-hidden"),
