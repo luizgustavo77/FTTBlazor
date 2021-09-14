@@ -314,14 +314,17 @@
 /*CSS Toast*/
 .toast {
     display: none;
-    padding: 1.5rem;
+    /*padding: 1.5rem;*/
     color: #fff;
-    z-index: 1;
-    position: absolute;
+    z-index: 100 !important;
+    position: fixed;
     width: 25rem;
-    top: 2rem;
+    height: 7rem;
+    bottom: 2rem;
     border-radius: 1rem;
-    left: 50%;
+    right: 2rem;
+    padding: unset !important;
+    box-shadow: unset !important;
 }
 
 .toast-icon {
@@ -335,29 +338,16 @@
 .toast-body {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    padding-left: 1rem;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0 0 0 1rem;
 }
-
-    .toast-body p {
-        margin-bottom: 0;
-    }
 
 .toast-visible {
     display: flex;
     flex-direction: row;
     animation: fadein 1.5s;
     animation-fill-mode: forwards;
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 .toast-info {
@@ -374,4 +364,14 @@
 
 .toast-danger {
     background-color: #dc3545 !important;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
