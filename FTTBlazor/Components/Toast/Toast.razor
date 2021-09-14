@@ -1,8 +1,10 @@
 ﻿@inherits ToastBase
 
-<div class="toast @(IsVisible ? "toast-visible" : null) @BackgroundCssClass">
+<div class="toast @(IsVisible ? "toast-visible" : null) @BackgroundCssClass" style="z-index: 100;">
     <div class="toast-icon">
-        <i class="fa fa-@IconCssClass" aria-hidden="true"></i>
+        <i class="material-icons" aria-hidden="true">
+            @IconCssClass
+        </i>
     </div>
     <div class="toast-body">
         <h5>@Heading</h5>

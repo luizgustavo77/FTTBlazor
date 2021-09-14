@@ -37,23 +37,23 @@ namespace FTTBlazor
             switch (level)
             {
                 case ToastEnum.Info:
-                    BackgroundCssClass = "bg-info";
+                    BackgroundCssClass = "toast-info";
                     IconCssClass = "info";
                     Heading = "Info";
                     break;
                 case ToastEnum.Success:
-                    BackgroundCssClass = "bg-success";
-                    IconCssClass = "check";
+                    BackgroundCssClass = "toast-success";
+                    IconCssClass = "check_circle";
                     Heading = "Success";
                     break;
                 case ToastEnum.Warning:
-                    BackgroundCssClass = "bg-warning";
-                    IconCssClass = "exclamation";
+                    BackgroundCssClass = "toast-warning";
+                    IconCssClass = "warning";
                     Heading = "Warning";
                     break;
                 case ToastEnum.Error:
-                    BackgroundCssClass = "bg-danger";
-                    IconCssClass = "times";
+                    BackgroundCssClass = "toast-danger";
+                    IconCssClass = "error";
                     Heading = "Error";
                     break;
             }

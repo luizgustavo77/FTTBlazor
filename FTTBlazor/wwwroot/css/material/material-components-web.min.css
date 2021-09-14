@@ -23743,11 +23743,11 @@ iframe {
         overflow: hidden
     }
 
-.demo-wrapper {
+.wrapper {
     margin: 24px
 }
 
-    .demo-wrapper iframe {
+    .wrapper iframe {
         border: 1px solid rgba(0,0,0,.5)
     }
 

@@ -359,3 +359,19 @@
         opacity: 1;
     }
 }
+
+.toast-info {
+    background-color: #17a2b8 !important;
+}
+
+.toast-success {
+    background-color: #28a745 !important;
+}
+
+.toast-warning {
+    background-color: #ffc107 !important;
+}
+
+.toast-danger {
+    background-color: #dc3545 !important;
+}
