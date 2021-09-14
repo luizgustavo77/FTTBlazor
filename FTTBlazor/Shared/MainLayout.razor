@@ -1,19 +1,22 @@
 ﻿@inherits LayoutComponentBase
 
-    <FTTBlazor.Client.Components.Toast.Toast />
+<FTTBlazor.Client.Components.Toast.Toast />
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <div class="demo-avatar-dropdown">
 
-    <div class="page">
-        <div class="sidebar">
-            <NavMenu />
-        </div>
-
-        <div class="main">
-            <div class="top-row px-4">
-                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
             </div>
+        </header>
+        <NavMenu />
+    </div>
 
-            <div class="content px-4">
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
                 @Body
             </div>
         </div>
-    </div>
+    </main>
+
+</div>

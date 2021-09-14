@@ -1,23 +1,19 @@
 ﻿@namespace FTTBlazor
-@using Microsoft.AspNetCore.Components
 @inherits BaseDomComponent
+@using Microsoft.AspNetCore.Components
 
-
-<div class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref"  @attributes="Attributes" Id="@Id">
+<div class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref" @attributes="Attributes" Id="@Id">
     @ChildContent
 </div>
 
-
 @code
 {
-
     [Parameter]
-    public  RenderFragment ChildContent { get; set; }
+    public RenderFragment ChildContent { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
         ClassMapper.Add("ftt-blazor-dialog__content");
     }
-
 }

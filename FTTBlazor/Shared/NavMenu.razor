@@ -1,21 +1,4 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">FTTBlazor</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-    </ul>
-</div>
-
-@code {
+﻿@code {
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -25,3 +8,12 @@
         collapseNavMenu = !collapseNavMenu;
     }
 }
+
+<NavLink class="demo-navigation mdl-navigation mdl-color--blue-grey-800" href="" Match="NavLinkMatch.All">
+    <a class="mdl-navigation__link" href="">
+        <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">
+            home
+        </i>
+        Home
+    </a>
+</NavLink>
