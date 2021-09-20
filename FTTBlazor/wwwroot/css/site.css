@@ -229,3 +229,13 @@ _:-ms-input-placeholder, :root .graph {
     -ms-flex-align: center;
     align-items: center;
 }
+
+.text-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}

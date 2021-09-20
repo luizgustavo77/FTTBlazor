@@ -39,6 +39,7 @@ namespace FTTBlazor.Client
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
