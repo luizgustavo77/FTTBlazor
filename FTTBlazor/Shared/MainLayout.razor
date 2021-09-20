@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <FTTBlazor.Client.Components.Toast.Toast />
+
 <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <div class="drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="drawer-header">
@@ -13,9 +14,7 @@
 
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid content">
-            <div class="charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                @Body
-            </div>
+            @Body
         </div>
     </main>
 </div>

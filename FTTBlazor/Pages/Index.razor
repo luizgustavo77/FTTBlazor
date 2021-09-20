@@ -1,28 +1,19 @@
 ﻿@page "/"
 
-@inject ToastService toastService
-
 @code{
     public bool dialogIsOpen { get; set; } = false;
 
 }
 
-<h1>FTT Blazor</h1>
+<div class="charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <img src="~/images/microsoft+blazor.png" />
+    <h1>FTT Blazor</h1>
+</div>
 
-<button @onclick="@(e => { dialogIsOpen = true; })">oi</button>
-
-<button class="btn btn-info" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">Info Toast</button>
-<button class="btn btn-success" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", ToastEnum.Success))">Success Toast</button>
-<button class="btn btn-warning" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", ToastEnum.Warning))">Warning Toast</button>
-<button class="btn btn-danger" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">Error Toast</button>
-
-<FTTBlazor.Dialog @bind-IsOpen="@dialogIsOpen">
-    <FTTBlazor.DialogTitle>Hi</FTTBlazor.DialogTitle>
-    <FTTBlazor.DialogContent>
-        <p>What's your favorite animal?</p>
-
-    </FTTBlazor.DialogContent>
-    <FTTBlazor.DialogActions>
-        <button>ola</button>
-    </FTTBlazor.DialogActions>
-</FTTBlazor.Dialog>
+<div class="charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <p>Nosso projeto tem o intuito apresentar a solução da Microsoft para o WebAssembly chamada Blazor!</p>
+    <p>
+        Alem disso temos a proposta de agilizar o desenvolvimento com Blazor casando o pardão REST com
+        componentes criado por nós para desenvolvimento WEB usando o MaterialDesign como base.
+    </p>
+</div>
