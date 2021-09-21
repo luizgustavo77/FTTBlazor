@@ -1,0 +1,36 @@
+﻿@page "/toaster"
+
+@inject ToastService toastService
+
+@code{
+}
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" style="margin-top: -8px;">
+    <img style="width: 30%;" src="../img/logoMicrosoft.png" />
+    <h1 style="text-align: right;">FTT Blazor - Toaster</h1>
+</div>
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+        <h1>Sobre o componenete de Toaster</h1>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-grid">
+        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">
+            INFORMAÇÃO
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-grid">
+        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", ToastEnum.Success))">
+            SUCESSO
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-grid">
+        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", ToastEnum.Warning))">
+            AVISO
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-grid">
+        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">
+            ERROR
+        </button>
+    </div>
+</div>
