@@ -1,29 +1,51 @@
 ﻿@page "/dialog"
 
 @code{
-    bool dialogIsOpen { get; set; }
+    bool dialogIsOpen { get; set; } = false;
+
 }
 
-<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" style="margin-top: -8px;">
-    <img style="width: 30%;" src="../img/logoMicrosoft.png" />
-    <h1 style="text-align: right;">FTT Blazor - Dialog</h1>
-</div>
-<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-    <div class="mdl-cell mdl-cell--12-col mdl-grid">
-        <h1>Sobre o componenete de Dialog</h1>
+<div class="mdl-color--white mdl-shadow--2dp  mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Dialog</h1>
     </div>
-    <div class="mdl-cell mdl-cell--12-col mdl-grid">
-        <button class="mdc-button" @onclick="@(e => { dialogIsOpen = true; })">ABRIR O DIALOG</button>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Clicando no botão abaixo o dialog vai abrir, por sobrepõe tudo atras da pagina. Clicando fora o dialog vai ser fechado</h6>
+        <button type="button" class="ftt-blazor-button" @onclick="@(e => { dialogIsOpen = true; })">ABRIR O DIALOG</button>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Variavel booleana que quando <b>true</b> abre o dialog e quando <b>false</b> fecha o modal</h6>
+        <img src="../img/about/dialogUse.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <img src="../img/about/dialog.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametro <span style="font-weight:bold;">bind-IsOpen</span></h4>
+        <h6>Aqui criamos a variavel que passamos como parametro para abrir o dialog</h6>
+        <img src="../img/about/dialogCode.png" />
     </div>
 </div>
 
 
 <FTTBlazor.Dialog @bind-IsOpen="@dialogIsOpen">
-    <FTTBlazor.DialogTitle>Hi</FTTBlazor.DialogTitle>
+    <FTTBlazor.DialogTitle>
+        Região do DialogTitle
+    </FTTBlazor.DialogTitle>
     <FTTBlazor.DialogContent>
-        <p>What's your favorite animal?</p>
+        <hr />
+        Região do DialogContent
+        <hr />
     </FTTBlazor.DialogContent>
     <FTTBlazor.DialogActions>
-        <button class="mdc-button" @onclick="@(e => { dialogIsOpen = false; })"> FECHAR </button>
+        Região do DialogActions
     </FTTBlazor.DialogActions>
 </FTTBlazor.Dialog>

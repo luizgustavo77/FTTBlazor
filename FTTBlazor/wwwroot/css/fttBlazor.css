@@ -1,28 +1,21 @@
 :root {
-    --ftt-blazor-theme-primary: #6200ee;
-    --ftt-blazor-theme-secondary: #018786;
-    --ftt-blazor-theme-background: #fff;
-    --ftt-blazor-theme-surface: #fff;
-    --ftt-blazor-theme-error: #b00020;
-    --ftt-blazor-theme-on-primary: #fff;
-    --ftt-blazor-theme-on-secondary: #fff;
-    --ftt-blazor-theme-on-surface: #000;
-    --ftt-blazor-theme-on-error: #fff;
-    --ftt-blazor-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
-    --ftt-blazor-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
-    --ftt-blazor-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);
-    --ftt-blazor-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);
-    --ftt-blazor-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);
-    --ftt-blazor-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
-    --ftt-blazor-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
-    --ftt-blazor-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
-    --ftt-blazor-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
-    --ftt-blazor-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
-    --ftt-blazor-theme-text-primary-on-dark: white;
-    --ftt-blazor-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
-    --ftt-blazor-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
-    --ftt-blazor-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
-    --ftt-blazor-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5)
+    --brandchart: #3f6184;
+    --brandone: #3f6184;
+    --brandtwo: #4b7199;
+    --brandcard: #f6f6f6;
+    --brandbackground: #f2f2f2;
+    --brandmenu: #494949;
+    --brandtext: #455a64;
+    --brandmenutext: #eee;
+    --brandmenusuperior: #37b;
+    --brandmodal: #eee;
+    --brandline: rgba(0, 0, 0, 0.17);
+    --brandlineminor: rgba(0, 0, 0, 0.03);
+    --brandlinemajor: rgba(0, 0, 0, 0.5);
+    --brantitlebar: var(--brandmenusuperior);
+    --brantitletext: #eee;
+    --brandtextmuted: #a1aab2;
+    --brandmenusuperior: #AF3800 !important;
 }
 
 
@@ -374,4 +367,47 @@
     to {
         opacity: 1;
     }
+}
+
+.ftt-blazor-button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    font-family: Roboto, sans-serif;
+    font-size: .875rem;
+    letter-spacing: .08929em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 8px 0 8px;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    outline: none;
+    line-height: inherit;
+    user-select: none;
+    overflow: visible;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-weight: 600;
+    border-radius: 0px !important;
+    min-width: 100px;
+    background-color: rgba(0,0,0,0);
+    color: #3f6184;
+    border: none !important;
+    margin: 0.3rem;
+}
+
+    .ftt-blazor-button:hover {
+        cursor: pointer;
+        background-color: var(--brandlineminor);
+    }
+
+.pull-right {
+    float: right
+}
+
+.pull-left {
+    float: left
 }

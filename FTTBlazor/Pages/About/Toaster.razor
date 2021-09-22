@@ -5,32 +5,55 @@
 @code{
 }
 
-<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" style="margin-top: -8px;">
-    <img style="width: 30%;" src="../img/logoMicrosoft.png" />
-    <h1 style="text-align: right;">FTT Blazor - Toaster</h1>
-</div>
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-    <div class="mdl-cell mdl-cell--12-col mdl-grid">
-        <h1>Sobre o componenete de Toaster</h1>
+    <div class="mdl-cell--12-col">
+        <h1>Toaster</h1>
     </div>
-    <div class="mdl-cell mdl-cell--3-col mdl-grid">
-        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Clicando nos botões abaixo a notifição vai abrir, ira sobrepor tudo atras da pagina.</h6>
+    </div>
+
+    <div class="mdl-cell--3-col mdl-grid">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">
             INFORMAÇÃO
         </button>
     </div>
-    <div class="mdl-cell mdl-cell--3-col mdl-grid">
-        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", ToastEnum.Success))">
+    <div class="mdl-cell--3-col mdl-grid">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", ToastEnum.Success))">
             SUCESSO
         </button>
     </div>
-    <div class="mdl-cell mdl-cell--3-col mdl-grid">
-        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", ToastEnum.Warning))">
+    <div class="mdl-cell--3-col mdl-grid">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", ToastEnum.Warning))">
             AVISO
         </button>
     </div>
-    <div class="mdl-cell mdl-cell--3-col mdl-grid">
-        <button class="mdc-button" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">
+    <div class="mdl-cell--3-col mdl-grid">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">
             ERROR
         </button>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Injeção no statup</h6>
+        <img src="../img/about/toasterUse1.png" />
+        <h6>Injeção na pagina</h6>
+        <img src="../img/about/toasterUse2.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <img src="../img/about/toaster.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">ShowToast</span></h4>
+        <h6><span style="font-weight:bold;">Message:</span> Aqui passamos o texto que sera mostrado ao aparecer o toaster</h6>
+
+        <h6><span style="font-weight:bold;">ToastEnum:</span> Aqui passamos o tipo da notificação</h6>
     </div>
 </div>

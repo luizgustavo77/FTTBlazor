@@ -6,6 +6,23 @@ body {
     height: 100%;
 }
 
+hi{
+    text-align: center;
+}
+
+h1 h4 {
+    color: var(--brandone);
+    font-weight: bold;
+}
+
+h2 h6 {
+    color: var(--brandone) !important;
+}
+
+p {
+    color: var(--brandtext);
+}
+
 .avatar {
     width: 48px;
     height: 48px;

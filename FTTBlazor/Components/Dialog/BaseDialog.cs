@@ -62,10 +62,8 @@ namespace FTTBlazor
             }
         }
 
-        [Parameter]
         public string SurfaceClass { get; set; }
 
-        [Parameter]
         public string SurfaceStyle { get; set; }
 
         public const bool CanBeClosedDefault = true;

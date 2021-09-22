@@ -3,13 +3,30 @@
 <FTTBlazor.Client.Components.Toast.Toast />
 
 <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <div class="drawer mdl-layout__drawer">
-        <img src="../img/ftt.png" class="img-center" style="width: 90%"/>
+
+    @*<header class="header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
+            <i class="material-icons"></i>
+        </div>
+        <div class="mdl-layout__header-row">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            </div>
+        </div>
+    </header>*@
+
+    <div class="drawer mdl-layout__drawer" style="transform: translateX(0);">
+        <img src="../img/ftt.png" class="img-center" style="width: 90%" />
         <NavMenu />
     </div>
 
     <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid content">
+        <div class="mdl-grid">
+
+            <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" style="margin-top: -8px;">
+                <img style="width: 30%;" src="../img/logoMicrosoft.png" />
+                <h1 style="text-align: right;">FTT Blazor</h1>
+            </div>
+
             @Body
         </div>
     </main>
