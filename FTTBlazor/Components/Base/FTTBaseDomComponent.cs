@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace FTTBlazor
 {
-    public abstract class BaseDomComponent : BaseComponent
+    public abstract class FTTBaseDomComponent : FTTBaseComponent
     {
         [Parameter]
         public string Id { get; set; } = "FTTBlazor_id_" + Guid.NewGuid();

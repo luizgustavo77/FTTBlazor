@@ -2,7 +2,7 @@
 
 namespace FTTBlazor
 {
-    public class ForwardRef : ForwardRef<ElementReference>
+    public class FTTForwardRef : ForwardRef<ElementReference>
     {
     }
 

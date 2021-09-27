@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor
 {
-    public class FTTBaseDialog : BaseDomComponent
+    public class FTTBaseDialog : FTTBaseDomComponent
     {
         [JSInvokable]
         public async Task DialogClosedHandler()

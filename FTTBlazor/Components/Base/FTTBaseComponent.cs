@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor
 {
-    public abstract class BaseComponent : ComponentBase, IDisposable
+    public abstract class FTTBaseComponent : ComponentBase, IDisposable
     {
         [Inject]
         protected IJSRuntime Js { get; set; }
@@ -16,7 +16,7 @@ namespace FTTBlazor
         protected bool Disposed { get; private set; }
 
         [Parameter]
-        public ForwardRef RefBack { get; set; }
+        public FTTForwardRef RefBack { get; set; }
 
         private readonly Queue<Func<Task>> afterRenderCallQueue = new Queue<Func<Task>>();
 
