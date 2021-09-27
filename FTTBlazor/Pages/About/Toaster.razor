@@ -16,22 +16,22 @@
     </div>
 
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", ToastEnum.Info))">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", FTTToastEnum.Info))">
             INFORMAÇÃO
         </button>
     </div>
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", ToastEnum.Success))">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", FTTToastEnum.Success))">
             SUCESSO
         </button>
     </div>
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", ToastEnum.Warning))">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", FTTToastEnum.Warning))">
             AVISO
         </button>
     </div>
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", ToastEnum.Error))">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", FTTToastEnum.Error))">
             ERROR
         </button>
     </div>

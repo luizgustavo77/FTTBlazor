@@ -19,7 +19,7 @@ namespace FTTBlazor
             ToastService.OnHide += HideToast;
         }
 
-        private void ShowToast(string message, ToastEnum level)
+        private void ShowToast(string message, FTTToastEnum level)
         {
             BuildToastSettings(level, message);
             IsVisible = true;
@@ -32,26 +32,26 @@ namespace FTTBlazor
             InvokeAsync(StateHasChanged);
         }
 
-        private void BuildToastSettings(ToastEnum level, string message)
+        private void BuildToastSettings(FTTToastEnum level, string message)
         {
             switch (level)
             {
-                case ToastEnum.Info:
+                case FTTToastEnum.Info:
                     BackgroundCssClass = "toast-info";
                     IconCssClass = "info";
                     Heading = "Info";
                     break;
-                case ToastEnum.Success:
+                case FTTToastEnum.Success:
                     BackgroundCssClass = "toast-success";
                     IconCssClass = "check_circle";
                     Heading = "Success";
                     break;
-                case ToastEnum.Warning:
+                case FTTToastEnum.Warning:
                     BackgroundCssClass = "toast-warning";
                     IconCssClass = "warning";
                     Heading = "Warning";
                     break;
-                case ToastEnum.Error:
+                case FTTToastEnum.Error:
                     BackgroundCssClass = "toast-danger";
                     IconCssClass = "error";
                     Heading = "Error";
@@ -65,5 +65,12 @@ namespace FTTBlazor
         {
             ToastService.OnShow -= ShowToast;
         }
+    }
+    public enum FTTToastEnum
+    {
+        Info,
+        Success,
+        Warning,
+        Error
     }
 }

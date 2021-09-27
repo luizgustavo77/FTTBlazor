@@ -5,11 +5,11 @@ namespace FTTBlazor
 {
     public class ToastService : IDisposable
     {
-        public event Action<string, ToastEnum> OnShow;
+        public event Action<string, FTTToastEnum> OnShow;
         public event Action OnHide;
         private Timer Countdown;
 
-        public void ShowToast(string message, ToastEnum level)
+        public void ShowToast(string message, FTTToastEnum level)
         {
             OnShow?.Invoke(message, level);
             StartCountdown();
