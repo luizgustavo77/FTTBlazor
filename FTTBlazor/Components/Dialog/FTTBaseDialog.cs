@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor
 {
-    public class BaseDialog : BaseDomComponent
+    public class FTTBaseDialog : BaseDomComponent
     {
         [JSInvokable]
         public async Task DialogClosedHandler()
@@ -72,13 +72,13 @@ namespace FTTBlazor
 
         private bool _isOpen;
 
-        private DotNetObjectReference<BaseDialog> dotNetObjectRef;
+        private DotNetObjectReference<FTTBaseDialog> dotNetObjectRef;
 
         protected ClassMapper SurfaceClassMapper { get; } = new ClassMapper();
 
         protected StyleMapper SurfaceStyleMapper { get; } = new StyleMapper();
 
-        public BaseDialog()
+        public FTTBaseDialog()
         {
             SurfaceClassMapper
                 .Add("ftt-blazor-dialog__surface")
