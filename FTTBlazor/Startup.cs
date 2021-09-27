@@ -17,7 +17,7 @@ namespace FTTBlazor.Client
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ToastService>();
+            services.AddScoped<FTTToastService>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

@@ -5,7 +5,7 @@ namespace FTTBlazor
 {
     public class ToastBase : ComponentBase, IDisposable
     {
-        [Inject] ToastService ToastService { get; set; }
+        [Inject] FTTToastService ToastService { get; set; }
 
         protected string Heading { get; set; }
         protected string Message { get; set; }

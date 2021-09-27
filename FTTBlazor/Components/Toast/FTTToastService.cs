@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace FTTBlazor
 {
-    public class ToastService : IDisposable
+    public class FTTToastService : IDisposable
     {
         public event Action<string, FTTToastEnum> OnShow;
         public event Action OnHide;
