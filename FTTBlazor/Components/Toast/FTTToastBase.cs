@@ -3,7 +3,7 @@ using System;
 
 namespace FTTBlazor
 {
-    public class ToastBase : ComponentBase, IDisposable
+    public class FTTToastBase : ComponentBase, IDisposable
     {
         [Inject] FTTToastService ToastService { get; set; }
 
