@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FTTBlazor
@@ -99,6 +102,42 @@ namespace FTTBlazor
         {
             base.Dispose();
             DisposeDotNetObjectRef(dotNetObjectRef);
+        }
+    }
+
+    public class FTTStyleMapper : FTTBaseMapper
+    {
+        public string AsString()
+        {
+            return string.Join("; ", Items.Select(i => i()).Where(i => i != null));
+        }
+    }
+
+    public class FTTClassMapper : FTTBaseMapper
+    {
+        public string AsString()
+        {
+            return string.Join(" ", Items.Select(i => i()).Where(i => i != null));
+        }
+    }
+
+    public class FTTBaseMapper
+    {
+        public List<Func<string>> Items = new List<Func<string>>();
+    }
+
+    public static class BaseMapperExtensions
+    {
+        public static T Add<T>(this T m, string name) where T : FTTBaseMapper
+        {
+            m.Items.Add(() => name);
+            return m;
+        }
+
+        public static T Get<T>(this T m, Func<string> funcName) where T : FTTBaseMapper
+        {
+            m.Items.Add(funcName);
+            return m;
         }
     }
 }
