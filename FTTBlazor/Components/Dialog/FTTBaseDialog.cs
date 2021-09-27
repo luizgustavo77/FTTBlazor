@@ -74,9 +74,9 @@ namespace FTTBlazor
 
         private DotNetObjectReference<FTTBaseDialog> dotNetObjectRef;
 
-        protected ClassMapper SurfaceClassMapper { get; } = new ClassMapper();
+        protected FTTClassMapper SurfaceClassMapper { get; } = new FTTClassMapper();
 
-        protected StyleMapper SurfaceStyleMapper { get; } = new StyleMapper();
+        protected FTTStyleMapper SurfaceStyleMapper { get; } = new FTTStyleMapper();
 
         public FTTBaseDialog()
         {

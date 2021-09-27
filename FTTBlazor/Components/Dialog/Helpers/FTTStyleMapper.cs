@@ -2,7 +2,7 @@
 
 namespace FTTBlazor
 {
-    public class StyleMapper : BaseMapper
+    public class FTTStyleMapper : FTTBaseMapper
     {
         public string AsString()
         {

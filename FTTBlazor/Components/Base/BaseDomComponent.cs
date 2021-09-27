@@ -27,8 +27,8 @@ namespace FTTBlazor
             }
         }
 
-        protected ClassMapper ClassMapper { get; } = new ClassMapper();
+        protected FTTClassMapper ClassMapper { get; } = new FTTClassMapper();
 
-        protected StyleMapper StyleMapper = new StyleMapper();
+        protected FTTStyleMapper StyleMapper = new FTTStyleMapper();
     }
 }
