@@ -11,6 +11,30 @@ namespace FTTBlazor
         [Inject]
         protected IJSRuntime Js { get; set; }
 
+        [Parameter]
+        public string Id { get; set; } = "FTTBlazor_id_" + Guid.NewGuid();
+
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> Attributes { get; set; }
+
+        [Parameter]
+        public string Class { get; set; }
+
+        private ElementReference _ref;
+
+        public virtual ElementReference Ref
+        {
+            get => _ref;
+            set
+            {
+                _ref = value;
+                RefBack?.Set(value);
+            }
+        }
+
+        protected FTTClassMapper ClassMapper { get; } = new FTTClassMapper();
+
+        protected FTTStyleMapper StyleMapper = new FTTStyleMapper();
         protected bool Rendered { get; private set; }
 
         protected bool Disposed { get; private set; }
@@ -99,6 +123,19 @@ namespace FTTBlazor
         protected void DisposeDotNetObjectRef<T>(DotNetObjectReference<T> value) where T : class
         {
             value?.Dispose();
+        }
+    }
+    public class FTTForwardRef : ForwardRef<ElementReference>
+    {
+    }
+
+    public class ForwardRef<T>
+    {
+        private T _current;
+
+        public void Set(T value)
+        {
+            _current = value;
         }
     }
 }
