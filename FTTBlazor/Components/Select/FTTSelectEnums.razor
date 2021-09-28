@@ -1,0 +1,41 @@
+﻿@typeparam T
+
+<div class="mat-layout-grid-cell mat-layout-grid-cell-span-@Size">
+    <div class="nexto-components nexto-select has-float-label @BorderRightCssClass">
+
+        <select disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@Value">
+            @if (string.IsNullOrEmpty(Value.ToString()) || Convert.ToInt32(Value) == 0)
+            {
+                data_id = "00000000-0000-0000-0000-000000000000";
+
+                <option style="display:none;" value="@Value" selected hidden disabled></option>
+
+            }
+
+            @if (DataSource != null)
+            {
+                @foreach (var item in DataSource)
+                {
+
+                    //if (Convert.ToInt32(item) == 0)
+                    //{
+                    //    continue;
+                    //}
+
+                    if (item.ToString() == Value.ToString())
+                    {
+                        data_id = item.ToString();
+                        <option selected value="@item">@item</option>
+                    }
+                    else
+                    {
+                        <option value="@item"> @item</option>
+                    }
+                }
+            }
+        </select>
+        <label for="@_id">@Title</label>
+
+
+    </div>
+</div>
