@@ -1,8 +1,7 @@
 ﻿@typeparam T
 
-<div class="mat-layout-grid-cell mat-layout-grid-cell-span-@Size">
+<div class="mdl-cell--@Size-col mdl-grid">
     <div class="nexto-components nexto-select has-float-label @BorderRightCssClass">
-
         <select disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@Value">
             @if (string.IsNullOrEmpty(Value.ToString()) || Convert.ToInt32(Value) == 0)
             {
@@ -16,12 +15,6 @@
             {
                 @foreach (var item in DataSource)
                 {
-
-                    //if (Convert.ToInt32(item) == 0)
-                    //{
-                    //    continue;
-                    //}
-
                     if (item.ToString() == Value.ToString())
                     {
                         data_id = item.ToString();
@@ -35,7 +28,5 @@
             }
         </select>
         <label for="@_id">@Title</label>
-
-
     </div>
 </div>
