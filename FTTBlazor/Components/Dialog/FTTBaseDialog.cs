@@ -2,142 +2,140 @@
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FTTBlazor
 {
-    public class FTTBaseDialog : FTTBaseComponent
+    public abstract class FTTBaseDialog : ComponentBase, IDisposable
     {
-        [JSInvokable]
-        public async Task DialogClosedHandler()
-        {
-            _isOpen = false;
-            await IsOpenChanged.InvokeAsync(false);
-            StateHasChanged();
-        }
-
-        [JSInvokable]
-        public async Task DialogOpenedHandler()
-        {
-            _isOpen = true;
-            await IsOpenChanged.InvokeAsync(true);
-            StateHasChanged();
-        }
+        [Inject]
+        protected IJSRuntime Js { get; set; }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public string Id { get; set; } = "FTTBlazor_id_" + Guid.NewGuid();
+
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> Attributes { get; set; }
 
         [Parameter]
-        public bool IsOpen
+        public string Class { get; set; }
+
+        private ElementReference _ref;
+
+        public virtual ElementReference Ref
         {
-            get => _isOpen;
+            get => _ref;
             set
             {
-                if (IsOpen != value)
+                _ref = value;
+                RefBack?.Set(value);
+            }
+        }
+
+        protected FTTClassMapper ClassMapper { get; } = new FTTClassMapper();
+
+        protected FTTStyleMapper StyleMapper = new FTTStyleMapper();
+        protected bool Rendered { get; private set; }
+
+        protected bool Disposed { get; private set; }
+
+        [Parameter]
+        public FTTForwardRef RefBack { get; set; }
+
+        private readonly Queue<Func<Task>> afterRenderCallQueue = new Queue<Func<Task>>();
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            Rendered = true;
+            await base.OnAfterRenderAsync(firstRender);
+            if (firstRender)
+            {
+                await Task.CompletedTask;
+            }
+
+            if (afterRenderCallQueue.Count > 0)
+            {
+                var actions = afterRenderCallQueue.ToArray();
+                afterRenderCallQueue.Clear();
+
+                foreach (var action in actions)
                 {
-                    _isOpen = value;
-                    CallAfterRender(async () =>
+                    if (Disposed)
                     {
-                        await JsInvokeAsync<object>("FTTBlazor.Dialog.setIsOpen", Ref, value);
-                    });
+                        return;
+                    }
+
+                    await action();
                 }
             }
         }
 
-        [Parameter]
-        public EventCallback<bool> IsOpenChanged { get; set; }
-
-        [Parameter]
-        public bool CanBeClosed
+        protected void CallAfterRender(Func<Task> action)
         {
-            get => _canBeClosed;
-            set
-            {
-                if (CanBeClosed == value)
-                    return;
-
-                _canBeClosed = value;
-                CallAfterRender(async () =>
-                {
-                    await JsInvokeAsync<object>("FTTBlazor.Dialog.setCanBeClosed", Ref, value);
-                });
-            }
+            afterRenderCallQueue.Enqueue(action);
         }
 
-        public string SurfaceClass { get; set; }
-
-        public string SurfaceStyle { get; set; }
-
-        public const bool CanBeClosedDefault = true;
-
-        private bool _canBeClosed = CanBeClosedDefault;
-
-        private bool _isOpen;
-
-        private DotNetObjectReference<FTTBaseDialog> dotNetObjectRef;
-
-        protected FTTClassMapper SurfaceClassMapper { get; } = new FTTClassMapper();
-
-        protected FTTStyleMapper SurfaceStyleMapper { get; } = new FTTStyleMapper();
-
-        public FTTBaseDialog()
+        protected virtual Task OnFirstAfterRenderAsync()
         {
-            SurfaceClassMapper
-                .Add("ftt-blazor-dialog__surface")
-                .Get(() => SurfaceClass);
+            return Task.CompletedTask;
+        }
 
-            SurfaceStyleMapper
-                .Get(() => SurfaceStyle);
-
-            ClassMapper.Add("ftt-blazor-dialog");
-            CallAfterRender(async () =>
+        public void InvokeStateHasChanged()
+        {
+            InvokeAsync(() =>
             {
-                dotNetObjectRef ??= CreateDotNetObjectRef(this);
-                await JsInvokeAsync<object>("FTTBlazor.Dialog.init", Ref, dotNetObjectRef);
+                try
+                {
+                    if (!Disposed)
+                    {
+                        StateHasChanged();
+                    }
+                }
+                catch (Exception)
+                {
+                }
             });
         }
 
-        public override void Dispose()
+        public virtual void Dispose()
         {
-            base.Dispose();
-            DisposeDotNetObjectRef(dotNetObjectRef);
-        }
-    }
-
-    public class FTTStyleMapper : FTTBaseMapper
-    {
-        public string AsString()
-        {
-            return string.Join("; ", Items.Select(i => i()).Where(i => i != null));
-        }
-    }
-
-    public class FTTClassMapper : FTTBaseMapper
-    {
-        public string AsString()
-        {
-            return string.Join(" ", Items.Select(i => i()).Where(i => i != null));
-        }
-    }
-
-    public class FTTBaseMapper
-    {
-        public List<Func<string>> Items = new List<Func<string>>();
-    }
-
-    public static class BaseMapperExtensions
-    {
-        public static T Add<T>(this T m, string name) where T : FTTBaseMapper
-        {
-            m.Items.Add(() => name);
-            return m;
+            Disposed = true;
         }
 
-        public static T Get<T>(this T m, Func<string> funcName) where T : FTTBaseMapper
+        protected async Task<T> JsInvokeAsync<T>(string code, params object[] args)
         {
-            m.Items.Add(funcName);
-            return m;
+            try
+            {
+                return await Js.InvokeAsync<T>(code, args);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        protected DotNetObjectReference<T> CreateDotNetObjectRef<T>(T value) where T : class
+        {
+            return DotNetObjectReference.Create(value);
+        }
+
+        protected void DisposeDotNetObjectRef<T>(DotNetObjectReference<T> value) where T : class
+        {
+            value?.Dispose();
+        }
+    }
+    public class FTTForwardRef : ForwardRef<ElementReference>
+    {
+    }
+
+    public class ForwardRef<T>
+    {
+        private T _current;
+
+        public void Set(T value)
+        {
+            _current = value;
         }
     }
 }
