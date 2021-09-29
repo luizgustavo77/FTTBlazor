@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor", "FTTBlazor\FTTBlazor.csproj", "{E548A0AC-5C3A-4C78-A37F-680E25AB4CCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor", "src\FTTBlazor\FTTBlazor.csproj", "{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTTBlazor.Server", "src\FTTBlazor.Server\FTTBlazor.Server.csproj", "{865A91A2-2D3C-4348-8298-51F260D10BE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor.Common", "src\FTTBlazor.Shared\FTTBlazor.Common.csproj", "{EDE0A55C-B57D-4918-98E2-339C96C7F8C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E548A0AC-5C3A-4C78-A37F-680E25AB4CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E548A0AC-5C3A-4C78-A37F-680E25AB4CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E548A0AC-5C3A-4C78-A37F-680E25AB4CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E548A0AC-5C3A-4C78-A37F-680E25AB4CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865A91A2-2D3C-4348-8298-51F260D10BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865A91A2-2D3C-4348-8298-51F260D10BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865A91A2-2D3C-4348-8298-51F260D10BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865A91A2-2D3C-4348-8298-51F260D10BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE0A55C-B57D-4918-98E2-339C96C7F8C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE0A55C-B57D-4918-98E2-339C96C7F8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE0A55C-B57D-4918-98E2-339C96C7F8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE0A55C-B57D-4918-98E2-339C96C7F8C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

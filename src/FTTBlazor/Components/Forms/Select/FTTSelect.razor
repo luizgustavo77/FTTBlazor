@@ -1,0 +1,35 @@
+﻿@typeparam T
+
+@if (!string.IsNullOrEmpty(_id))
+{
+    <div class="mdl-cell--@Size-col align-left">
+        <div class="ftt-blazor-components ftt-blazor-select has-float-label @BorderRightCssClass">
+
+            <select disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@ItemId" @attributes="@attributes" @bind="@ItemId">
+                @if (string.IsNullOrEmpty(ItemId) || ItemId == Guid.Empty.ToString())
+                {
+                    <option style="display:none;" value="@ItemId" selected hidden disabled></option>
+
+                }
+
+                @if (DataSource != null)
+                {
+                    @foreach (var item in DataSource)
+                    {
+
+                        if (item.Id.ToString() == ItemId && (!string.IsNullOrEmpty(ItemId) && ItemId != Guid.Empty.ToString()))
+                        {
+                            <option selected value="@item.GetType().GetProperty("Id").GetValue(item).ToString()">@item.GetType().GetProperty(DataSourceDescField).GetValue(item)</option>
+                        }
+                        else
+                        {
+                            <option value="@item.GetType().GetProperty("Id").GetValue(item).ToString()"> @item.GetType().GetProperty(DataSourceDescField).GetValue(item)</option>
+                        }
+                    }
+                }
+            </select>
+            <label for="@_id">@Label</label>
+
+        </div>
+    </div>
+}

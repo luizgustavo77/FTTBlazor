@@ -1,6 +1,7 @@
 ﻿@page "/select"
 
 @using FTTBlazor.Components.Forms.Select;
+@using FTTBlazor.Common;
 
 @code{
     enum EnumPokemons
@@ -14,14 +15,16 @@
     EnumPokemons enumValue;
 
     string[] ListPokemons = new string[]
-    {
-        "Pikachu",
+    {   "Pikachu",
         "Bulbasaur",
         "Charmander",
-        "Squirtle"
-    };
+        "Squirtle"};
 
     string stringValue { get; set; }
+
+    string endpoint = "https://localhost:44306/FTTBlazor";
+    string Id { get; set; }
+    string Name { get; set; }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -110,6 +113,61 @@
         <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
         <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
         <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+    </div>
+
+</div>
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Select Endpoint</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para SELECT Endpoint e exemplos de como usar.</h6>
+    </div>
+
+    <FTTSelect OnItemSelected="@(e => { Console.WriteLine("Selecionou: ID " + Id + "NAME " + Name); })"
+               BorderRight="true"
+               T="EndpointPokemon"
+               Size="4"
+               DataSourceEndpoint="@endpoint"
+               Required="true"
+               DataSourceDescField="Name"
+               @bind-DataId="@Id"
+               @bind-DataDesc="@Name"
+               Label="Exemplo de string endpoint"
+               Filter="(x => !string.IsNullOrWhiteSpace(x.Name))">
+    </FTTSelect>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/selectEnum1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <img src="../img/about/selectEndpoint.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">T:</span> Definimos o objeto que vai montar o DDL</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">DataSourceEndpoint:</span> Endpoint para fazer a requisição do tipo GET</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
+        <h6><span style="font-weight:bold;">DataSourceDescField:</span> Define o nome da variavel que vai mostrar no modal</h6>
+        <h6><span style="font-weight:bold;">bind-DataId:</span> Definimos a variavel que vai receber o dado do ID</h6>
+        <h6><span style="font-weight:bold;">bind-DataDesc:</span> Definimos a variavel que vai receber o dado da DESCRIÇÃO</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">Data:</span> Definimos a lista que vai montar o DDL</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h6><span style="font-weight:bold;">TokenProvider:</span> Adiciona um JWT na requisição</h6>
+        <h6><span style="font-weight:bold;">Filter:</span> Adiciona um filtro no dado que chega</h6>
     </div>
 
 </div>
