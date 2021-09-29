@@ -65,8 +65,6 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public bool Required { get; set; } = false;
 
-        public bool Show { get; set; }
-
         private string strEnum;
 
         public string data_id { get; set; } = "00000000-0000-0000-0000-000000000000";

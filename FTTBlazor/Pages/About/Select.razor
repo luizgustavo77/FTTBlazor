@@ -3,15 +3,25 @@
 @using FTTBlazor.Components.Forms.Select;
 
 @code{
-    enum Pokemons
+    enum EnumPokemons
     {
-        Pikachu,
+        Pikachu = 1,
         Bulbasaur,
         Charmander,
         Squirtle
     }
 
-    Pokemons item;
+    EnumPokemons enumValue;
+
+    string[] ListPokemons = new string[]
+    {
+        "Pikachu",
+        "Bulbasaur",
+        "Charmander",
+        "Squirtle"
+    };
+
+    string stringValue { get; set; }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -21,13 +31,13 @@
 
     <div class="mdl-cell--12-col">
         <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para SELECT e exemplos de como usar.</h6>
+        <h6>Abaixo uma serie de opções para SELECT ENUM e exemplos de como usar.</h6>
     </div>
 
-    <FTTSelectEnums OnItemSelected="@(e => { Console.WriteLine("Selecionou: " + item.ToString()); })"
+    <FTTSelectEnums OnItemSelected="@(e => { Console.WriteLine("Selecionou: " + enumValue.ToString()); })"
                     BorderRight="true"
-                    @bind-Value="@item"
-                    T="Pokemons"
+                    @bind-Value="@enumValue"
+                    T="EnumPokemons"
                     Size="4"
                     Required="true"
                     Label="Exemplo de enum">
@@ -36,13 +46,13 @@
     <div class="mdl-cell--12-col">
         <h4>Usando</h4>
         <h6>Adicionando na pagina</h6>
-        <img src="../img/about/selectEnum2.png" />
+        <img src="../img/about/selectEnum1.png" />
     </div>
 
     <div class="mdl-cell--12-col">
         <h4>Codigo usado</h4>
         <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
-        <img src="../img/about/selectEnum1.png" />
+        <img src="../img/about/selectEnum.png" />
     </div>
 
     <div class="mdl-cell--12-col">
@@ -54,6 +64,52 @@
         <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
         <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
         <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+    </div>
+
+</div>
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Select String Array</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para SELECT STRING e exemplos de como usar.</h6>
+    </div>
+
+    <FTTSelectArray OnItemSelected="@(e => { Console.WriteLine("Selecionou: " + stringValue); })"
+                    BorderRight="true"
+                    @bind-Value="@stringValue"
+                    Data="@ListPokemons"
+                    Size="4"
+                    Required="true"
+                    Label="Exemplo de string array">
+    </FTTSelectArray>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/selectEnum1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <img src="../img/about/selectString.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">Data:</span> Definimos a lista que vai montar o DDL</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
     </div>
 
 </div>

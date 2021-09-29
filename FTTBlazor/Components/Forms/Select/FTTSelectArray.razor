@@ -1,0 +1,24 @@
+﻿@if (!string.IsNullOrEmpty(_id))
+{
+    <div class="mdl-cell--@Size-col align-left">
+        <div class="ftt-blazor-components ftt-blazor-select has-float-label @BorderRightCssClass">
+            <select style="cursor: @StyleIsReadOnly" disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@_Value">
+                @if (string.IsNullOrEmpty(_Value))
+                {
+                    data_id = "00000000-0000-0000-0000-000000000000";
+
+                    <option style="display:none;" value="" selected hidden disabled></option>
+                }
+
+                @if (DataSource != null)
+                {
+                    @foreach (var item in DataSource)
+                    {
+                        <option value="@item"> @item</option>
+                    }
+                }
+            </select>
+            <label for="@_id">@Label</label>
+        </div>
+    </div>
+}
