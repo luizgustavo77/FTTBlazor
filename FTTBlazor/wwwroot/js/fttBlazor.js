@@ -12619,22 +12619,4 @@
             }, e
         }(r.MDCComponent);
     e.MDCDataTable = u
-}, function (t, e, n) {
-    "use strict";
-
-    function i(t) {
-        return {
-            scrollTop: t.scrollTop,
-            clientHeight: t.clientHeight
-        }
-    }
-    Object.defineProperty(e, "__esModule", {
-        value: !0
-    }), e.init = e.getScrollView = void 0, e.getScrollView = i, e.init = function (t, e) {
-        return t.addEventListener("scroll", (function (n) {
-            e.invokeMethodAsync("VirtualScrollingSetView", i(t)).then((function (t) { }))
-        })), window.addEventListener("resize", (function (n) {
-            e.invokeMethodAsync("VirtualScrollingSetView", i(t)).then((function (t) { }))
-        })), i(t)
-    }
-}, function (t, e, n) { }]);
+},  function (t, e, n) { }]);

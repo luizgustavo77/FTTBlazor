@@ -1,0 +1,59 @@
+﻿@page "/select"
+
+@using FTTBlazor.Components.Forms.Select;
+
+@code{
+    enum Pokemons
+    {
+        Pikachu,
+        Bulbasaur,
+        Charmander,
+        Squirtle
+    }
+
+    Pokemons item;
+}
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Select Enum</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para SELECT e exemplos de como usar.</h6>
+    </div>
+
+    <FTTSelectEnums OnItemSelected="@(e => { Console.WriteLine("Selecionou: " + item.ToString()); })"
+                    BorderRight="true"
+                    @bind-Value="@item"
+                    T="Pokemons"
+                    Size="4"
+                    Required="true"
+                    Label="Exemplo de enum">
+    </FTTSelectEnums>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/selectEnum2.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <img src="../img/about/selectEnum1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">T:</span> Definimos o enum que vai montar o DDL</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+    </div>
+
+</div>

@@ -4,15 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Components.Select
+namespace FTTBlazor.Components.Forms.Select
 {
     public partial class FTTSelectEnums<T> : ComponentBase where T : struct, IConvertible
     {
         [Parameter]
-        public string Title { get; set; }
-
-        [Parameter]
-        public bool Disabled { get; set; } = false;
+        public string Label { get; set; }
 
         [Parameter]
         public EventCallback OnItemSelected { get; set; }
@@ -31,6 +28,8 @@ namespace FTTBlazor.Components.Select
         }
 
         private bool _IsReadOnly;
+
+        private string StyleIsReadOnly { get { return _IsReadOnly ? "not-allowed" : ""; } }
 
         [Parameter]
         public T Value
@@ -72,6 +71,16 @@ namespace FTTBlazor.Components.Select
 
         public string data_id { get; set; } = "00000000-0000-0000-0000-000000000000";
 
+        private string _id { get; set; }
+
+        public IEnumerable<T> DataSource { get; set; }
+
+        private Guid _dataid;
+
+        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+
+        private List<KeyValuePair<string, object>> attributes;
+
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
@@ -87,16 +96,6 @@ namespace FTTBlazor.Components.Select
                 attributes.Add(new KeyValuePair<string, object>("required", "required"));
             }
         }
-
-        private string _id { get; set; }
-
-        public IEnumerable<T> DataSource { get; set; }
-
-        private Guid _dataid;
-
-        private string BorderRightCssClass { get { return BorderRight ? "nexto-border-right" : ""; } }
-
-        private List<KeyValuePair<string, object>> attributes;
 
         protected override void OnInitialized()
         {

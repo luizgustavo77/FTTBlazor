@@ -1,14 +1,13 @@
 ﻿@typeparam T
 
-<div class="mdl-cell--@Size-col mdl-grid">
-    <div class="nexto-components nexto-select has-float-label @BorderRightCssClass">
-        <select disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@Value">
+<div class="mdl-cell--@Size-col align-left">
+    <div class="ftt-blazor-components ftt-blazor-select has-float-label @BorderRightCssClass">
+        <select style="cursor: @StyleIsReadOnly" disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@Value">
             @if (string.IsNullOrEmpty(Value.ToString()) || Convert.ToInt32(Value) == 0)
             {
                 data_id = "00000000-0000-0000-0000-000000000000";
 
                 <option style="display:none;" value="@Value" selected hidden disabled></option>
-
             }
 
             @if (DataSource != null)
@@ -27,6 +26,6 @@
                 }
             }
         </select>
-        <label for="@_id">@Title</label>
+        <label for="@_id">@Label</label>
     </div>
 </div>
