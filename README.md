@@ -58,3 +58,4 @@ Este projeto é licenciado pelos termos do [MIT license](LICENSE).
 ## 💼 **Agradecimentos**
 - [Blazor](https://blazor.net)
 - [Material Design](https://material.io/components/)
+- [Macorrati](https://www.udemy.com/course/curso-blazor-essencial/)
