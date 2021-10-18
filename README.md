@@ -33,7 +33,7 @@
 
 ---
 
-## 📜 **License**
+## 📜 **Licenciado **
 
 Este projeto é licenciado pelos termos do [MIT license](LICENSE).
 
