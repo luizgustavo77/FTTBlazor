@@ -1,0 +1,57 @@
+﻿@page "/input"
+
+@using FTTBlazor.Components.Forms.Input;
+
+@code{
+    string texto { get; set; }
+    string area { get; set; }
+    DateTime date { get; set; }
+    bool check { get; set; }
+}
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Select Enum</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para SELECT ENUM e exemplos de como usar.</h6>
+    </div>
+
+    <FTTInput BorderRight="true" Size="4" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTCheckbox BorderRight="true" Size="4" Label="Check" @bind-Value="check"></FTTCheckbox>
+    <FTTInput BorderRight="true" Size="4" Type="InputType.Color" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTInput BorderRight="true" Size="12" Label="Area" Type="InputType.TextArea" @bind-Value="area"></FTTInput>
+    <FTTInput BorderRight="true" Size="4" Type="InputType.Time" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTInput BorderRight="true" Size="4" Type="InputType.Phone" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTInput BorderRight="true" Size="4" Type="InputType.Number" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTInput BorderRight="true" Size="4" Type="InputType.Money" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTInput BorderRight="true" Size="4" Type="InputType.Email" Label="Texto" @bind-Value="texto"></FTTInput>
+    <FTTCalendar BorderRight="true" Size="4" Label="Texto" @bind-Value="date"></FTTCalendar>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/selectEnum1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <img src="../img/about/selectEnum.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">T:</span> Definimos o enum que vai montar o DDL</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+    </div>
+
+</div>

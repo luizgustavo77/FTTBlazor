@@ -1,0 +1,207 @@
+﻿@code {
+    [CascadingParameter]
+    private FTTModal Parent { get; set; }
+
+    [CascadingParameter]
+    private FTTModalOptions GlobalFTTModalOptions { get; set; }
+
+    [Parameter]
+    public FTTModalOptions Options { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment Content { get; set; }
+
+    [Parameter]
+    public Guid uId { get; set; }
+
+    private string Position { get; set; }
+    private string Class { get; set; }
+    private bool HideHeader { get; set; }
+    private bool HideCloseButton { get; set; }
+    private bool DisableBackgroundCancel { get; set; }
+
+    public bool firstRenderDone { get; set; }
+
+    public ParameterView CurrentParams { get; set; }
+
+    public event EventHandler OnClose;
+
+    protected override void OnInitialized()
+    {
+        ConfigureInstance();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            firstRenderDone = true;
+        }
+    }
+
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        if (firstRenderDone)
+        {
+            return;
+        }
+        else
+        {
+            CurrentParams = parameters;
+
+            await base.SetParametersAsync(parameters);
+        }
+    }
+
+    public void SetTitle(string title)
+    {
+        Title = title;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        Close(FTTModalResult.Ok<object>(null));
+    }
+
+    public void Close(FTTModalResult modalResult)
+    {
+        Parent.DismissInstance(uId, modalResult);
+    }
+
+    public async Task Cancel()
+    {
+        if (OnClose != null)
+        {
+            OnClose.Invoke(this, null);
+        }
+        else
+        {
+            Parent.DismissInstance(uId, FTTModalResult.Cancel());
+        }
+    }
+
+    private void ConfigureInstance()
+    {
+        Position = SetPosition();
+        Class = SetClass();
+        HideHeader = SetHideHeader();
+        HideCloseButton = SetHideCloseButton();
+        DisableBackgroundCancel = SetDisableBackgroundCancel();
+    }
+
+    private string SetPosition()
+    {
+        FTTModalPosition position;
+        if (Options.Position.HasValue)
+        {
+            position = Options.Position.Value;
+        }
+        else if (GlobalFTTModalOptions.Position.HasValue)
+        {
+            position = GlobalFTTModalOptions.Position.Value;
+        }
+        else
+        {
+            position = FTTModalPosition.Center;
+        }
+
+        switch (position)
+        {
+            case FTTModalPosition.Center:
+                return "ftt-blazor-modal-center";
+            case FTTModalPosition.TopLeft:
+                return "ftt-blazor-modal-topleft";
+            case FTTModalPosition.TopRight:
+                return "ftt-blazor-modal-topright";
+            case FTTModalPosition.BottomLeft:
+                return "ftt-blazor-modal-bottomleft";
+            case FTTModalPosition.BottomRight:
+                return "ftt-blazor-modal-bottomright";
+            default:
+                return "ftt-blazor-modal-center";
+        }
+    }
+
+    private string SetClass()
+    {
+        if (!string.IsNullOrWhiteSpace(Options.Class))
+            return Options.Class;
+
+        if (!string.IsNullOrWhiteSpace(GlobalFTTModalOptions.Class))
+            return GlobalFTTModalOptions.Class;
+
+        return "ftt-blazor-modal";
+    }
+
+    private bool SetHideHeader()
+    {
+        if (Options.HideHeader.HasValue)
+            return Options.HideHeader.Value;
+
+        if (GlobalFTTModalOptions.HideHeader.HasValue)
+            return GlobalFTTModalOptions.HideHeader.Value;
+
+        return false;
+    }
+
+    private bool SetHideCloseButton()
+    {
+        if (Options.HideCloseButton.HasValue)
+            return Options.HideCloseButton.Value;
+
+        if (GlobalFTTModalOptions.HideCloseButton.HasValue)
+            return GlobalFTTModalOptions.HideCloseButton.Value;
+
+        return false;
+    }
+
+    private bool SetDisableBackgroundCancel()
+    {
+        if (Options.DisableBackgroundCancel.HasValue)
+            return Options.DisableBackgroundCancel.Value;
+
+        if (GlobalFTTModalOptions.DisableBackgroundCancel.HasValue)
+            return GlobalFTTModalOptions.DisableBackgroundCancel.Value;
+
+        return false;
+    }
+
+    private void HandleBackgroundClick()
+    {
+        if (DisableBackgroundCancel) return;
+
+        Cancel();
+    }
+}
+
+<div class="ftt-blazor-modal-container @Position">
+
+    <div class="ftt-blazor-modal-overlay" @onclick="HandleBackgroundClick"></div>
+
+    <div class="ftt-blazor-modal-wrapper">
+
+        <div class="ftt-blazor-modal @Class">
+            @if (!HideHeader)
+            {
+                <div class="ftt-blazor-modal-header">
+                    <h4 class="ftt-blazor-modal-title">@Title</h4>
+                    @if (!HideCloseButton)
+                    {
+                        <button type="button" class="ftt-blazor-modal-close" @onclick="@(async () => await Cancel())">
+                            <span>&times;</span>
+                        </button>
+                    }
+                </div>
+            }
+            <div class="ftt-blazor-modal-content">
+                <CascadingValue Value="this">
+                    @Content
+                </CascadingValue>
+            </div>
+        </div>
+    </div>
+</div>

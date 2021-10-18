@@ -26,7 +26,6 @@ namespace FTTBlazor.Components.Forms.Select
             get { return _IsReadOnly; }
             set { _IsReadOnly = value; }
         }
-
         private bool _IsReadOnly;
 
         private string StyleIsReadOnly { get { return _IsReadOnly ? "not-allowed" : ""; } }

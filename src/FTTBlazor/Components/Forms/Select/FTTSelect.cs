@@ -75,7 +75,7 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public bool BorderRight { get; set; }
 
-        private string BorderRightCssClass { get { return BorderRight ? "nexto-border-right" : ""; } }
+        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
 
         [Parameter]
         public string DataSourceDescField { get; set; } = "Name";

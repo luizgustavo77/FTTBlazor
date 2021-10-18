@@ -1,0 +1,15 @@
+﻿<div class="mdl-cell--@Size-col ftt-blazor-align-left">
+
+    @if (!string.IsNullOrEmpty(_id))
+    {
+        <div class="ftt-blazor-components ftt-blazor-checkbox @BorderRightCssClass">
+
+            <input id="@_id" name="@_id" role="@_id" disabled="@_IsReadOnly" type="checkbox" @attributes="@attributes" value="@_value" @onchange="@(e=>{ ValueChanged.InvokeAsync((bool)e.Value);})" />
+
+
+            <label for="@_id">@Label</label>
+
+        </div>
+    }
+
+</div>

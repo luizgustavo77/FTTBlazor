@@ -15,8 +15,7 @@ namespace FTTBlazor.Components.Forms.Select
 
         [Parameter]
         public bool BorderRight { get; set; }
-
-        private string BorderRightCssClass { get { return BorderRight ? "nexto-border-right" : ""; } }
+        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
 
         [Parameter]
         public bool IsReadOnly
@@ -24,14 +23,12 @@ namespace FTTBlazor.Components.Forms.Select
             get { return _IsReadOnly; }
             set { _IsReadOnly = value; }
         }
-
         private bool _IsReadOnly;
 
         private string StyleIsReadOnly { get { return _IsReadOnly ? "not-allowed" : ""; } }
 
         [Parameter]
         public string Value { get; set; }
-
         public string _Value
         {
             get { return _value; }
@@ -76,9 +73,9 @@ namespace FTTBlazor.Components.Forms.Select
 
         private string _value = "";
 
-        private Guid _dataid;
-
         public string data_id { get; set; } = "00000000-0000-0000-0000-000000000000";
+
+        private Guid _dataid;
 
         private string _id { get; set; }
 
@@ -103,8 +100,6 @@ namespace FTTBlazor.Components.Forms.Select
             {
                 attributes.Add(new KeyValuePair<string, object>("required", "required"));
             }
-
-            // attributes.Add(new KeyValuePair<string, object>("data-desc", DataDesc));
 
             _id = Guid.NewGuid().ToString();
         }

@@ -1,0 +1,37 @@
+﻿@code{
+
+    public bool firstRenderDone { get; set; }
+
+    public ParameterView CurrentParams { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            firstRenderDone = true;
+        }
+    }
+
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        if (firstRenderDone && CurrentParams.Equals(parameters))
+        {
+            return;
+        }
+        else
+        {
+            CurrentParams = parameters;
+
+            await base.SetParametersAsync(parameters);
+        }
+    }
+}
+
+<CascadingValue Value="this">
+    <CascadingValue Value="GlobalFTTModalOptions">
+        @foreach (var modal in Modals)
+        {
+            @modal.ModalInstance
+        }
+    </CascadingValue>
+</CascadingValue>

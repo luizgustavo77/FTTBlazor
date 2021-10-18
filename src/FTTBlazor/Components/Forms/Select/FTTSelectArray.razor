@@ -1,7 +1,7 @@
 ﻿@if (!string.IsNullOrEmpty(_id))
 {
-    <div class="mdl-cell--@Size-col align-left">
-        <div class="ftt-blazor-components ftt-blazor-select has-float-label @BorderRightCssClass">
+    <div class="mdl-cell--@Size-col ftt-blazor-align-left">
+        <div class="ftt-blazor-components ftt-blazor-select ftt-blazor-has-float-label @BorderRightCssClass">
             <select style="cursor: @StyleIsReadOnly" disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@_Value">
                 @if (string.IsNullOrEmpty(_Value))
                 {
