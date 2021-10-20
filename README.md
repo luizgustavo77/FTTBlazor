@@ -32,7 +32,7 @@
 | Crud | Crud | Nov | --- | LG |
 | Tabela | Crud | Nov | --- | LG |
 | Base Modal | Crud | Dez | --- | LG |
-| Finalizar | Todos | Dez | --- | LG |
+| Finalizar | Todos | Dez | --- | LG e Thiago |
  
 ---
   
