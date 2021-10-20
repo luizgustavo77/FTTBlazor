@@ -5,6 +5,11 @@
 
 ---
 
+# 🧩 **Instalando**
+> Abaixo o passo a passo para instalar o componente
+
+---
+
 ## ☕ **FTTBlazor Beta**
 > Roadmap do desenvolvimento
 
