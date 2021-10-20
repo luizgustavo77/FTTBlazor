@@ -6,25 +6,32 @@
 ---
 
 ## ☕ **FTTBlazor Beta**
-> Componentes desenvolvidos até agora
-- Dialog;
-- Modal;
-- Toast;
-- Forms:
-  - Input;
-  - Number;
-  - Color;
-  - TextArea;
-  - Calendar;
-  - Time;
-  - CheckBox;
-  - Telefone;
-  - EMail;
-  - Link;
-  - Select:
-    - Select Type T com endpoint;
-    - Select Enum;
-    - Select Array de string;
+> Roadmap do desenvolvimento
+| Componente | Relação | Entrega | Concluido | Responsavel |
+| --- | --- | --- | --- | --- |
+| Dialog | Dialog | Set | OK | LG |
+| Modal | Dialog | Set | OK | LG |
+| Toast | Dialog | Set | OK | LG |
+| Grid Divider | Dialog | Out | --- | LG |
+| Tab | Dialog | Nov | --- | LG |
+| Input | Forms | Set | OK | LG |
+| Select Type T  | Forms | Set | OK | LG |
+| Select Enum  | Forms | Set | OK | LG |
+| Select Array  | Forms | Set | OK | LG |
+| Number | Forms | Out | OK | LG |
+| Color | Forms | Out | OK | LG |
+| TextArea | Forms | Out | OK | LG |
+| Calendar | Forms | Out | OK | LG |
+| Time | Forms | Out | OK | LG |
+| CheckBox | Forms | Out | OK | LG |
+| Telefone | Forms | Out | OK | LG |
+| EMail | Forms | Out | OK | LG |
+| Link | Forms | Out | OK | LG |
+| Money | Forms | Out | OK | LG |
+| Crud | Crud | Nov | --- | LG |
+| Tabela | Crud | Nov | --- | LG |
+| Base Modal | Crud | Dez | --- | LG |
+| Finalizar | Todos | Dez | --- | LG |
  
 ---
   
@@ -33,7 +40,7 @@
 
 ---
 
-## 📜 **Licenciado **
+## 📜 **Licenciado**
 
 Este projeto é licenciado pelos termos do [MIT license](LICENSE).
 
