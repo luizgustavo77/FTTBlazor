@@ -43,7 +43,7 @@
 
 ## 📜 **Licenciado**
 
-Este projeto é licenciado pelos termos do [MIT license](LICENSE).
+Este projeto é licenciado pelos termos do [MIT license](https://github.com/luizgustavo77/FTTBlazor/blob/master/LICENSE.md).
 
 ---
 
