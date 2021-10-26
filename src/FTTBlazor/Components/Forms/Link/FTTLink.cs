@@ -28,16 +28,24 @@ namespace FTTBlazor.Components.Forms.Link
 
         [Parameter]
         public bool BorderRight { get; set; } = false;
+        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
 
         [Parameter]
         public T LinkItem { get; set; }
 
         private string _id { get; set; } = Guid.NewGuid().ToString();
 
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        protected override void OnInitialized()
+        {
+            Console.WriteLine("bateu o link " + LinkItem?.Name);
+
+            base.OnInitialized();
+        }
 
         public async Task OpenModal()
         {
+            Console.WriteLine("Bateu aq");
+
             var modal = Modal.Show(LinkModal, Title, LinkItem);
             var modalresult = await modal.Result;
 

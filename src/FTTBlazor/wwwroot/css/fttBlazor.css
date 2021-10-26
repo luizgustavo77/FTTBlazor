@@ -530,21 +530,25 @@
     text-align: center;
 }
 
-.ftt-blazor-components input, .ftt-blazor-components textarea {
-    background-color: transparent !important;
+.ftt-blazor-components {
+    left: 0.39rem;
 }
 
-.ftt-blazor-components a {
-    background-color: transparent !important;
-}
+    .ftt-blazor-components input, .ftt-blazor-components textarea {
+        background-color: transparent !important;
+    }
 
-.ftt-blazor-components textarea {
-    border-top: none;
-    margin-top: 30px;
-    padding-left: 15px;
-    border-right: none !important;
-    border-left: none;
-}
+    .ftt-blazor-components a {
+        background-color: transparent !important;
+    }
+
+    .ftt-blazor-components textarea {
+        border-top: none;
+        margin-top: 30px;
+        padding-left: 15px;
+        border-right: none !important;
+        border-left: none;
+    }
 
 .ftt-blazor-text-field {
     background-color: var(--brandfield) !important;
@@ -999,6 +1003,7 @@
     }
 
 .ftt-blazor-components label, .ftt-blazor-modal-title {
+    margin-left: 1rem;
     font-family: Roboto, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

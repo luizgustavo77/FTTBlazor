@@ -33,11 +33,19 @@ namespace FTTBlazor.Components.Forms.Input
 
                 if (Type == InputType.Money)
                     value = FormatMoney(value);
+                else if (Type == InputType.Phone)
+                    value = FormatPhoneNumber(value);
+                else if (Type == InputType.CNPJ)
+                    value = FormatCNPJ(value);
+                else if (Type == InputType.CPF)
+                    value = FormatCPF(value);
+                else if (Type == InputType.Percentage)
+                    value = FormatPercentage(value);
+                else if (Type == InputType.CEP)
+                    value = FormatCEP(value);
 
                 _value = value;
                 ValueChanged.InvokeAsync(value);
-
-                OnValueChanged.InvokeAsync(value);
             }
         }
         private string _value;
@@ -50,12 +58,6 @@ namespace FTTBlazor.Components.Forms.Input
 
         [Parameter]
         public EventCallback<string> OnInput { get; set; }
-
-        [Parameter]
-        public EventCallback OnValueChanged { get; set; }
-
-        [Parameter]
-        public EventCallback<string> ValueInput { get; set; }
 
         [Parameter]
         public string Size { get; set; } = "4";
@@ -168,6 +170,110 @@ namespace FTTBlazor.Components.Forms.Input
                 return "";
             }
         }
+
+        public static string FormatPhoneNumber(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return "";
+            try
+            {
+                input = input.Trim();
+                if (input.Length == 0 || input.Length == 1)
+                    input = "(" + input;
+                if (input.Length == 3)
+                    input += ")";
+
+                if (input.Length == 8)
+                    input += "-";
+
+                return input;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        
+        public static string FormatCNPJ(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return "";
+            try
+            {
+                input = input.Trim();
+                if (input.Length == 2 || input.Length == 6)
+                    input += ".";
+                if (input.Length == 10)
+                    input += "/";
+                if (input.Length == 15)
+                    input += "-";
+                return input;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public static string FormatCPF(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return "";
+            try
+            {
+                input = input.Trim();
+                if (input.Length == 3 || input.Length == 7)
+                    input += ".";
+                if (input.Length == 11)
+                    input += "-";
+                return input;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public static string FormatPercentage(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return "";
+            try
+            {
+                input = input.Trim();
+                input.Replace("%", "");
+                if (input.Length >= 3)
+                {
+                    input = input.Replace(",", "");
+                    input = input.Insert(input.Length - 3, ".");
+                }
+                if (input.Length > 6)
+                    input.Remove(0, 1);
+
+                return input + "%";
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public static string FormatCEP(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return "";
+            try
+            {
+                input = input.Trim();
+                if (input.Length == 5)
+                    input += "-";
+                return input;
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 
     public enum InputType
@@ -177,8 +283,11 @@ namespace FTTBlazor.Components.Forms.Input
         Color,
         Time,
         Phone,
-        Number,
         Money,
-        Email
+        Email,
+        CNPJ,
+        CPF,
+        Percentage,
+        CEP
     }
 }

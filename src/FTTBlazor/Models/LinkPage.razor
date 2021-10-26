@@ -1,0 +1,16 @@
+﻿@inject HttpClient client
+
+@code {
+    [Parameter]
+    public Guid Id { get; set; }
+
+    [Parameter]
+    public EndpointPokemon Item { get; set; }
+
+    [Parameter]
+    public bool isReadOnly { get; set; }
+}
+
+<h3>LinkPage</h3>
+<p>Essa é a pagian aberta ao clicar no link!</p>
+

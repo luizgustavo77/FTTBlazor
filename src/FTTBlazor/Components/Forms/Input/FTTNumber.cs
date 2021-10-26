@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Forms.Input
 {
-    public partial class FTTCheckbox : ComponentBase
+    public partial class FTTNumber : ComponentBase
     {
         [Parameter]
         public bool IsReadOnly
@@ -24,7 +24,7 @@ namespace FTTBlazor.Components.Forms.Input
         private string _label;
 
         [Parameter]
-        public bool Value
+        public int Value
         {
             get { return _value; }
             set
@@ -32,18 +32,19 @@ namespace FTTBlazor.Components.Forms.Input
                 if (_value == value) return;
 
                 _value = value;
-
                 ValueChanged.InvokeAsync(value);
-                OnValueChanged.InvokeAsync(null);
             }
         }
-        private bool _value;
+        private int _value;
 
         [Parameter]
-        public EventCallback<bool> ValueChanged { get; set; }
+        public EventCallback<int> ValueChanged { get; set; }
 
-        [Parameter] 
-        public EventCallback OnValueChanged { get; set; }
+        [Parameter]
+        public EventCallback<int> OnFocusOut { get; set; }
+
+        [Parameter]
+        public EventCallback<int> OnInput { get; set; }
 
         [Parameter]
         public string Size { get; set; } = "4";
@@ -52,10 +53,26 @@ namespace FTTBlazor.Components.Forms.Input
         public string Pattern { get; set; } = "";
 
         [Parameter]
+        public string MaxLength { get; set; }
+
+        [Parameter]
         public bool Required { get; set; } = false;
 
         [Parameter]
         public bool BorderRight { get; set; }
+
+        [Parameter]
+        public InputType Type { get; set; } = InputType.Input;
+
+        [Parameter]
+        public string Icon { get; set; }
+
+        [Parameter]
+        public EventCallback IconClick { get; set; }
+
+        [Parameter]
+        public string CssClass { get; set; }
+
         private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
 
         private List<KeyValuePair<string, object>> attributes;
@@ -82,6 +99,6 @@ namespace FTTBlazor.Components.Forms.Input
         protected override async Task OnParametersSetAsync()
         {
 
-        }
+        }               
     }
 }

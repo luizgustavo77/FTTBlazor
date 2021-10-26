@@ -1,0 +1,10 @@
+﻿<div class="mdl-cell--@Size-col ftt-blazor-align-left">
+
+    @if (!string.IsNullOrEmpty(_id))
+    {
+        <button class="ftt-blazor-button" id="@_id" disabled="@_IsReadOnly" type="@Type.ToString()" @onclick="@(e => { OnClick.InvokeAsync(""); })">
+            @Label
+        </button>
+    }
+
+</div>

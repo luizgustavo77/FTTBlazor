@@ -6,7 +6,7 @@
         <div class="ftt-blazor-components ftt-blazor-input ftt-blazor-has-float-link ftt-blazor-has-float-label" style="min-height: 56px; padding-top: 1em; ">
             @if (LinkItem != null)
             {
-                <a style="text-decoration: underline black; cursor:pointer;" class="ftt-blazor-link @BorderRightCssClass" id="@_id" @onclick="@(e => { OpenModal(); })">
+                <a style="text-decoration: underline black; cursor:pointer;" class="ftt-blazor-link @BorderRightCssClass" id="@_id" @onclick="@(async(e) => { await OpenModal(); })">
                     @if (!string.IsNullOrWhiteSpace(LinkItem?.Name) && LinkItem.Name.Length > 20)
                     {
                         @(LinkItem.Name.Substring(0, 20) + "...")
@@ -30,7 +30,7 @@
 
             @if (!string.IsNullOrWhiteSpace(Icon) && LinkItem != null)
             {
-                <button type="button" class="ftt-blazor-input-icon" @onclick="@(e => { OpenModal(); })">
+                <button type="button" class="ftt-blazor-input-icon" @onclick="@(async(e) => { await OpenModal(); })">
                     <i class="material-icons">@Icon</i>
                 </button>
             }

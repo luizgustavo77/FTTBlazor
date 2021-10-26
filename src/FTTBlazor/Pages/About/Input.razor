@@ -3,55 +3,205 @@
 @using FTTBlazor.Components.Forms.Input;
 
 @code{
-    string texto { get; set; }
-    string area { get; set; }
+    string Texto { get; set; }
+    string TextArea { get; set; }
+    string Color { get; set; }
+    string Time { get; set; }
+    string Phone { get; set; }
+    string Money { get; set; }
+    string Email { get; set; }
+    string CNPJ { get; set; }
+    string CPF { get; set; }
+    string Percentage { get; set; }
+    string CEP { get; set; }
+
     DateTime date { get; set; }
     bool check { get; set; }
+
+    int Number { get; set; }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
     <div class="mdl-cell--12-col">
-        <h1>Select Enum</h1>
+        <h1>Input (string)</h1>
     </div>
 
     <div class="mdl-cell--12-col">
         <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para SELECT ENUM e exemplos de como usar.</h6>
+        <h6>Abaixo uma serie de opções para INPUT e exemplos de como usar.</h6>
     </div>
 
-    <FTTInput BorderRight="true" Size="4" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTCheckbox BorderRight="true" Size="4" Label="Check" @bind-Value="check"></FTTCheckbox>
-    <FTTInput BorderRight="true" Size="4" Type="InputType.Color" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTInput BorderRight="true" Size="12" Label="Area" Type="InputType.TextArea" @bind-Value="area"></FTTInput>
-    <FTTInput BorderRight="true" Size="4" Type="InputType.Time" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTInput BorderRight="true" Size="4" Type="InputType.Phone" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTInput BorderRight="true" Size="4" Type="InputType.Number" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTInput BorderRight="true" Size="4" Type="InputType.Money" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTInput BorderRight="true" Size="4" Type="InputType.Email" Label="Texto" @bind-Value="texto"></FTTInput>
-    <FTTCalendar BorderRight="true" Size="4" Label="Texto" @bind-Value="date"></FTTCalendar>
+    <FTTInput BorderRight="true" Size="4" Label="Input" @bind-Value="Texto"></FTTInput>
+    <FTTInput Type="InputType.Color" BorderRight="true" Size="4" Label="Color" @bind-Value="Color"></FTTInput>
+    <FTTInput Type="InputType.Time" BorderRight="true" Size="4" Label="Time" @bind-Value="Time"></FTTInput>
+
+    <FTTInput Type="InputType.Phone" BorderRight="true" Size="4" Label="Telefone" @bind-Value="Phone"></FTTInput>
+    <FTTInput Type="InputType.Money" BorderRight="true" Size="4" Label="Dinheiro" @bind-Value="Money"></FTTInput>
+
+    <FTTInput Type="InputType.Email" BorderRight="true" Size="4" Label="Email" @bind-Value="Email"></FTTInput>
+    <FTTInput Type="InputType.CNPJ" BorderRight="true" Size="4" Label="CPNJ" @bind-Value="CNPJ"></FTTInput>
+    <FTTInput Type="InputType.CPF" BorderRight="true" Size="4" Label="CPF" @bind-Value="CPF"></FTTInput>
+
+    <FTTInput Type="InputType.Percentage" BorderRight="true" Size="4" Label="Porcentagem" @bind-Value="Percentage"></FTTInput>
+    <FTTInput Type="InputType.CEP" BorderRight="true" Size="4" Label="CEP" @bind-Value="CEP"></FTTInput>
+
+    <FTTInput Type="InputType.TextArea" BorderRight="true" Size="12" Label="Area de Texto" @bind-Value="TextArea"></FTTInput>
 
     <div class="mdl-cell--12-col">
         <h4>Usando</h4>
         <h6>Adicionando na pagina</h6>
-        <img src="../img/about/selectEnum1.png" />
+        <img src="../img/about/input1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Types</h4>
+        <h6>Abaixo a imagem dos tipos de INPUT disponiveis</h6>
+        <img src="../img/about/input2.png" />
     </div>
 
     <div class="mdl-cell--12-col">
         <h4>Codigo usado</h4>
-        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
-        <img src="../img/about/selectEnum.png" />
+        <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
+        <img src="../img/about/input.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
-        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
-        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
-        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
-        <h6><span style="font-weight:bold;">T:</span> Definimos o enum que vai montar o DDL</h6>
-        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
-        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
-        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h4>Parametros do <span style="font-weight:bold;">FTTInput</span></h4>
         <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">ValueChanged:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">OnFocusOut:</span> Aqui podemos adicionar a chamada de um metodo FocusOut</h6>
+        <h6><span style="font-weight:bold;">OnInput:</span> Aqui podemos adicionar a chamada de um metodo OnInput</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">Pattern:</span> Validações para o componente</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Obriga o preenchimento dentro de formulários com SUBMIT</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">Type:</span> Definimos o tipo de input</h6>
+        <h6><span style="font-weight:bold;">Icon:</span> Podemos adicionar um <a href="https://fonts.google.com/icons?selected=Material+Icons">ICON</a> ao final do input</h6>
+        <h6><span style="font-weight:bold;">IconClick:</span> Capturamos o OnClick do ICON</h6>
+        <h6><span style="font-weight:bold;">CssClass:</span> Adicionamos um CSS ao componente</h6>
+    </div>
+
+</div>
+
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Input (int)</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para INPUT e exemplos de como usar.</h6>
+    </div>
+
+    <FTTNumber BorderRight="true" Size="4" Label="Input" @bind-Value="Number"></FTTNumber>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/input1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
+        <img src="../img/about/inputNumber.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTNumber</span></h4>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">ValueChanged:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">OnFocusOut:</span> Aqui podemos adicionar a chamada de um metodo FocusOut</h6>
+        <h6><span style="font-weight:bold;">OnInput:</span> Aqui podemos adicionar a chamada de um metodo OnInput</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">Pattern:</span> Validações para o componente</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Obriga o preenchimento dentro de formulários com SUBMIT</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">Icon:</span> Podemos adicionar um <a href="https://fonts.google.com/icons?selected=Material+Icons">ICON</a> ao final do input</h6>
+        <h6><span style="font-weight:bold;">IconClick:</span> Capturamos o OnClick do ICON</h6>
+        <h6><span style="font-weight:bold;">CssClass:</span> Adicionamos um CSS ao componente</h6>
+    </div>
+
+</div>
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Input Calendar (DateTime)</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para CALENDAR e exemplos de como usar.</h6>
+    </div>
+
+    <FTTCalendar BorderRight="true" Size="4" Label="Check" @bind-Value="date"></FTTCalendar>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/input1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
+        <img src="../img/about/calendar.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTCalendar</span></h4>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">ValueChanged:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Obriga o preenchimento dentro de formulários com SUBMIT</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
+        <h6><span style="font-weight:bold;">Pattern:</span> Validações para o componente</h6>
+    </div>
+
+</div>
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>Input Checkbox (bool)</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para CECKBOX e exemplos de como usar.</h6>
+    </div>
+
+    <FTTCheckbox BorderRight="true" Size="4" Label="Check" @bind-Value="check"></FTTCheckbox>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/input1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
+        <img src="../img/about/checkbox.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTCheckbox</span></h4>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
+        <h6><span style="font-weight:bold;">ValueChanged:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
+        <h6><span style="font-weight:bold;">OnValueChanged:</span> Aqui podemos adicionar a chamada de um metodo OnValueChanged</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
+        <h6><span style="font-weight:bold;">Pattern:</span> Validações para o componente</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Obriga o preenchimento dentro de formulários com SUBMIT</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
     </div>
 
 </div>
