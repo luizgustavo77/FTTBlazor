@@ -1,6 +1,5 @@
 ﻿@page "/link"
 @using FTTBlazor.Components.Forms.Link;
-@inject FTTBlazor.Components.Modal.Service.IFTTModalService Modal
 
 @code{
     FTTBlazor.Models.EndpointPokemon pokemon = new Models.EndpointPokemon()
@@ -9,26 +8,6 @@
         Name = "Squardle"
     };
 
-    async Task OpemModal()
-    {
-        try
-        {
-            var modal = Modal.Show(typeof(FTTBlazor.Models.EndpointPokemon), "DAR BAIXA", new Models.EndpointPokemon()
-            {
-                Id = new Guid().ToString(),
-                Name = "Squardle"
-            });
-            var modalresult = await modal.Result;
-            if (!modalresult.Cancelled || modalresult.Cancelled || modalresult.Deleted)
-            {
-                this.StateHasChanged();
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -41,9 +20,11 @@
         <h6>Abaixo uma serie de opções para LINK e exemplos de como usar.</h6>
     </div>
 
-    <FTTBlazor.Components.Forms.Button.FTTButton Label="Open" OnClick="OpemModal"></FTTBlazor.Components.Forms.Button.FTTButton>
-
-    <FTTLink Size="4" T="FTTBlazor.Models.EndpointPokemon" Icon="visibility" Title="Link para pokemon" LinkModal="typeof(FTTBlazor.Models.LinkPage)" LinkItem="@pokemon"></FTTLink>
+    <FTTLink BorderRight="true" Size="4" T="FTTBlazor.Models.EndpointPokemon" Icon="visibility" Title="Link para pokemon" LabelLink="Squardle">
+        <Body>
+            <FTTBlazor.Models.LinkPage Item="pokemon"></FTTBlazor.Models.LinkPage>
+        </Body>
+    </FTTLink>
 
     <div class="mdl-cell--12-col">
         <h4>Usando</h4>

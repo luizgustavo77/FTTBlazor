@@ -1,0 +1,29 @@
+﻿@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment Body { get; set; }
+
+    [Parameter]
+    public RenderFragment Footer { get; set; }
+
+    [Parameter]
+    public bool DialogIsOpen { get; set; } = false;
+}
+
+<FTTDialog @bind-IsOpen="@DialogIsOpen">
+    <FTTDialogTitle>
+        <div style=" border-bottom: 1px solid var(--brandline);">
+            @Title
+        </div>
+    </FTTDialogTitle>
+    <FTTDialogContent>
+        <div style=" border-bottom: 1px solid var(--brandline);">
+            @Body
+        </div>
+    </FTTDialogContent>
+    <FTTDialogActions>
+        @Footer
+    </FTTDialogActions>
+</FTTDialog>

@@ -1,4 +1,3 @@
-using FTTBlazor.Components.Modal;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,7 +14,6 @@ namespace FTTBlazor
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped<FTTToastService>();
-            builder.Services.AddModalService();
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
