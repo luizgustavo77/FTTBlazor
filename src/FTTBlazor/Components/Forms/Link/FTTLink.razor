@@ -4,9 +4,9 @@
 <div class="mdl-cell--@Size-col ftt-blazor-align-left">
     @if (!string.IsNullOrEmpty(_id))
     {
-        <div class="ftt-blazor-components ftt-blazor-input ftt-blazor-has-float-link ftt-blazor-has-float-label" style="min-height: 56px; padding-top: 1em; ">
+        <div class="ftt-blazor-components ftt-blazor-input ftt-blazor-has-float-link ftt-blazor-has-float-label @BorderRightCssClass" style="min-height: 56px; padding-top: 1em; ">
 
-            <a style="text-decoration: underline black; cursor:pointer;" class="ftt-blazor-link @BorderRightCssClass" id="@_id" @onclick="@(e => { DialogIsOpen = true; })">
+            <a style="text-decoration: underline black; cursor:pointer;" class="ftt-blazor-link" id="@_id" @onclick="@(e => { DialogIsOpen = true; })">
                 @LabelLink
             </a>
 

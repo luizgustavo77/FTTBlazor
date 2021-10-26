@@ -1,4 +1,5 @@
 ﻿@page "/link"
+
 @using FTTBlazor.Components.Forms.Link;
 
 @code{
@@ -20,34 +21,35 @@
         <h6>Abaixo uma serie de opções para LINK e exemplos de como usar.</h6>
     </div>
 
-    <FTTLink BorderRight="true" Size="4" T="FTTBlazor.Models.EndpointPokemon" Icon="visibility" Title="Link para pokemon" LabelLink="Squardle">
+    <FTTLink BorderRight="true" Size="4" T="FTTBlazor.Models.EndpointPokemon" Icon="visibility"
+             Title="Link para pokemon" LabelLink="@pokemon.Name">
         <Body>
             <FTTBlazor.Models.LinkPage Item="pokemon"></FTTBlazor.Models.LinkPage>
         </Body>
+        <Footer>
+        </Footer>
     </FTTLink>
 
     <div class="mdl-cell--12-col">
         <h4>Usando</h4>
         <h6>Adicionando na pagina</h6>
-        <img src="../img/about/selectEnum1.png" />
+        <img src="../img/about/link1.png" />
     </div>
 
     <div class="mdl-cell--12-col">
         <h4>Codigo usado</h4>
         <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
-        <img src="../img/about/selectEnum.png" />
+        <img src="../img/about/link.png" />
     </div>
 
     <div class="mdl-cell--12-col">
         <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
-        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
-        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
-        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
-        <h6><span style="font-weight:bold;">T:</span> Definimos o enum que vai montar o DDL</h6>
+        <h6><span style="font-weight:bold;">Body:</span> Aqui podemos adicionar o conteudo do corpo do MODAL</h6>
+        <h6><span style="font-weight:bold;">RenderFragment:</span> Aqui podemos adicionar o conteudo do footer do MODAL</h6>
+        <h6><span style="font-weight:bold;">Title:</span> Aqui definimos o titulo do MODAL e o LABEL do LINK</h6>
+        <h6><span style="font-weight:bold;">LabelLink:</span> Aqui definimos o nome do LINK</h6>
         <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
-        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
-        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
-        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h6><span style="font-weight:bold;">Icon:</span> Icone do LINK</h6>
     </div>
 
 </div>
