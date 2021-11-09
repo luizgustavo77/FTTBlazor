@@ -35,7 +35,7 @@
 | Link | Forms | Out | OK | LG |
 | Money | Forms | Out | OK | LG |
 | Tabela | Crud | Nov | --- | LG |
-| Base Modal | Crud | Dez | --- | LG |
+| TabelaModal | Crud | Dez | --- | LG |
 | Finalizar | Todos | Dez | --- | LG e Thiago |
  
 ---
