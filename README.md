@@ -7,7 +7,11 @@
 
 # 🧩 **Instalando**
 > Abaixo o passo a passo para instalar o componente
-
+1. Adicionando dependencias
+   - CSS
+   - JS
+   - startup
+2. Adicionando biblioteca
 ---
 
 ## ☕ **FTTBlazor Beta**
