@@ -1,5 +1,4 @@
 ﻿@typeparam T
-@using FTTBlazor.Components.Modal;
 
 <div class="mdl-cell--@Size-col ftt-blazor-align-left">
     @if (!string.IsNullOrEmpty(_id))
@@ -24,11 +23,18 @@
     }
 </div>
 
-<Modal DialogIsOpen="DialogIsOpen" Title="@Title">
-    <Body>
-        @Body
-    </Body>
-    <Footer>
+<FTTDialog @bind-IsOpen="@DialogIsOpen">
+    <FTTDialogTitle>
+        <div style="width:100%; border-bottom: 1px solid var(--brandline);">
+            @Title
+        </div>
+    </FTTDialogTitle>
+    <FTTDialogContent>
+        <div style="width: 100%; border-bottom: 1px solid var(--brandline);">
+            @Body
+        </div>
+    </FTTDialogContent>
+    <FTTDialogActions>
         @Footer
-    </Footer>
-</Modal>
+    </FTTDialogActions>
+</FTTDialog>

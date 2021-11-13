@@ -1,0 +1,20 @@
+﻿@page "/crud"
+
+@code{
+    public List<FTTBlazor.Components.Crud.FTTGridColumn> cols = new List<FTTBlazor.Components.Crud.FTTGridColumn>();
+
+    string endpoint = "https://localhost:44306/FTTBlazor";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        cols.Add(new FTTBlazor.Components.Crud.FTTGridColumn() { FieldName = "Name", FieldDescription = "Nome" });
+
+    }
+
+}
+
+<FTTBlazor.Components.Crud.FTTCrud Interface="Models.EndpointPokemon" Columns="cols" Endpoint="@endpoint" Title="Pokemons">
+    <ModalContent>
+        <FTTBlazor.Models.LinkPage Item="@context"></FTTBlazor.Models.LinkPage>
+    </ModalContent>
+</FTTBlazor.Components.Crud.FTTCrud>

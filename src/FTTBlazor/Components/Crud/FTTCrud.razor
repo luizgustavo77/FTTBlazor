@@ -1,0 +1,235 @@
+﻿@typeparam Interface
+
+<form autocomplete="off" class="ftt-blazor-card ftt-blazor-card-plain ftt-blazor-crud-component">
+    <div class="ftt-blazor-card-body" style="padding-top:0px;">
+        <div class="ftt-blazor-table-responsive ftt-blazor-stretched-table">
+            <table class="ftt-blazor-table">
+                <thead style="text-transform:uppercase;">
+                    <tr>
+                        <td width="80" style="text-align:center;">
+                            @if (CanCreate)
+                            {
+                                <button type="button" class="btn btn-link btn-add" @onclick="@(e => { OpenDialogAdd(); })"><i class="material-icons" style="font-weight:600; cursor: pointer;">add</i></button>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-link btn-add" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons" style="font-weight: 600; cursor: pointer;">add</i></button>
+                            }
+                        </td>
+
+                        @if (Columns != null)
+                        {
+                            foreach (var col in Columns)
+                            {
+                                var classCss = "ftt-blazor-grid-header-input";
+                                var id = new Guid();
+
+                                <td class="@classCss ftt-blazor-align-left">
+                                    <div class="ftt-blazor-components ftt-blazor-input ftt-blazor-has-float-label">
+                                        <input id="@id" @oninput="@(e => AddFilter(e.Value.ToString(), col.FieldName))" class="ftt-blazor-border-right" autocomplete="@id" />
+
+                                        <label for="@id">
+                                            @col.FieldDescription
+                                        </label>
+                                    </div>
+                                </td>
+                            }
+
+                            <td width="80" style="text-align:center;">
+                                <button type="button" class="btn btn-link btn-action" style="border:1px solid var(--brandline);" @onclick="@(e => { DownloadFile(); })">
+                                    <i class="material-icons" style="cursor: pointer;">save_alt</i>
+                                </button>
+                            </td>
+                        }
+                        else
+                        {
+                            <td width="200" style="text-align:center;"></td>
+                        }
+
+                        <td width="5">
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (!CanRead)
+                    {
+                        <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full"><td colspan="99" class="ftt-blazor-height-full"><div class="loading-message">Sem permissão para leitura dos dados.</div></td></tr>
+                    }
+                    else
+                    {
+                        if (_ItemList == null)
+                        {
+                            <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full"><td colspan="99" class="ftt-blazor-height-full"><div class="loading-message">Carregando dados, aguarde.</div></td></tr>
+                        }
+                        else if (_ItemList != null && _ItemList.Count() == 0)
+                        {
+                            <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full"><td colspan="99" class="ftt-blazor-height-full"><div class="loading-message">Nenhum registro encontrado.</div></td></tr>
+                        }
+                        else
+                        {
+                            @foreach (var item in _ItemList)
+                            {
+                                <tr>
+                                    @if (CanRead)
+                                    {
+                                        <td width="80" style="text-align:center;padding-left:8px!important;"><button type="button" class="btn btn-link btn-action" @onclick="@( e => { OpenDialog(item); })"><i class="material-icons">remove_red_eye</i></button></td>
+                                    }
+                                    else
+                                    {
+                                        <td width="80" style="text-align:center;padding-left:8px!important;"><button type="button" class="btn btn-link btn-action" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons">remove_red_eye</i></button></td>
+                                    }
+                                    @if (Columns != null)
+                                    {
+                                        foreach (var col in Columns)
+                                        {
+                                            var style = "text-align:left;";
+
+                                            <td style="@style">
+                                                @if (col.IsModalLink)
+                                                {
+                                                    try
+                                                    {
+                                                        if (!string.IsNullOrEmpty(item.GetType().GetProperty(col.FieldName).GetValue(item).ToString()))
+                                                        {
+                                                            <a style="text-decoration:underline;cursor:pointer;">@item.GetType().GetProperty(col.FieldName).GetValue(item).ToString()</a>
+                                                        }
+                                                    }
+                                                    catch (Exception)
+                                                    {
+
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    switch (col.FieldType)
+                                                    {
+                                                        case FTTFieldType.Common:
+                                                            @RetornaValores(col, item);
+                                                            break;
+                                                        default:
+                                                            @RetornaValores(col, item);
+                                                            break;
+                                                    }
+                                                }
+                                            </td>
+                                        }
+                                    }
+
+                                    <td width="80" style="text-align:center;">
+                                        @if (CanDelete)
+                                        {
+                                            <button type="button" class="btn btn-link btn-action" @onclick="@( e => OpenDialogDelete(item))"><i class="material-icons">delete</i></button>
+                                        }
+                                        else
+                                        {
+                                            <button type="button" class="btn btn-link btn-action" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons">delete</i></button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="ftt-blazor-table-footer">
+            <span class="btn btn-link disabled crud-current-page">Página @curPage de @totalPages</span>
+
+            <div class="ftt-blazor-pull-right crud-pages">
+                <a class="btn btn-link" @onclick="@(e => updateList(1))">
+                    <i class="material-icons" style="cursor: pointer;">skip_previous</i>
+                </a>
+
+                @for (int i = startPage; i <= endPage; i++)
+                {
+                    var page_now = i;
+                    <a class="btn btn-link @(page_now == curPage ? "currentpage" : "")" @onclick="@(e => updateList(currentPage: page_now))">
+                        @page_now
+                    </a>
+                }
+
+                <a class="btn btn-link" @onclick="@(e => updateList(totalPages))">
+                    <i class="material-icons" style="cursor: pointer;">skip_next</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<FTTDialog @bind-IsOpen="@ModalDeleteIsOpen">
+    <FTTDialogTitle>Excluir </FTTDialogTitle>
+    <FTTDialogContent>
+
+        <p>&nbsp; Tem certeza que deseja excluir este registro?</p>
+
+    </FTTDialogContent>
+    <FTTDialogActions>
+        <button type="button" class="ftt-blazor-button" @onclick="@(async () => { closeWindow(); })">Cancelar</button>
+        <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OkClickDelete(); })">Excluir</button>
+    </FTTDialogActions>
+</FTTDialog>
+
+
+<FTTDialog @bind-IsOpen="ModalIsOpen">
+    <FTTDialogTitle> @Title </FTTDialogTitle>
+    <FTTDialogContent>
+        <form action="#0" @onsubmit="@(async () => await Save(isformsubmit:true))" class="basemodal" autocomplete="off">
+            <CascadingValue Value="@this" Name="modal">
+                <div class="ftt-blazor-crud-modal-content">
+                    <div style="padding: 3px !important; padding-bottom: 0px !important; min-width: 1024px; max-width: 1024px;">
+                        <div class="ftt-blazor-layout-grid-inner" style="grid-gap:0px!important;">
+                            @if (!CanRead)
+                            {
+                                <div style="height:500px;width:100%">
+                                    <div class="loading-message">Sem permissão para leitura dos dados.</div>
+                                </div>
+                            }
+                            else
+                            {
+                                @if (!IsNew && string.IsNullOrWhiteSpace(Item.Id))
+                                {
+                                    <div style="height:500px;width:100%">
+                                        <div class="loading-message">Aguarde, carregando dados.</div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    @ModalContent(Item)
+                                }
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </CascadingValue>
+        </form>
+    </FTTDialogContent>
+    <FTTDialogActions>
+        <div class="ftt-blazor-modal-buttons">
+            <div class="ftt-blazor-pull-left">
+                @if (!IsNew)
+                {
+                    if (CanDelete)
+                    {
+                        <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OpenDialogDelete(Item); })">Excluir</button>
+                    }
+                }
+            </div>
+
+            @if (CanEdit)
+            {
+                <div class="ftt-blazor-pull-right">
+                    <button type="button" class="ftt-blazor-button" @onclick="@(async () => { ModalIsOpen = false; })">Fechar</button>
+                    <button type="submit" class="ftt-blazor-button">Salvar</button>
+                </div>
+            }
+            else
+            {
+                <div class="ftt-blazor-pull-right">
+                    <button type="button" class="ftt-blazor-button" @onclick="@(async () => { ModalIsOpen = false; })">Fechar</button>
+                </div>
+            }
+        </div>
+    </FTTDialogActions>
+</FTTDialog>

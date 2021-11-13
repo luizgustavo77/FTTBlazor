@@ -1,4 +1,4 @@
-! function (t) {
+﻿! function (t) {
     var e = {};
 
     function n(i) {
@@ -10058,7 +10058,7 @@
                 var e = o.numbers.MIN_AUTO_DISMISS_TIMEOUT_MS,
                     n = o.numbers.MAX_AUTO_DISMISS_TIMEOUT_MS,
                     i = o.numbers.INDETERMINATE;
-                if (!(t === o.numbers.INDETERMINATE || t <= n && e <= t)) throw new Error("\n        timeoutMs must be an integer in the range " + e + "�" + n + "\n        (or " + i + " to disable), but got '" + t + "'");
+                if (!(t === o.numbers.INDETERMINATE || t <= n && e <= t)) throw new Error("\n        timeoutMs must be an integer in the range " + e + "–" + n + "\n        (or " + i + " to disable), but got '" + t + "'");
                 this.autoDismissTimeoutMs_ = t
             }, e.prototype.getCloseOnEscape = function () {
                 return this.closeOnEscape_
@@ -12638,3 +12638,14 @@
         })), i(t)
     }
 }, function (t, e, n) { }]);
+
+function saveAsFile(filename, csvString) {
+    var universalBOM = "\uFEFF";
+
+    var link = document.createElement('a');
+    link.download = filename;
+    link.href = 'data:text/csv; charset=utf-8,' + encodeURIComponent(universalBOM + csvString);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
