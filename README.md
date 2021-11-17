@@ -22,7 +22,6 @@
 | Dialog | Dialog | Set | OK | LG |
 | Toast | Dialog | Set | OK | LG |
 | Grid Divider | Dialog | Out | --- | LG |
-| Tab | Dialog | Nov | --- | LG |
 | Input | Forms | Set | OK | LG |
 | Select Type T  | Forms | Set | OK | LG |
 | Select Enum  | Forms | Set | OK | LG |
