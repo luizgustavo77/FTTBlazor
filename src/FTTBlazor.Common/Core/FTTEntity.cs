@@ -1,4 +1,4 @@
-﻿namespace FTTBlazor.Core
+﻿namespace FTTBlazor.Common.Core
 {
     public class FTTEntity
     {

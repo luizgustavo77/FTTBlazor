@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 
-namespace FTTBlazor
+namespace FTTBlazor.Components.Toast
 {
-    public class FTTToastBase : ComponentBase, IDisposable
+    public partial class FTTToast : ComponentBase, IDisposable
     {
         [Inject] FTTToastService ToastService { get; set; }
 

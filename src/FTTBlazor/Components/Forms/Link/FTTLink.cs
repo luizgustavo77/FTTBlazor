@@ -1,4 +1,4 @@
-using FTTBlazor.Core;
+using FTTBlazor.Common.Core;
 using Microsoft.AspNetCore.Components;
 using System;
 

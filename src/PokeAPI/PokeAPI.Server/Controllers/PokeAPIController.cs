@@ -1,4 +1,4 @@
-﻿using FTTBlazor.Common;
+﻿using FTTBlazor.Common.PokeAPI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;

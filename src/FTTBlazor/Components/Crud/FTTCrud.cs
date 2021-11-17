@@ -8,10 +8,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using FTTBlazor.Common.Core;
+using FTTBlazor.Components.Toast;
 
 namespace FTTBlazor.Components.Crud
 {
-    public partial class FTTCrud<Interface> : ComponentBase where Interface : Core.FTTEntity
+    public partial class FTTCrud<Interface> : ComponentBase where Interface : FTTEntity
     {
         public FTTCrud()
         {

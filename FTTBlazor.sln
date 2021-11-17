@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PokeAPI", "PokeAPI", "{DEB7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Server", "src\PokeAPI\PokeAPI.Server\PokeAPI.Server.csproj", "{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor.Common", "src\FTTBlazor.Common\FTTBlazor.Common.csproj", "{00EC5222-2C52-424A-A6CC-51A4D869B171}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Service", "src\PokeAPI\PokeAPI.Service\PokeAPI.Service.csproj", "{81748182-C4E4-4256-AC84-84BC608A2794}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,21 @@ Global
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00EC5222-2C52-424A-A6CC-51A4D869B171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EC5222-2C52-424A-A6CC-51A4D869B171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EC5222-2C52-424A-A6CC-51A4D869B171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EC5222-2C52-424A-A6CC-51A4D869B171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81748182-C4E4-4256-AC84-84BC608A2794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81748182-C4E4-4256-AC84-84BC608A2794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81748182-C4E4-4256-AC84-84BC608A2794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81748182-C4E4-4256-AC84-84BC608A2794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7} = {DEB785FB-05D7-40EA-AE3C-91D45B17DB57}
+		{81748182-C4E4-4256-AC84-84BC608A2794} = {DEB785FB-05D7-40EA-AE3C-91D45B17DB57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E769668-6808-4410-9FFA-1F1A7D88A897}
