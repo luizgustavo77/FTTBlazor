@@ -69,13 +69,12 @@ namespace FTTBlazor.Components.Crud
         public bool CanRead { get; set; } = true;
 
         [Parameter]
-        public IEnumerable<Interface> Items { get; set; }
-
-        [Parameter]
         public List<FTTGridColumn> Columns { get; set; } = null;
 
         [Parameter]
         public string Token { get; set; }
+
+        public IEnumerable<Interface> Items { get; set; }
 
         bool ModalIsOpen { get; set; }
 
@@ -519,21 +518,12 @@ namespace FTTBlazor.Components.Crud
 
         public string FieldDescription { get; set; }
 
-        public bool Show { get; set; }
-
-        public bool IsModalLink { get; set; } = false;
-
         public Type ModalPage { get; set; } = null;
-
-        public string ModalPageIdField { get; set; } = null;
-
-        public string ModalPageTitle { get; set; } = null;
     }
 
     public enum FTTFieldType
     {
-        Common,
-        CreditDebit,
+        Nenhum,
         Money
     }
 

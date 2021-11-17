@@ -13,8 +13,53 @@
 
 }
 
-<FTTBlazor.Components.Crud.FTTCrud Interface="Models.EndpointPokemon" Columns="cols" Endpoint="@endpoint" Title="Pokemons">
-    <ModalContent>
-        <FTTBlazor.Models.LinkPage Item="@context"></FTTBlazor.Models.LinkPage>
-    </ModalContent>
-</FTTBlazor.Components.Crud.FTTCrud>
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>CRUD</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para CRUD e exemplos de como usar.</h6>
+    </div>
+
+    <div style="height: 30rem;">
+
+        <FTTBlazor.Components.Crud.FTTCrud Interface="Models.EndpointPokemon" Columns="cols" Endpoint="@endpoint" Title="Pokemons">
+            <ModalContent>
+                <FTTInput Label="Nome" @bind-Value="@context.Name" Size="12"></FTTInput>
+            </ModalContent>
+        </FTTBlazor.Components.Crud.FTTCrud>
+
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/crud1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
+        <img src="../img/about/crud.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTCrud</span></h4>
+        <h6><span style="font-weight:bold;">ModalContent:</span> Conteudo do Modal</h6>
+        <h6><span style="font-weight:bold;">Filter:</span> Filtro para os dados</h6>
+        <h6><span style="font-weight:bold;">OnBeforeAdd:</span> Evento para após criar um dado</h6>
+        <h6><span style="font-weight:bold;">OnAddClick:</span> Evento para antes de criar um dado</h6>
+        <h6><span style="font-weight:bold;">PageSize:</span> Numero de itens que vamos mostrar</h6>
+        <h6><span style="font-weight:bold;">Endpoint:</span> EndPoint da API com o padrão REST</h6>
+        <h6><span style="font-weight:bold;">Title:</span> Titulo do Modal</h6>
+        <h6><span style="font-weight:bold;">CanCreate:</span> Permissão para criar um item</h6>
+        <h6><span style="font-weight:bold;">CanDelete:</span> Permissão para deletar um item na tabela</h6>
+        <h6><span style="font-weight:bold;">CanEdit:</span> Permissão para editar um item na tabela</h6>
+        <h6><span style="font-weight:bold;">CanRead:</span> Permissão para ver um item na tabela</h6>
+        <h6><span style="font-weight:bold;">Columns:</span> Colunas que a tabela vai mostrar</h6>
+        <h6><span style="font-weight:bold;">Token:</span> Token para usar como parametro na requisição</h6>
+    </div>
+
+</div>

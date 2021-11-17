@@ -13,7 +13,7 @@
                             }
                             else
                             {
-                                <button type="button" class="btn btn-link btn-add" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons" style="font-weight: 600; cursor: pointer;">add</i></button>
+                                <button type="button" class="btn btn-link btn-add" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons" style="font-weight: 600; cursor: not-allowed;">add</i></button>
                             }
                         </td>
 
@@ -73,11 +73,11 @@
                                 <tr>
                                     @if (CanRead)
                                     {
-                                        <td width="80" style="text-align:center;padding-left:8px!important;"><button type="button" class="btn btn-link btn-action" @onclick="@( e => { OpenDialog(item); })"><i class="material-icons">remove_red_eye</i></button></td>
+                                        <td width="80" style="text-align:center;padding-left:8px!important; cursor: pointer;"><button type="button" class="btn btn-link btn-action" @onclick="@( e => { OpenDialog(item); })"><i class="material-icons">remove_red_eye</i></button></td>
                                     }
                                     else
                                     {
-                                        <td width="80" style="text-align:center;padding-left:8px!important;"><button type="button" class="btn btn-link btn-action" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons">remove_red_eye</i></button></td>
+                                        <td width="80" style="text-align: center; padding-left: 8px !important; cursor: not-allowed;"><button type="button" class="btn btn-link btn-action" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons">remove_red_eye</i></button></td>
                                     }
                                     @if (Columns != null)
                                     {
@@ -86,32 +86,9 @@
                                             var style = "text-align:left;";
 
                                             <td style="@style">
-                                                @if (col.IsModalLink)
-                                                {
-                                                    try
-                                                    {
-                                                        if (!string.IsNullOrEmpty(item.GetType().GetProperty(col.FieldName).GetValue(item).ToString()))
-                                                        {
-                                                            <a style="text-decoration:underline;cursor:pointer;">@item.GetType().GetProperty(col.FieldName).GetValue(item).ToString()</a>
-                                                        }
-                                                    }
-                                                    catch (Exception)
-                                                    {
 
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    switch (col.FieldType)
-                                                    {
-                                                        case FTTFieldType.Common:
-                                                            @RetornaValores(col, item);
-                                                            break;
-                                                        default:
-                                                            @RetornaValores(col, item);
-                                                            break;
-                                                    }
-                                                }
+                                                @RetornaValores(col, item);
+
                                             </td>
                                         }
                                     }
@@ -119,7 +96,7 @@
                                     <td width="80" style="text-align:center;">
                                         @if (CanDelete)
                                         {
-                                            <button type="button" class="btn btn-link btn-action" @onclick="@( e => OpenDialogDelete(item))"><i class="material-icons">delete</i></button>
+                                            <button type="button" class="btn btn-link btn-action" @onclick="@( e => OpenDialogDelete(item))" style=" cursor: pointer;"><i class="material-icons">delete</i></button>
                                         }
                                         else
                                         {
