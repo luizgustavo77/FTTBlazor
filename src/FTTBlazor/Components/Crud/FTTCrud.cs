@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Crud
 {
-    public partial class FTTCrud<Interface> : ComponentBase where Interface : Core.Entity
+    public partial class FTTCrud<Interface> : ComponentBase where Interface : Core.FTTEntity
     {
         public FTTCrud()
         {

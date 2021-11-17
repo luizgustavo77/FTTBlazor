@@ -4,7 +4,7 @@ using System;
 
 namespace FTTBlazor.Components.Forms.Link
 {
-    public partial class FTTLink<T> : ComponentBase where T : Entity
+    public partial class FTTLink<T> : ComponentBase where T : FTTEntity
     {
         [Parameter]
         public RenderFragment Body { get; set; }

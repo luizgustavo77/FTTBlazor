@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Forms.Select
 {
-    public partial class FTTSelect<T> : ComponentBase where T : Entity
+    public partial class FTTSelect<T> : ComponentBase where T : FTTEntity
     {
         [Parameter]
         public string DataSourceEndpoint { get; set; }

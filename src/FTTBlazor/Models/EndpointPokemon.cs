@@ -2,7 +2,7 @@
 
 namespace FTTBlazor.Models
 {
-    public class EndpointPokemon : Entity
+    public class EndpointPokemon : FTTEntity
     {
         public string Name { get; set; }
     }
