@@ -1,8 +1,8 @@
 ﻿using FTTBlazor.Core;
 
-namespace FTTBlazor.Models
+namespace FTTBlazor.Common
 {
-    public class EndpointPokemon : FTTEntity
+    public class Pokemon : FTTEntity
     {
         public string Name { get; set; }
     }

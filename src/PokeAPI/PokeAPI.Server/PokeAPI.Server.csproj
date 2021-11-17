@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FTTBlazor\FTTBlazor.csproj" />
+    <ProjectReference Include="..\..\FTTBlazor\FTTBlazor.csproj" />
   </ItemGroup>
 
 </Project>

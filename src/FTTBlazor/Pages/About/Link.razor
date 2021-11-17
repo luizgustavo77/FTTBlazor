@@ -3,7 +3,7 @@
 @using FTTBlazor.Components.Forms.Link;
 
 @code{
-    FTTBlazor.Models.EndpointPokemon pokemon = new Models.EndpointPokemon()
+    FTTBlazor.Common.Pokemon pokemon = new FTTBlazor.Common.Pokemon()
     {
         Id = new Guid().ToString(),
         Name = "Squardle"
@@ -21,7 +21,7 @@
         <h6>Abaixo uma serie de opções para LINK e exemplos de como usar.</h6>
     </div>
 
-    <FTTLink BorderRight="true" Size="4" T="FTTBlazor.Models.EndpointPokemon" Icon="visibility"
+    <FTTLink BorderRight="true" Size="4" T="FTTBlazor.Common.Pokemon" Icon="visibility"
              Title="Link para pokemon" LabelLink="@pokemon.Name">
         <Body>
             <FTTBlazor.Models.LinkPage Item="pokemon"></FTTBlazor.Models.LinkPage>
