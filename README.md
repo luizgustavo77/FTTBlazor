@@ -64,7 +64,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 | EMail | Forms | Out | OK | LG |
 | Link | Forms | Out | OK | LG |
 | Money | Forms | Out | OK | LG |
-| Crud | Crud | Nov | --- | LG |
+| Crud | Crud | Nov | OK | LG |
 | Finalizar | Todos | Dez | --- | LG e Thiago |
  
 ---
