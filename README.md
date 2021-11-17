@@ -7,7 +7,11 @@
 
 # 🧩 **Instalando**
 > Abaixo o passo a passo para instalar o componente
-
+1. Adicionando dependencias
+   - CSS
+   - JS
+   - startup
+2. Adicionando biblioteca
 ---
 
 ## ☕ **FTTBlazor Beta**
@@ -16,10 +20,8 @@
 | Componente | Relação | Entrega | Concluido | Responsavel |
 | --- | --- | --- | --- | --- |
 | Dialog | Dialog | Set | OK | LG |
-| Modal | Dialog | Set | OK | LG |
 | Toast | Dialog | Set | OK | LG |
 | Grid Divider | Dialog | Out | --- | LG |
-| Tab | Dialog | Nov | --- | LG |
 | Input | Forms | Set | OK | LG |
 | Select Type T  | Forms | Set | OK | LG |
 | Select Enum  | Forms | Set | OK | LG |
@@ -34,8 +36,7 @@
 | EMail | Forms | Out | OK | LG |
 | Link | Forms | Out | OK | LG |
 | Money | Forms | Out | OK | LG |
-| Tabela | Crud | Nov | --- | LG |
-| TabelaModal | Crud | Dez | --- | LG |
+| Crud | Crud | Nov | --- | LG |
 | Finalizar | Todos | Dez | --- | LG e Thiago |
  
 ---
