@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Server
+namespace PokeAPI.Server
 {
     public class Program
     {

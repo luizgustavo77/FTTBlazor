@@ -2,8 +2,7 @@
 
 namespace FTTBlazor.Common.PokeAPI
 {
-    public class Pokemon : FTTEntity
+    public class PokemonDTO : FTTEntity
     {
-        public string Name { get; set; }
     }
 }

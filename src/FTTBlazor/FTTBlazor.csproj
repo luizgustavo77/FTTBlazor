@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FTTBlazor.Common\FTTBlazor.Common.csproj" />
     <ProjectReference Include="..\FTTBlazor.Common\FTTBlazor.Common.csproj" />
   </ItemGroup>
 

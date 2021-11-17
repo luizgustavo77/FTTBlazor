@@ -358,6 +358,7 @@ namespace FTTBlazor.Components.Crud
         {
             Item = DeleteItem;
             ModalDeleteIsOpen = true;
+            ModalIsOpen = false;
         }
 
         void OpenDialog(Interface OpenItem)
@@ -473,18 +474,11 @@ namespace FTTBlazor.Components.Crud
             return ret;
         }
 
-        public async Task Save(bool closewindow = true, bool showsavedmessage = true, bool isformsubmit = false)
+        public async Task Save()
         {
             __result = null;
 
-            if (Item != null && !string.IsNullOrWhiteSpace(Item.Id))
-            {
-                IsNew = false;
-            }
-            else
-            {
-                IsNew = true;
-            }
+            IsNew = string.IsNullOrWhiteSpace(Item?.Id);
 
             if (!string.IsNullOrWhiteSpace(Token))
                 Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
@@ -508,6 +502,8 @@ namespace FTTBlazor.Components.Crud
                 result = await Http.PutAsJsonAsync<Interface>(Endpoint, Item);
             }
 
+            await LoadDataAsync(false);
+            ModalIsOpen = false;
             this.StateHasChanged();
         }
     }

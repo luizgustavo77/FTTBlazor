@@ -151,7 +151,7 @@
 <FTTDialog @bind-IsOpen="ModalIsOpen">
     <FTTDialogTitle> @Title </FTTDialogTitle>
     <FTTDialogContent>
-        <form action="#0" @onsubmit="@(async () => await Save(isformsubmit:true))" class="basemodal" autocomplete="off">
+        <form action="#0" @onsubmit="@(async () => await Save())" class="basemodal" autocomplete="off">
             <CascadingValue Value="@this" Name="modal">
                 <div class="ftt-blazor-crud-modal-content">
                     <div style="padding: 3px !important; padding-bottom: 0px !important; min-width: 1024px; max-width: 1024px;">
@@ -198,7 +198,7 @@
             {
                 <div class="ftt-blazor-pull-right">
                     <button type="button" class="ftt-blazor-button" @onclick="@(async () => { ModalIsOpen = false; })">Fechar</button>
-                    <button type="submit" class="ftt-blazor-button">Salvar</button>
+                    <button type="submit" class="ftt-blazor-button" @onclick="@(async () => { await Save(); })">Salvar</button>
                 </div>
             }
             else

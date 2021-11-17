@@ -1,18 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using PokeAPI.Data;
 
-namespace FTTBlazor.Server
+namespace PokeAPI.Server
 {
     public class Startup
     {
@@ -26,11 +21,15 @@ namespace FTTBlazor.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FTTBlazor.Server", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PokeAPI.Server", Version = "v1" });
+            });
+
+            services.AddDbContext<Data.DatabaseContext>(options =>
+            {
+                options.UseSqlite("Data Source = PokeAPI.db");
             });
 
             services.AddCors(Options =>
@@ -53,7 +52,7 @@ namespace FTTBlazor.Server
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FTTBlazor.Server v1"));
             }
 
-            
+
 
             app.UseHttpsRedirection();
 
