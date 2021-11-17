@@ -8,9 +8,37 @@
 # 🧩 **Instalando**
 > Abaixo o passo a passo para instalar o componente
 1. Adicionando dependencias
-   - CSS
-   - JS
+- css
+``` html
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://github.com/luizgustavo77/FTTBlazor/blob/master/src/FTTBlazor/wwwroot/css/fttBlazor.css" /> 
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+````
+- js
+``` html
+<script src="https://github.com/luizgustavo77/FTTBlazor/blob/master/src/FTTBlazor/wwwroot/js/fttBlazor.js"></script>
+```
    - startup
+``` c#
+builder.Services.AddScoped<FTTToastService>();
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+```
+- imports
+``` c#
+@using FTTBlazor
+@using FTTBlazor.Core
+@using FTTBlazor.Dialog
+@using FTTBlazor.Components.Forms
+@using FTTBlazor.Components.Forms.Button
+@using FTTBlazor.Components.Forms.Input
+@using FTTBlazor.Components.Forms.Link
+@using FTTBlazor.Components.Forms.Select
+@using FTTBlazor.Components.Toast
+```
+- nupkg
+``` cmd
+
+```
 2. Adicionando biblioteca
 ---
 
