@@ -1,12 +1,4 @@
 using FTTBlazor.Common.Core;
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Forms.Select
 {
@@ -24,8 +16,8 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
 
         private bool _IsReadOnly;
@@ -58,10 +50,7 @@ namespace FTTBlazor.Components.Forms.Select
         {
             get => _datadesc;
 
-            set
-            {
-                _datadesc = value;
-            }
+            set => _datadesc = value;
         }
 
         private string _datadesc = "";
@@ -75,7 +64,7 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public bool BorderRight { get; set; }
 
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         [Parameter]
         public string DataSourceDescField { get; set; } = "Name";
@@ -94,7 +83,7 @@ namespace FTTBlazor.Components.Forms.Select
 
         public string ItemId
         {
-            get { return _ItemId; }
+            get => _ItemId;
             set
             {
                 _ItemId = value;

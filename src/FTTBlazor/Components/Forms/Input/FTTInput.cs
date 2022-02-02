@@ -1,48 +1,58 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace FTTBlazor.Components.Forms.Input
+﻿namespace FTTBlazor.Components.Forms.Input
 {
     public partial class FTTInput : ComponentBase
     {
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
         private bool _IsReadOnly;
 
         [Parameter]
         public string Label
         {
-            get { return _label; }
-            set { _label = value; }
+            get => _label;
+            set => _label = value;
         }
         private string _label;
 
         [Parameter]
         public string Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
-                if (_value == value) return;
+                if (_value == value)
+                {
+                    return;
+                }
 
                 if (Type == InputType.Money)
+                {
                     value = FormatMoney(value);
+                }
                 else if (Type == InputType.Phone)
+                {
                     value = FormatPhoneNumber(value);
+                }
                 else if (Type == InputType.CNPJ)
+                {
                     value = FormatCNPJ(value);
+                }
                 else if (Type == InputType.CPF)
+                {
                     value = FormatCPF(value);
+                }
                 else if (Type == InputType.Percentage)
+                {
                     value = FormatPercentage(value);
+                }
                 else if (Type == InputType.CEP)
+                {
                     value = FormatCEP(value);
+                }
 
                 _value = value;
                 ValueChanged.InvokeAsync(value);
@@ -86,7 +96,7 @@ namespace FTTBlazor.Components.Forms.Input
         [Parameter]
         public string CssClass { get; set; }
 
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         private List<KeyValuePair<string, object>> attributes;
 
@@ -117,7 +127,10 @@ namespace FTTBlazor.Components.Forms.Input
         public static string FormatMoney(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return "";
+            }
+
             try
             {
                 input = input.Trim();
@@ -129,8 +142,9 @@ namespace FTTBlazor.Components.Forms.Input
                 }
 
                 if (input.Length < 7)
+                {
                     input = input.Replace(".", "");
-
+                }
                 else
                 {
                     if (input.Length >= 7 && input.Length < 11)
@@ -174,17 +188,27 @@ namespace FTTBlazor.Components.Forms.Input
         public static string FormatPhoneNumber(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return "";
+            }
+
             try
             {
                 input = input.Trim();
                 if (input.Length == 0 || input.Length == 1)
+                {
                     input = "(" + input;
+                }
+
                 if (input.Length == 3)
+                {
                     input += ")";
+                }
 
                 if (input.Length == 8)
+                {
                     input += "-";
+                }
 
                 return input;
             }
@@ -193,20 +217,32 @@ namespace FTTBlazor.Components.Forms.Input
                 return "";
             }
         }
-        
+
         public static string FormatCNPJ(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return "";
+            }
+
             try
             {
                 input = input.Trim();
                 if (input.Length == 2 || input.Length == 6)
+                {
                     input += ".";
+                }
+
                 if (input.Length == 10)
+                {
                     input += "/";
+                }
+
                 if (input.Length == 15)
+                {
                     input += "-";
+                }
+
                 return input;
             }
             catch
@@ -218,14 +254,23 @@ namespace FTTBlazor.Components.Forms.Input
         public static string FormatCPF(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return "";
+            }
+
             try
             {
                 input = input.Trim();
                 if (input.Length == 3 || input.Length == 7)
+                {
                     input += ".";
+                }
+
                 if (input.Length == 11)
+                {
                     input += "-";
+                }
+
                 return input;
             }
             catch
@@ -237,7 +282,10 @@ namespace FTTBlazor.Components.Forms.Input
         public static string FormatPercentage(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return "";
+            }
+
             try
             {
                 input = input.Trim();
@@ -248,7 +296,9 @@ namespace FTTBlazor.Components.Forms.Input
                     input = input.Insert(input.Length - 3, ".");
                 }
                 if (input.Length > 6)
+                {
                     input.Remove(0, 1);
+                }
 
                 return input + "%";
             }
@@ -261,12 +311,18 @@ namespace FTTBlazor.Components.Forms.Input
         public static string FormatCEP(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
+            {
                 return "";
+            }
+
             try
             {
                 input = input.Trim();
                 if (input.Length == 5)
+                {
                     input += "-";
+                }
+
                 return input;
             }
             catch

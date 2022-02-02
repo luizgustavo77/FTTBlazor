@@ -1,6 +1,4 @@
-﻿using FTTBlazor.Common.Core;
-
-namespace PokeAPI.Data.Entities
+﻿namespace PokeAPI.Data.Entities
 {
     public class Pokemon
     {

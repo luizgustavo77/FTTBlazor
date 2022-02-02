@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-
-namespace FTTBlazor.Components.Toast
+﻿namespace FTTBlazor.Components.Toast
 {
     public partial class FTTToast : ComponentBase, IDisposable
     {
-        [Inject] FTTToastService ToastService { get; set; }
+        [Inject] private FTTToastService ToastService { get; set; }
 
         protected string Heading { get; set; }
         protected string Message { get; set; }

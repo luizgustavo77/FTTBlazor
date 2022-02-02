@@ -1,35 +1,33 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace FTTBlazor.Components.Forms.Input
+﻿namespace FTTBlazor.Components.Forms.Input
 {
     public partial class FTTCheckbox : ComponentBase
     {
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
         private bool _IsReadOnly;
 
         [Parameter]
         public string Label
         {
-            get { return _label; }
-            set { _label = value; }
+            get => _label;
+            set => _label = value;
         }
         private string _label;
 
         [Parameter]
         public bool Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
-                if (_value == value) return;
+                if (_value == value)
+                {
+                    return;
+                }
 
                 _value = value;
 
@@ -42,7 +40,7 @@ namespace FTTBlazor.Components.Forms.Input
         [Parameter]
         public EventCallback<bool> ValueChanged { get; set; }
 
-        [Parameter] 
+        [Parameter]
         public EventCallback OnValueChanged { get; set; }
 
         [Parameter]
@@ -56,7 +54,7 @@ namespace FTTBlazor.Components.Forms.Input
 
         [Parameter]
         public bool BorderRight { get; set; }
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         private List<KeyValuePair<string, object>> attributes;
 

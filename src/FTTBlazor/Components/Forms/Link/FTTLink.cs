@@ -1,6 +1,4 @@
 using FTTBlazor.Common.Core;
-using Microsoft.AspNetCore.Components;
-using System;
 
 namespace FTTBlazor.Components.Forms.Link
 {
@@ -26,11 +24,11 @@ namespace FTTBlazor.Components.Forms.Link
 
         [Parameter]
         public bool BorderRight { get; set; } = false;
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         private string _id { get; set; } = Guid.NewGuid().ToString();
 
-        bool DialogIsOpen { get; set; }
+        private bool DialogIsOpen { get; set; }
 
         protected override void OnInitialized()
         {

@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace FTTBlazor.Dialog
+﻿namespace FTTBlazor.Dialog
 {
     public abstract class FTTDialog : ComponentBase, IDisposable
     {
@@ -44,7 +38,7 @@ namespace FTTBlazor.Dialog
 
         private readonly Queue<Func<Task>> afterRenderCallQueue = new Queue<Func<Task>>();
 
-        protected async override Task OnAfterRenderAsync(bool firstRender)
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             Rendered = true;
             await base.OnAfterRenderAsync(firstRender);

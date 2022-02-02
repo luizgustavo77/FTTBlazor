@@ -1,7 +1,4 @@
-﻿using System;
-using System.Timers;
-
-namespace FTTBlazor.Components.Toast
+﻿namespace FTTBlazor.Components.Toast
 {
     public class FTTToastService : IDisposable
     {

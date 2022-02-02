@@ -1,8 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 namespace FTTBlazor.Components.Forms.Select
 {
     public partial class FTTSelectArray : ComponentBase
@@ -15,23 +10,23 @@ namespace FTTBlazor.Components.Forms.Select
 
         [Parameter]
         public bool BorderRight { get; set; }
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
         private bool _IsReadOnly;
 
-        private string StyleIsReadOnly { get { return _IsReadOnly ? "not-allowed" : ""; } }
+        private string StyleIsReadOnly => _IsReadOnly ? "not-allowed" : "";
 
         [Parameter]
         public string Value { get; set; }
         public string _Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
 
@@ -48,7 +43,10 @@ namespace FTTBlazor.Components.Forms.Select
                         data_id = "00000000-0000-0000-0000-000000000000";
                     }
 
-                    if (_value == value) return;
+                    if (_value == value)
+                    {
+                        return;
+                    }
 
                     _value = value;
                     ValueChanged.InvokeAsync(value);

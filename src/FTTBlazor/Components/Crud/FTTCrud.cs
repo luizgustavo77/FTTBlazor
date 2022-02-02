@@ -1,13 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
 using FTTBlazor.Common.Core;
 using FTTBlazor.Components.Toast;
 
@@ -78,21 +68,14 @@ namespace FTTBlazor.Components.Crud
 
         public IEnumerable<Interface> Items { get; set; }
 
-        bool ModalIsOpen { get; set; }
+        private bool ModalIsOpen { get; set; }
 
         private IEnumerable<Interface> DataSource { get; set; }
 
         public IEnumerable<Interface> ItemList
         {
-            get
-            {
-                return _ItemList;
-            }
-            set
-            {
-                _ItemList = value;
-
-            }
+            get => _ItemList;
+            set => _ItemList = value;
         }
         public IEnumerable<Interface> _ItemList { get; set; }
 
@@ -100,14 +83,12 @@ namespace FTTBlazor.Components.Crud
 
         public int totalPages { get; set; }
 
-        int curPage;
-        int pagerSize;
-        int startPage;
-        int endPage;
-
-        bool ModalDeleteIsOpen = false;
-
-        bool IsNew = false;
+        private int curPage;
+        private readonly int pagerSize;
+        private int startPage;
+        private int endPage;
+        private bool ModalDeleteIsOpen = false;
+        private bool IsNew = false;
 
         protected bool isMenuVisible { get; set; }
 
@@ -120,7 +101,7 @@ namespace FTTBlazor.Components.Crud
         private HttpResponseMessage __result;
         public HttpResponseMessage result
         {
-            get { return __result; }
+            get => __result;
             set
             {
                 if ((value.StatusCode == System.Net.HttpStatusCode.OK) || (value.StatusCode == System.Net.HttpStatusCode.NoContent))
@@ -166,7 +147,9 @@ namespace FTTBlazor.Components.Crud
                 }
 
                 if (!string.IsNullOrWhiteSpace(value))
+                {
                     SearchParams.Add(field, value);
+                }
 
                 var filtered = ApplyFilters();
 
@@ -205,7 +188,7 @@ namespace FTTBlazor.Components.Crud
             return resultlist;
         }
 
-        public async static Task SaveAs(IJSRuntime js, string filename, string data)
+        public static async Task SaveAs(IJSRuntime js, string filename, string data)
         {
             await js.InvokeAsync<object>(
                 "saveAsFile",
@@ -213,7 +196,7 @@ namespace FTTBlazor.Components.Crud
                 data);
         }
 
-        void DownloadFile()
+        private void DownloadFile()
         {
             if (Columns == null)
             {
@@ -251,7 +234,7 @@ namespace FTTBlazor.Components.Crud
             SaveAs(js, "dados.csv", text);
         }
 
-        void ResolvePagination(IEnumerable<Interface> items, bool isReload)
+        private void ResolvePagination(IEnumerable<Interface> items, bool isReload)
         {
             try
             {
@@ -303,7 +286,9 @@ namespace FTTBlazor.Components.Crud
             try
             {
                 if (!string.IsNullOrWhiteSpace(Token))
+                {
                     Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
+                }
 
                 var items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(Endpoint);
 
@@ -326,14 +311,16 @@ namespace FTTBlazor.Components.Crud
             base.StateHasChanged();
         }
 
-        async Task OkClickDelete()
+        private async Task OkClickDelete()
         {
             try
             {
                 ModalDeleteIsOpen = false;
 
                 if (!string.IsNullOrWhiteSpace(Token))
+                {
                     Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
+                }
 
                 string url = Endpoint + "\\" + Convert.ToString(Item.GetType().GetProperty("Id").GetValue(Item, null));
                 result = await Http.DeleteAsync(url);
@@ -347,21 +334,21 @@ namespace FTTBlazor.Components.Crud
             }
         }
 
-        void OpenDialogAdd()
+        private void OpenDialogAdd()
         {
             Item = (Interface)Activator.CreateInstance(typeof(Interface));
             IsNew = true;
             ModalIsOpen = true;
         }
 
-        void OpenDialogDelete(Interface DeleteItem)
+        private void OpenDialogDelete(Interface DeleteItem)
         {
             Item = DeleteItem;
             ModalDeleteIsOpen = true;
             ModalIsOpen = false;
         }
 
-        void OpenDialog(Interface OpenItem)
+        private void OpenDialog(Interface OpenItem)
         {
             Item = OpenItem;
             IsNew = false;
@@ -458,7 +445,7 @@ namespace FTTBlazor.Components.Crud
                     }
                     else
                     {
-                        ret = " Não";
+                        ret = "Não";
                     }
                 }
                 else
@@ -466,7 +453,7 @@ namespace FTTBlazor.Components.Crud
                     ret = item.GetType().GetProperty(col.FieldName).GetValue(item).ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "";
             }
@@ -481,7 +468,9 @@ namespace FTTBlazor.Components.Crud
             IsNew = string.IsNullOrWhiteSpace(Item?.Id);
 
             if (!string.IsNullOrWhiteSpace(Token))
+            {
                 Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
+            }
 
             if (IsNew)
             {

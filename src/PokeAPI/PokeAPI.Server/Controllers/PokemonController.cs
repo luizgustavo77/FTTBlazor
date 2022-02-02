@@ -1,9 +1,6 @@
 ﻿using FTTBlazor.Common.PokeAPI;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PokeAPI.Data;
 using PokeAPI.Service;
-using System.Collections.Generic;
 
 namespace PokeAPI.Server.Controllers
 {
@@ -12,7 +9,7 @@ namespace PokeAPI.Server.Controllers
     public class PokemonController
     {
         private readonly ILogger<PokemonController> _logger;
-        private DatabaseContext _dbContext;
+        private readonly DatabaseContext _dbContext;
 
         public PokemonController(ILogger<PokemonController> logger, DatabaseContext dbContext)
         {
@@ -24,7 +21,9 @@ namespace PokeAPI.Server.Controllers
         public PokemonDTO Get([FromRoute] string id)
         {
             if (string.IsNullOrWhiteSpace(id))
+            {
                 return null;
+            }
 
             return new PokemonService(_dbContext).Get(long.Parse(id));
         }
@@ -51,7 +50,9 @@ namespace PokeAPI.Server.Controllers
         public void Delete([FromRoute] string id)
         {
             if (string.IsNullOrWhiteSpace(id))
+            {
                 return;
+            }
 
             new PokemonService(_dbContext).Delete(long.Parse(id));
         }

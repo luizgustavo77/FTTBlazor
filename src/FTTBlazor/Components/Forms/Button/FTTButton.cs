@@ -1,24 +1,20 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Threading.Tasks;
-
-namespace FTTBlazor.Components.Forms.Button
+﻿namespace FTTBlazor.Components.Forms.Button
 {
     public partial class FTTButton : ComponentBase
     {
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
         private bool _IsReadOnly;
 
         [Parameter]
         public string Label
         {
-            get { return _label; }
-            set { _label = value; }
+            get => _label;
+            set => _label = value;
         }
         private string _label;
 

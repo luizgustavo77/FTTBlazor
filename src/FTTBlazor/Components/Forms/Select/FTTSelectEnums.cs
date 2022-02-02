@@ -1,9 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace FTTBlazor.Components.Forms.Select
 {
     public partial class FTTSelectEnums<T> : ComponentBase where T : struct, IConvertible
@@ -23,23 +17,24 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
         private bool _IsReadOnly;
 
-        private string StyleIsReadOnly { get { return _IsReadOnly ? "not-allowed" : ""; } }
+        private string StyleIsReadOnly => _IsReadOnly ? "not-allowed" : "";
 
         [Parameter]
         public T Value
         {
-            get { return Enum.Parse<T>(strEnum); }
+            get => Enum.Parse<T>(strEnum);
             set
             {
 
-                if (strEnum == value.ToString()) return;
-
-
+                if (strEnum == value.ToString())
+                {
+                    return;
+                }
 
                 if (!string.IsNullOrEmpty(value.ToString()))
                 {
@@ -74,7 +69,7 @@ namespace FTTBlazor.Components.Forms.Select
 
         private Guid _dataid;
 
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         private List<KeyValuePair<string, object>> attributes;
 

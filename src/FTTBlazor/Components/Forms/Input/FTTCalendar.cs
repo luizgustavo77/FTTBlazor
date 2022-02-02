@@ -1,39 +1,37 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace FTTBlazor.Components.Forms.Input
+﻿namespace FTTBlazor.Components.Forms.Input
 {
     public partial class FTTCalendar : ComponentBase
     {
         [Parameter]
         public bool IsReadOnly
         {
-            get { return _IsReadOnly; }
-            set { _IsReadOnly = value; }
+            get => _IsReadOnly;
+            set => _IsReadOnly = value;
         }
         private bool _IsReadOnly;
 
         [Parameter]
         public string Label
         {
-            get { return _label; }
-            set { _label = value; }
+            get => _label;
+            set => _label = value;
         }
         private string _label;
 
         [Parameter]
         public DateTime? Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
                 if (value.HasValue)
                 {
 
 
-                    if (_value == value.Value) return;
+                    if (_value == value.Value)
+                    {
+                        return;
+                    }
 
                     _value = value.Value;
                 }
@@ -56,14 +54,14 @@ namespace FTTBlazor.Components.Forms.Input
 
         [Parameter]
         public bool BorderRight { get; set; }
-        private string BorderRightCssClass { get { return BorderRight ? "ftt-blazor-border-right" : ""; } }
+        private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         [Parameter]
         public string Pattern { get; set; } = "";
 
         private string _id { get; set; }
 
-        string StyleReadOnly { get { return _IsReadOnly ? "cursor: not-allowed" : ""; } }
+        private string StyleReadOnly => _IsReadOnly ? "cursor: not-allowed" : "";
 
         private List<KeyValuePair<string, object>> attributes;
 
