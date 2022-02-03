@@ -1,9 +1,12 @@
 ﻿@page "/crud"
 
-@code{
+@code {
     public List<FTTBlazor.Components.Crud.FTTGridColumn> cols = new List<FTTBlazor.Components.Crud.FTTGridColumn>();
-
+#if DEBUG
     string endpoint = "https://localhost:44306/Pokemon";
+#else
+    string endpoint = "https://localhost:44306/Pokemon";
+#endif
 
     protected override async Task OnParametersSetAsync()
     {
@@ -11,7 +14,6 @@
         cols.Add(new FTTBlazor.Components.Crud.FTTGridColumn() { FieldName = "Name", FieldDescription = "Nome" });
 
     }
-
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
