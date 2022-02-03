@@ -26,8 +26,10 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 - imports
 ``` c#
 @using FTTBlazor
-@using FTTBlazor.Core
-@using FTTBlazor.Dialog
+@using FTTBlazor.Common.Core
+@using FTTBlazor.Components.Crud
+@using FTTBlazor.Components.Dialog
+@using FTTBlazor.Components.Divider
 @using FTTBlazor.Components.Forms
 @using FTTBlazor.Components.Forms.Button
 @using FTTBlazor.Components.Forms.Input
@@ -49,7 +51,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 | --- | --- | --- | --- | --- |
 | Dialog | Dialog | Set | OK | LG |
 | Toast | Dialog | Set | OK | LG |
-| Grid Divider | Dialog | Out | --- | LG |
+| Grid Divider | Dialog | Out | OK | LG |
 | Input | Forms | Set | OK | LG |
 | Select Type T  | Forms | Set | OK | LG |
 | Select Enum  | Forms | Set | OK | LG |

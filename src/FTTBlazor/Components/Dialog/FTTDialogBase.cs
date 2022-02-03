@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Dialog
+namespace FTTBlazor.Components.Dialog
 {
-    public abstract class FTTDialog : ComponentBase, IDisposable
+    public abstract class FTTDialogBase : ComponentBase, IDisposable
     {
         [Inject]
         protected IJSRuntime Js { get; set; }
@@ -123,20 +123,6 @@ namespace FTTBlazor.Dialog
         protected void DisposeDotNetObjectRef<T>(DotNetObjectReference<T> value) where T : class
         {
             value?.Dispose();
-        }
-    }
-
-    public class FTTForwardRef : ForwardRef<ElementReference>
-    {
-    }
-
-    public class ForwardRef<T>
-    {
-        private T _current;
-
-        public void Set(T value)
-        {
-            _current = value;
         }
     }
 }

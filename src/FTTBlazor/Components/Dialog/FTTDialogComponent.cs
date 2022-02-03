@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FTTBlazor
+namespace FTTBlazor.Components.Dialog
 {
     public class FTTDialogComponent : FTTBaseDialog
     {
