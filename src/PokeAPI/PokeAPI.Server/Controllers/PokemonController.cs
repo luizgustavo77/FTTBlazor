@@ -1,6 +1,9 @@
 ﻿using FTTBlazor.Common.PokeAPI;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using PokeAPI.Data;
 using PokeAPI.Service;
+using System.Collections.Generic;
 
 namespace PokeAPI.Server.Controllers
 {

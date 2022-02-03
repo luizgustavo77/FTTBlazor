@@ -125,7 +125,7 @@ namespace FTTBlazor.Components.Crud
         {
             if (e != null)
             {
-                var limit = 700;
+                int limit = 700;
 
                 if (Convert.ToInt32(e.ClientY) > limit)
                 {
@@ -203,7 +203,7 @@ namespace FTTBlazor.Components.Crud
                 return;
             }
 
-            var text = "";
+            string text = "";
 
             foreach (var col in Columns)
             {
@@ -230,7 +230,7 @@ namespace FTTBlazor.Components.Crud
                 text += "\r\n";
             }
 
-            var bytes = System.Text.Encoding.UTF8.GetBytes(text);
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(text);
             SaveAs(js, "dados.csv", text);
         }
 
@@ -245,7 +245,7 @@ namespace FTTBlazor.Components.Crud
                     if (curPage == null || curPage == 0) { curPage = 1; }
 
                     ItemList = Items.Skip((curPage - 1) * PageSize).Take(PageSize);
-                    totalPages = (int)Math.Ceiling(Items.Count() / (decimal)PageSize);
+                    totalPages = (int)Math.Ceiling(Items.Count() / PageSize);
 
                     if (isReload)
                     {
@@ -413,7 +413,7 @@ namespace FTTBlazor.Components.Crud
 
         public string RetornaValores(FTTGridColumn col, Interface item)
         {
-            var ret = "";
+            string ret = "";
 
             try
             {
@@ -437,7 +437,7 @@ namespace FTTBlazor.Components.Crud
                 }
                 else if (item.GetType().GetProperty(col.FieldName).PropertyType == typeof(bool))
                 {
-                    var data = ((bool)item.GetType().GetProperty(col.FieldName).GetValue(item));
+                    bool data = ((bool)item.GetType().GetProperty(col.FieldName).GetValue(item));
 
                     if (data)
                     {

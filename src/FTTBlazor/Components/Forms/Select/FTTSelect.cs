@@ -152,7 +152,7 @@ namespace FTTBlazor.Components.Forms.Select
             {
                 var curritem = DataSource.FirstOrDefault(e => e.Id == _ItemId);
 
-                var datadesc = (string)typeof(T).GetProperty(DataSourceDescField).GetValue(curritem);
+                string datadesc = (string)typeof(T).GetProperty(DataSourceDescField).GetValue(curritem);
 
                 if (DataId != _ItemId)
                 {
