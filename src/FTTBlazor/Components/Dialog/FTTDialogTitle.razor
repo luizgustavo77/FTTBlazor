@@ -2,10 +2,6 @@
 @inherits FTTBaseDialog
 @using Microsoft.AspNetCore.Components
 
-<h2 class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref" @attributes="Attributes" Id="@Id">
-    @ChildContent
-</h2>
-
 @code
 {
     [Parameter]
@@ -17,3 +13,7 @@
         ClassMapper.Add("ftt-blazor-dialog__title");
     }
 }
+
+<h2 class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref" @attributes="Attributes" Id="@Id">
+    @ChildContent
+</h2>

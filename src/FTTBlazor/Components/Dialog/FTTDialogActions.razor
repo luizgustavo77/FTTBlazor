@@ -2,14 +2,8 @@
 @using Microsoft.AspNetCore.Components
 @inherits FTTBaseDialog
 
-<footer class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref"  @attributes="Attributes" Id="@Id">
-    @ChildContent
-</footer>
-
-
 @code
 {
-
     [Parameter]
     public  RenderFragment ChildContent { get; set; }
 
@@ -18,5 +12,8 @@
         await base.OnInitializedAsync();
         ClassMapper.Add("ftt-blazor-dialog__actions");
     }
-
 }
+
+<footer class="@ClassMapper.AsString()" style="@StyleMapper.AsString()" @ref="Ref"  @attributes="Attributes" Id="@Id">
+    @ChildContent
+</footer>
