@@ -1,4 +1,7 @@
-﻿namespace FTTBlazor.Components.Toast
+﻿using Microsoft.AspNetCore.Components;
+using System;
+
+namespace FTTBlazor.Components.Toast
 {
     public partial class FTTToast : ComponentBase, IDisposable
     {

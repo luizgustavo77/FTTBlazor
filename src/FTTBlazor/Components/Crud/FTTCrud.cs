@@ -1,5 +1,15 @@
 using FTTBlazor.Common.Core;
 using FTTBlazor.Components.Toast;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Crud
 {
@@ -151,7 +161,7 @@ namespace FTTBlazor.Components.Crud
                     SearchParams.Add(field, value);
                 }
 
-                var filtered = ApplyFilters();
+                IEnumerable<Interface> filtered = ApplyFilters();
 
                 ResolvePagination(filtered, true);
             }
@@ -163,7 +173,7 @@ namespace FTTBlazor.Components.Crud
 
         public IEnumerable<Interface> ApplyFilters()
         {
-            var resultlist = DataSource;
+            IEnumerable<Interface> resultlist = DataSource;
 
             foreach (KeyValuePair<string, string> item in SearchParams)
             {
@@ -205,16 +215,16 @@ namespace FTTBlazor.Components.Crud
 
             string text = "";
 
-            foreach (var col in Columns)
+            foreach (FTTGridColumn col in Columns)
             {
                 text += col.FieldDescription + ";";
             }
 
             text += "\r\n";
 
-            foreach (var item in Items)
+            foreach (Interface item in Items)
             {
-                foreach (var col in Columns)
+                foreach (FTTGridColumn col in Columns)
                 {
                     try
                     {
@@ -245,7 +255,8 @@ namespace FTTBlazor.Components.Crud
                     if (curPage == null || curPage == 0) { curPage = 1; }
 
                     ItemList = Items.Skip((curPage - 1) * PageSize).Take(PageSize);
-                    totalPages = (int)Math.Ceiling(Items.Count() / PageSize);
+                    double count = Items.Count() / PageSize;
+                    totalPages = (int)Math.Ceiling(count);
 
                     if (isReload)
                     {
@@ -290,7 +301,7 @@ namespace FTTBlazor.Components.Crud
                     Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
                 }
 
-                var items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(Endpoint);
+                IEnumerable<Interface> items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(Endpoint);
 
                 DataSource = items;
 
@@ -299,7 +310,7 @@ namespace FTTBlazor.Components.Crud
                     DataSource = DataSource.Where(Filter);
                 }
 
-                var filtered = ApplyFilters();
+                IEnumerable<Interface> filtered = ApplyFilters();
 
                 ResolvePagination(filtered, isReload);
             }
@@ -424,7 +435,7 @@ namespace FTTBlazor.Components.Crud
                 }
                 else if (item.GetType().GetProperty(col.FieldName).PropertyType == typeof(DateTime))
                 {
-                    var data = (DateTime)item.GetType().GetProperty(col.FieldName).GetValue(item);
+                    DateTime data = (DateTime)item.GetType().GetProperty(col.FieldName).GetValue(item);
 
                     if (data.ToString("dd/MM/yyyy") == "01/01/0001" && data.ToShortTimeString() != "00:00")
                     {
@@ -478,7 +489,7 @@ namespace FTTBlazor.Components.Crud
 
                 try
                 {
-                    var newitem = await __result.Content.ReadFromJsonAsync<Interface>();
+                    Interface newitem = await __result.Content.ReadFromJsonAsync<Interface>();
                     Item = newitem;
                 }
                 catch (Exception ex)
@@ -493,7 +504,7 @@ namespace FTTBlazor.Components.Crud
 
             await LoadDataAsync(false);
             ModalIsOpen = false;
-            this.StateHasChanged();
+            StateHasChanged();
         }
     }
 

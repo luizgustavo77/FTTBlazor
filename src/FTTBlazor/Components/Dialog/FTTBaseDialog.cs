@@ -1,4 +1,10 @@
-﻿namespace FTTBlazor
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace FTTBlazor
 {
     public abstract class FTTBaseDialog : ComponentBase, IDisposable
     {
@@ -49,10 +55,10 @@
 
             if (afterRenderCallQueue.Count > 0)
             {
-                var actions = afterRenderCallQueue.ToArray();
+                Func<Task>[] actions = afterRenderCallQueue.ToArray();
                 afterRenderCallQueue.Clear();
 
-                foreach (var action in actions)
+                foreach (Func<Task> action in actions)
                 {
                     if (Disposed)
                     {

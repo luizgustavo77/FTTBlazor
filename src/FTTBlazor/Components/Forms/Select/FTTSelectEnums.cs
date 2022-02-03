@@ -1,3 +1,9 @@
+using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace FTTBlazor.Components.Forms.Select
 {
     public partial class FTTSelectEnums<T> : ComponentBase where T : struct, IConvertible
@@ -67,7 +73,7 @@ namespace FTTBlazor.Components.Forms.Select
 
         public IEnumerable<T> DataSource { get; set; }
 
-        private Guid _dataid;
+        private readonly Guid _dataid;
 
         private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 

@@ -1,4 +1,8 @@
-﻿namespace FTTBlazor.Components.Forms.Button
+﻿using Microsoft.AspNetCore.Components;
+using System;
+using System.Threading.Tasks;
+
+namespace FTTBlazor.Components.Forms.Button
 {
     public partial class FTTButton : ComponentBase
     {

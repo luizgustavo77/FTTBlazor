@@ -1,3 +1,8 @@
+using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace FTTBlazor.Components.Forms.Select
 {
     public partial class FTTSelectArray : ComponentBase
@@ -73,7 +78,7 @@ namespace FTTBlazor.Components.Forms.Select
 
         public string data_id { get; set; } = "00000000-0000-0000-0000-000000000000";
 
-        private Guid _dataid;
+        private readonly Guid _dataid;
 
         private string _id { get; set; }
 

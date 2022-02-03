@@ -1,4 +1,12 @@
 using FTTBlazor.Common.Core;
+using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Forms.Select
 {
@@ -120,7 +128,7 @@ namespace FTTBlazor.Components.Forms.Select
 
             if (DataSourceEndpoint != null)
             {
-                var client = new HttpClient();
+                HttpClient client = new HttpClient();
 
                 if (!string.IsNullOrWhiteSpace(TokenProvider))
                 {
@@ -129,7 +137,7 @@ namespace FTTBlazor.Components.Forms.Select
                 }
 
                 Console.WriteLine("Fazendo requisição");
-                var list = await client.GetFromJsonAsync<IEnumerable<T>>(DataSourceEndpoint);
+                IEnumerable<T> list = await client.GetFromJsonAsync<IEnumerable<T>>(DataSourceEndpoint);
 
                 Console.WriteLine("Pego e veio: " + list.Count());
                 DataSource = list;
@@ -150,7 +158,7 @@ namespace FTTBlazor.Components.Forms.Select
         {
             if (!string.IsNullOrEmpty(_ItemId) && _ItemId != "00000000-0000-0000-0000-000000000000")
             {
-                var curritem = DataSource.FirstOrDefault(e => e.Id == _ItemId);
+                T curritem = DataSource.FirstOrDefault(e => e.Id == _ItemId);
 
                 string datadesc = (string)typeof(T).GetProperty(DataSourceDescField).GetValue(curritem);
 
