@@ -1235,3 +1235,13 @@ div.ftt-blazor-table-responsive .table.table tbody tr:hover {
         font-size: 0px;
         border-radius: 0px !important;
     }
+
+.ftt-blazor-divider-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid var(--brandline);
+    height: 56px;
+    background-color: var(--brandlineminor);
+    margin-top: -2px
+}

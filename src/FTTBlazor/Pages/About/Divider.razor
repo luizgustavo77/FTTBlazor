@@ -1,0 +1,49 @@
+﻿@page "/divider"
+
+@using FTTBlazor.Components.Divider;
+
+@code {
+    string Texto { get; set; }
+    string Color { get; set; }
+    string Time { get; set; }
+}
+
+<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell--12-col">
+        <h1>FTTGridDivider</h1>
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Exemplo</h4>
+        <h6>Abaixo uma serie de opções para Divider e exemplos de como usar.</h6>
+    </div>
+
+    <FTTGridDivider Iscollapsible="true" FTTFields="true" IsCollapsed="true" Title="Divider" AddButtonIsVisible="true">
+        <FTTInput BorderRight="true" Size="4" Label="Input" @bind-Value="Texto"></FTTInput>
+        <FTTInput Type="InputType.Color" BorderRight="true" Size="4" Label="Color" @bind-Value="Color"></FTTInput>
+        <FTTInput Type="InputType.Time" BorderRight="true" Size="4" Label="Time" @bind-Value="Time"></FTTInput>
+    </FTTGridDivider>
+
+    <div class="mdl-cell--12-col">
+        <h4>Usando</h4>
+        <h6>Adicionando na pagina</h6>
+        <img src="../img/about/divider1.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Codigo usado</h4>
+        <h6>Abaixo uma imagem de como implementar o componente no seu sistema</h6>
+        <img src="../img/about/divider.png" />
+    </div>
+
+    <div class="mdl-cell--12-col">
+        <h4>Parametros do <span style="font-weight:bold;">FTTGridDivider</span></h4>
+        <h6><span style="font-weight:bold;">AddButtonIsVisible:</span> Habilita o botão para adicionar, lembrando que o evento é customizado</h6>
+        <h6><span style="font-weight:bold;">Title:</span> Texto do header</h6>
+        <h6><span style="font-weight:bold;">AddButtonOnClick:</span> Aqui podemos adicionar a chamada do botão para adicionar</h6>
+        <h6><span style="font-weight:bold;">Iscollapsible:</span> Define se pode maximizar & minimizar</h6>
+        <h6><span style="font-weight:bold;">IsCollapsed:</span> Define o default se é maximizado ou minimizado</h6>
+        <h6><span style="font-weight:bold;">FTTFields:</span> Define se tem inputs para habilitar o grid</h6>
+    </div>
+
+</div>
