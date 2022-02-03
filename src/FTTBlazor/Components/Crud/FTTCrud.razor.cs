@@ -47,7 +47,7 @@ namespace FTTBlazor.Components.Crud
         public Func<Interface, Task<Interface>> OnBeforeAdd { get; set; }
 
         [Parameter]
-        public int PageSize { get; set; } = 100;
+        public int PageSize { get; set; } = 50;
 
         [Parameter]
         public string Endpoint { get; set; }
@@ -93,8 +93,6 @@ namespace FTTBlazor.Components.Crud
 
         public int totalPages { get; set; }
 
-        private int curPage;
-        private readonly int pagerSize;
         private int startPage;
         private int endPage;
         private bool ModalDeleteIsOpen = false;
@@ -105,6 +103,8 @@ namespace FTTBlazor.Components.Crud
         public string FileMenuPosition { get; set; } = "";
 
         public Dictionary<string, string> SearchParams { get; set; } = new Dictionary<string, string>();
+
+        public int CurrentPage { get; set; } = 1;
 
         public string Url { get; set; }
 
@@ -151,6 +151,8 @@ namespace FTTBlazor.Components.Crud
         {
             try
             {
+                CurrentPage = 0;
+
                 if (SearchParams.ContainsKey(field))
                 {
                     SearchParams.Remove(field);
@@ -161,9 +163,8 @@ namespace FTTBlazor.Components.Crud
                     SearchParams.Add(field, value);
                 }
 
-                IEnumerable<Interface> filtered = ApplyFilters();
-
-                ResolvePagination(filtered, true);
+                //IEnumerable<Interface> filtered = ApplyFilters();
+                // ResolvePagination(filtered, true);
             }
             catch (Exception ex)
             {
@@ -252,19 +253,19 @@ namespace FTTBlazor.Components.Crud
                 {
                     Items = items;
 
-                    if (curPage == null || curPage == 0) { curPage = 1; }
-
-                    ItemList = Items.Skip((curPage - 1) * PageSize).Take(PageSize);
+                    ItemList = Items.Skip((CurrentPage - 1) * PageSize).Take(PageSize);
                     double count = Items.Count() / PageSize;
                     totalPages = (int)Math.Ceiling(count);
 
+                    if (totalPages <= 0)
+                        totalPages = 1;
                     if (isReload)
                     {
                         startPage = 1;
 
                         endPage = totalPages;
 
-                        if (curPage > totalPages)
+                        if (CurrentPage > totalPages)
                         {
                             NavigateToPage("previous");
                         }
@@ -300,8 +301,8 @@ namespace FTTBlazor.Components.Crud
                 {
                     Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
                 }
-
-                IEnumerable<Interface> items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(Endpoint);
+                var endpointUsed = Endpoint + "?pagesize=" + PageSize.ToString() + "&currentpage=" + CurrentPage.ToString();
+                IEnumerable<Interface> items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(endpointUsed);
 
                 DataSource = items;
 
@@ -311,7 +312,6 @@ namespace FTTBlazor.Components.Crud
                 }
 
                 IEnumerable<Interface> filtered = ApplyFilters();
-
                 ResolvePagination(filtered, isReload);
             }
             catch (Exception ex)
@@ -371,9 +371,9 @@ namespace FTTBlazor.Components.Crud
             if (direction == "forward" && endPage < totalPages)
             {
                 startPage = endPage + 1;
-                if (endPage + pagerSize < totalPages)
+                if (endPage + PageSize < totalPages)
                 {
-                    endPage = startPage + pagerSize - 1;
+                    endPage = startPage + PageSize - 1;
                 }
                 else
                 {
@@ -384,14 +384,14 @@ namespace FTTBlazor.Components.Crud
             else if (direction == "back" && startPage > 1)
             {
                 endPage = startPage - 1;
-                startPage = startPage - pagerSize;
+                startPage = startPage - PageSize;
             }
         }
 
         public void updateList(int currentPage)
         {
             ItemList = Items.Skip((currentPage - 1) * PageSize).Take(PageSize);
-            curPage = currentPage;
+            CurrentPage = currentPage;
             base.StateHasChanged();
         }
 
@@ -399,27 +399,27 @@ namespace FTTBlazor.Components.Crud
         {
             if (direction == "next")
             {
-                if (curPage < totalPages)
+                if (CurrentPage < totalPages)
                 {
-                    if (curPage == endPage)
+                    if (CurrentPage == endPage)
                     {
                         SetPagerSize("forward");
                     }
-                    curPage += 1;
+                    CurrentPage += 1;
                 }
             }
             else if (direction == "previous")
             {
-                if (curPage > 1)
+                if (CurrentPage > 1)
                 {
-                    if (curPage == startPage)
+                    if (CurrentPage == startPage)
                     {
                         SetPagerSize("back");
                     }
-                    curPage -= 1;
+                    CurrentPage -= 1;
                 }
             }
-            updateList(curPage);
+            updateList(CurrentPage);
         }
 
         public string RetornaValores(FTTGridColumn col, Interface item)
