@@ -111,16 +111,20 @@
             </table>
         </div>
         <div class="ftt-blazor-table-footer">
-            <span class="btn btn-link disabled crud-current-page">Página @CurrentPage de @totalPages</span>
+            <span class="btn btn-link disabled crud-current-page">Página @curPage de @totalPages</span>
 
             <div class="ftt-blazor-pull-right crud-pages">
                 <a class="btn btn-link" @onclick="@(e => updateList(1))">
                     <i class="material-icons" style="cursor: pointer;">skip_previous</i>
                 </a>
 
-                    <a style="font-size: 30px;" class="btn btn-link" @onclick="@( async e=> { CurrentPage = (CurrentPage +1); await LoadDataAsync(true);})">
-                        @CurrentPage
+                @for (int i = startPage; i <= endPage; i++)
+                {
+                    var page_now = i;
+                    <a class="btn btn-link @(page_now == curPage ? "currentpage" : "")" @onclick="@(e => updateList(currentPage: page_now))">
+                        @page_now
                     </a>
+                }
 
                 <a class="btn btn-link" @onclick="@(e => updateList(totalPages))">
                     <i class="material-icons" style="cursor: pointer;">skip_next</i>
