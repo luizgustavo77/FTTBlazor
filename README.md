@@ -49,25 +49,24 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 | Componente | Relação | Entrega | Concluido | Responsavel |
 | --- | --- | --- | --- | --- |
-| Dialog | Dialog | Set | OK | LG |
-| Toast | Dialog | Set | OK | LG |
-| Grid Divider | Dialog | Out | OK | LG |
-| Input | Forms | Set | OK | LG |
-| Select Type T  | Forms | Set | OK | LG |
-| Select Enum  | Forms | Set | OK | LG |
-| Select Array  | Forms | Set | OK | LG |
-| Number | Forms | Out | OK | LG |
-| Color | Forms | Out | OK | LG |
-| TextArea | Forms | Out | OK | LG |
-| Calendar | Forms | Out | OK | LG |
-| Time | Forms | Out | OK | LG |
-| CheckBox | Forms | Out | OK | LG |
-| Telefone | Forms | Out | OK | LG |
-| EMail | Forms | Out | OK | LG |
-| Link | Forms | Out | OK | LG |
-| Money | Forms | Out | OK | LG |
-| Crud | Crud | Nov | OK | LG |
-| Finalizar | Todos | Dez | --- | LG e Thiago |
+| Dialog | Dialog | Set/2021 | OK | LG |
+| Toast | Dialog | Set/2021 | OK | LG |
+| Grid Divider | Dialog/2021 | Out | OK | LG |
+| Input | Forms | Set/2021 | OK | LG |
+| Select Type T  | Forms | Set/2021 | OK | LG |
+| Select Enum  | Forms | Set/2021 | OK | LG |
+| Select Array  | Forms | Set/2021 | OK | LG |
+| Number | Forms | Out/2021 | OK | LG |
+| Color | Forms | Out/2021 | OK | LG |
+| TextArea | Forms | Out/2021 | OK | LG |
+| Calendar | Forms | Out/2021 | OK | LG |
+| Time | Forms | Out/2021 | OK | LG |
+| CheckBox | Forms | Out/2021 | OK | LG |
+| Telefone | Forms | Out/2021 | OK | LG |
+| EMail | Forms | Out/2021 | OK | LG |
+| Link | Forms | Out/2021 | OK | LG |
+| Money | Forms | Out/2021 | OK | LG |
+| Crud | Crud | Nov/2021 | OK | LG |
  
 ---
   
