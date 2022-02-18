@@ -312,7 +312,7 @@
     z-index: 100 !important;
     position: fixed;
     width: 25rem;
-    height: 7rem;
+    height: 5rem;
     bottom: 2rem;
     border-radius: 1rem;
     right: 2rem;
@@ -1244,4 +1244,19 @@ div.ftt-blazor-table-responsive .table.table tbody tr:hover {
     height: 56px;
     background-color: var(--brandlineminor);
     margin-top: -2px
+}
+
+.ftt-blazor-currentpage {
+    background-color: var(--brandline) !important;
+    padding: 5% 3% 5% 5%;
+    margin: 3%;
+    color: white;
+}
+
+a {
+    cursor: pointer;
+}
+
+.ftt-blazor-loading-message {
+    text-align: center;
 }

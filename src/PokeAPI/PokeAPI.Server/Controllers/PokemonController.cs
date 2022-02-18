@@ -1,5 +1,6 @@
 ﻿using FTTBlazor.Common.PokeAPI;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using PokeAPI.Data;
 using PokeAPI.Service;
@@ -32,9 +33,9 @@ namespace PokeAPI.Server.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<PokemonDTO> Get()
+        public IEnumerable<PokemonDTO> Get([FromQuery] int pagesize = 50, [FromQuery] int currentpage = 0)
         {
-            return new PokemonService(_dbContext).GetAll();
+            return new PokemonService(_dbContext).GetAll(pagesize, currentpage);
         }
 
         [HttpPost]

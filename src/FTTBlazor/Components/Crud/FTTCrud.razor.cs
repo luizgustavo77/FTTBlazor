@@ -47,7 +47,7 @@ namespace FTTBlazor.Components.Crud
         public Func<Interface, Task<Interface>> OnBeforeAdd { get; set; }
 
         [Parameter]
-        public int PageSize { get; set; } = 100;
+        public int PageSize { get; set; } = 50;
 
         [Parameter]
         public string Endpoint { get; set; }
@@ -76,28 +76,24 @@ namespace FTTBlazor.Components.Crud
         [Parameter]
         public string Token { get; set; }
 
-        public IEnumerable<Interface> Items { get; set; }
+        private int curPage { get; set; }
 
         private bool ModalIsOpen { get; set; }
 
-        private IEnumerable<Interface> DataSource { get; set; }
-
+        public IEnumerable<Interface> DataSource { get; set; }
+        public IEnumerable<Interface> _ItemList { get; set; }
         public IEnumerable<Interface> ItemList
         {
             get => _ItemList;
             set => _ItemList = value;
         }
-        public IEnumerable<Interface> _ItemList { get; set; }
 
         public Interface Item { get; set; } = null;
 
         public int totalPages { get; set; }
 
-        private int curPage = 1;
-        private readonly int pagerSize;
-        private int startPage;
-        private int endPage;
         private bool ModalDeleteIsOpen = false;
+
         private bool IsNew = false;
 
         protected bool isMenuVisible { get; set; }
@@ -131,22 +127,6 @@ namespace FTTBlazor.Components.Crud
             ModalDeleteIsOpen = false;
         }
 
-        protected async Task ShowMenu(MouseEventArgs e = null)
-        {
-            if (e != null)
-            {
-                int limit = 700;
-
-                if (Convert.ToInt32(e.ClientY) > limit)
-                {
-                    FileMenuPosition = "bottom:44px;";
-                    FileMenuPosition += "box-shadow: -3px -2px 17px -12px rgb(0 0 0 / 56%), -9px -10px 25px 0px rgb(0 0 0 / 12%), -1px -8px 10px -5px rgb(0 0 0 / 20%);";
-                }
-            }
-
-            isMenuVisible = !isMenuVisible;
-        }
-
         public void AddFilter(string value, string field)
         {
             try
@@ -161,15 +141,23 @@ namespace FTTBlazor.Components.Crud
                     SearchParams.Add(field, value);
                 }
 
-                IEnumerable<Interface> filtered = ApplyFilters();
+                if (SearchParams.Count == 0)
+                {
+                    ItemList = DataSource;
+                }
+                else
+                {
+                    ItemList = ApplyFilters();
+                }
 
-                ResolvePagination(filtered, true);
+                this.StateHasChanged();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message + ex.StackTrace);
             }
         }
+
 
         public IEnumerable<Interface> ApplyFilters()
         {
@@ -182,7 +170,6 @@ namespace FTTBlazor.Components.Crud
                 bool isBoolean = false;
                 if (query.Any(e => bool.TryParse(e.GetType().GetProperty(item.Key).GetValue(e).ToString(), out isBoolean)))
                 {
-                    Console.WriteLine("é bool");
                     bool value = item.Value.ToString().ToLower().Contains("s") ? true : false;
 
                     resultlist = query.Where(e => (bool)e.GetType().GetProperty(item.Key).GetValue(e) == value);
@@ -192,8 +179,6 @@ namespace FTTBlazor.Components.Crud
                     resultlist = query.Where(e => e.GetType().GetProperty(item.Key).GetValue(e).ToString().ToLower().Contains(item.Value.ToLower()));
                 }
             }
-
-            ItemList = resultlist;
 
             return resultlist;
         }
@@ -222,7 +207,7 @@ namespace FTTBlazor.Components.Crud
 
             text += "\r\n";
 
-            foreach (Interface item in Items)
+            foreach (Interface item in ItemList)
             {
                 foreach (FTTGridColumn col in Columns)
                 {
@@ -244,44 +229,6 @@ namespace FTTBlazor.Components.Crud
             SaveAs(js, "dados.csv", text);
         }
 
-        private void ResolvePagination(IEnumerable<Interface> items, bool isReload)
-        {
-            try
-            {
-                if (items != null)
-                {
-                    Items = items;
-
-                    if (curPage == null || curPage == 0) { curPage = 1; }
-
-                    ItemList = Items.Skip((curPage - 1) * PageSize).Take(PageSize);
-                    double count = Items.Count() / PageSize;
-                    totalPages = (int)Math.Ceiling(count);
-
-                    if (isReload)
-                    {
-                        startPage = 1;
-
-                        endPage = totalPages;
-
-                        if (curPage > totalPages)
-                        {
-                            NavigateToPage("previous");
-                        }
-                    }
-                    else
-                    {
-                        SetPagerSize("forward");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-        }
-
         protected override async Task OnParametersSetAsync()
         {
             if (Nav.Uri != Url)
@@ -292,7 +239,7 @@ namespace FTTBlazor.Components.Crud
             await LoadDataAsync(false);
         }
 
-        public async Task LoadDataAsync(bool isReload = false)
+        public async Task LoadDataAsync(bool isReload = false, bool IsLoadMore = false)
         {
             try
             {
@@ -301,22 +248,34 @@ namespace FTTBlazor.Components.Crud
                     Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);
                 }
 
-                IEnumerable<Interface> items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(Endpoint);
+                string endpointUsed = Endpoint;
 
-                DataSource = items;
+                endpointUsed = endpointUsed + "?pagesize=" + PageSize.ToString() + "&currentpage=" + curPage.ToString();
+
+                IEnumerable<Interface> items = await Http.GetFromJsonAsync<IEnumerable<Interface>>(endpointUsed);
+
+                if (IsLoadMore)
+                {
+                    if(items.Count() == 0)
+                    {
+                        Toaster.ShowToast("Não tem mais items!", FTTToastEnum.Warning);
+                        curPage = (curPage - 1);
+                        return;
+                    }
+                }
+
+                ItemList = items;
 
                 if (Filter != null)
                 {
-                    DataSource = DataSource.Where(Filter);
+                    ItemList = ItemList.Where(Filter);
                 }
 
-                IEnumerable<Interface> filtered = ApplyFilters();
-
-                ResolvePagination(filtered, isReload);
+                DataSource = ItemList;
             }
             catch (Exception ex)
             {
-                Toaster.ShowToast("Falha ao Realizar a Operação. " + ex.Message, FTTToastEnum.Warning);
+                Toaster.ShowToast("Erro Load Data: " + ex.Message, FTTToastEnum.Warning);
             }
 
             base.StateHasChanged();
@@ -364,62 +323,6 @@ namespace FTTBlazor.Components.Crud
             Item = OpenItem;
             IsNew = false;
             ModalIsOpen = true;
-        }
-
-        public void SetPagerSize(string direction)
-        {
-            if (direction == "forward" && endPage < totalPages)
-            {
-                startPage = endPage + 1;
-                if (endPage + pagerSize < totalPages)
-                {
-                    endPage = startPage + pagerSize - 1;
-                }
-                else
-                {
-                    endPage = totalPages;
-                }
-                base.StateHasChanged();
-            }
-            else if (direction == "back" && startPage > 1)
-            {
-                endPage = startPage - 1;
-                startPage = startPage - pagerSize;
-            }
-        }
-
-        public void updateList(int currentPage)
-        {
-            ItemList = Items.Skip((currentPage - 1) * PageSize).Take(PageSize);
-            curPage = currentPage;
-            base.StateHasChanged();
-        }
-
-        public void NavigateToPage(string direction)
-        {
-            if (direction == "next")
-            {
-                if (curPage < totalPages)
-                {
-                    if (curPage == endPage)
-                    {
-                        SetPagerSize("forward");
-                    }
-                    curPage += 1;
-                }
-            }
-            else if (direction == "previous")
-            {
-                if (curPage > 1)
-                {
-                    if (curPage == startPage)
-                    {
-                        SetPagerSize("back");
-                    }
-                    curPage -= 1;
-                }
-            }
-            updateList(curPage);
         }
 
         public string RetornaValores(FTTGridColumn col, Interface item)

@@ -39,13 +39,25 @@ namespace PokeAPI.Service
             return result;
         }
 
-        public List<PokemonDTO> GetAll()
+        public List<PokemonDTO> GetAll(int pagesize, int currentpage)
         {
             List<PokemonDTO> result = new List<PokemonDTO>();
 
             try
             {
-                List<Pokemon> list = _dbContext.Pokemon.ToList();
+                IQueryable<Pokemon> query = _dbContext.Pokemon;
+
+                if (currentpage > 0)
+                {
+                    query = query.Skip(currentpage * pagesize);
+                }
+
+                if (pagesize != 0)
+                {
+                    query = query.Take(pagesize);
+                }
+
+                List<Pokemon> list = query.ToList();
 
                 result = list.Select(x => Mapping.Mapper.Map<PokemonDTO>(x)).ToList();
             }

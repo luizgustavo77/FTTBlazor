@@ -9,11 +9,19 @@
                         <td width="80" style="text-align:center;">
                             @if (CanCreate)
                             {
-                                <button type="button" class="btn btn-link btn-add" @onclick="@(e => { OpenDialogAdd(); })"><i class="material-icons" style="font-weight:600; cursor: pointer;">add</i></button>
+                                <button type="button" class="ftt-blazor-button" @onclick="@(e => { OpenDialogAdd(); })">
+                                    <i class="material-icons" style="font-weight:600; cursor: pointer;">
+                                        add
+                                    </i>
+                                </button>
                             }
                             else
                             {
-                                <button type="button" class="btn btn-link btn-add" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons" style="font-weight: 600; cursor: not-allowed;">add</i></button>
+                                <button type="button" class="ftt-blazor-button" style="opacity:0.5; cursor:not-allowed;">
+                                    <i class="material-icons" style="font-weight: 600; cursor: not-allowed;">
+                                        add
+                                    </i>
+                                </button>
                             }
                         </td>
 
@@ -36,7 +44,7 @@
                             }
 
                             <td width="80" style="text-align:center;">
-                                <button type="button" class="btn btn-link btn-action" style="border:1px solid var(--brandline);" @onclick="@(e => { DownloadFile(); })">
+                                <button type="button" class="ftt-blazor-button" style="border:1px solid var(--brandline);" @onclick="@(e => { DownloadFile(); })">
                                     <i class="material-icons" style="cursor: pointer;">save_alt</i>
                                 </button>
                             </td>
@@ -54,17 +62,35 @@
                 <tbody>
                     @if (!CanRead)
                     {
-                        <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full"><td colspan="99" class="ftt-blazor-height-full"><div class="loading-message">Sem permissão para leitura dos dados.</div></td></tr>
+                        <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full">
+                            <td colspan="99" class="ftt-blazor-height-full">
+                                <div class="ftt-blazor-loading-message">
+                                    Sem permissão para leitura dos dados.
+                                </div>
+                            </td>
+                        </tr>
                     }
                     else
                     {
                         if (_ItemList == null)
                         {
-                            <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full"><td colspan="99" class="ftt-blazor-height-full"><div class="loading-message">Carregando dados, aguarde.</div></td></tr>
+                            <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full">
+                                <td colspan="99" class="ftt-blazor-height-full">
+                                    <div class="ftt-blazor-loading-message">
+                                        Carregando dados, aguarde.
+                                    </div>
+                                </td>
+                            </tr>
                         }
                         else if (_ItemList != null && _ItemList.Count() == 0)
                         {
-                            <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full"><td colspan="99" class="ftt-blazor-height-full"><div class="loading-message">Nenhum registro encontrado.</div></td></tr>
+                            <tr class="ftt-blazor-no-hover-bg ftt-blazor-height-full">
+                                <td colspan="99" class="ftt-blazor-height-full">
+                                    <div class="ftt-blazor-loading-message">
+                                        Nenhum registro encontrado.
+                                    </div>
+                                </td>
+                            </tr>
                         }
                         else
                         {
@@ -73,11 +99,23 @@
                                 <tr>
                                     @if (CanRead)
                                     {
-                                        <td width="80" style="text-align:center;padding-left:8px!important; cursor: pointer;"><button type="button" class="btn btn-link btn-action" @onclick="@( e => { OpenDialog(item); })"><i class="material-icons">remove_red_eye</i></button></td>
+                                        <td width="80" style="text-align:center;padding-left:8px!important; cursor: pointer;">
+                                            <button type="button" class="ftt-blazor-button" @onclick="@( e => { OpenDialog(item); })">
+                                                <i class="material-icons">
+                                                    remove_red_eye
+                                                </i>
+                                            </button>
+                                        </td>
                                     }
                                     else
                                     {
-                                        <td width="80" style="text-align: center; padding-left: 8px !important; cursor: not-allowed;"><button type="button" class="btn btn-link btn-action" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons">remove_red_eye</i></button></td>
+                                        <td width="80" style="text-align: center; padding-left: 8px !important; cursor: not-allowed;">
+                                            <button type="button" class="ftt-blazor-button" style="opacity:0.5; cursor:not-allowed;">
+                                                <i class="material-icons">
+                                                    remove_red_eye
+                                                </i>
+                                            </button>
+                                        </td>
                                     }
                                     @if (Columns != null)
                                     {
@@ -96,11 +134,19 @@
                                     <td width="80" style="text-align:center;">
                                         @if (CanDelete)
                                         {
-                                            <button type="button" class="btn btn-link btn-action" @onclick="@( e => OpenDialogDelete(item))" style=" cursor: pointer;"><i class="material-icons">delete</i></button>
+                                            <button type="button" class="ftt-blazor-button" @onclick="@( e => OpenDialogDelete(item))" style=" cursor: pointer;">
+                                                <i class="material-icons">
+                                                    delete
+                                                </i>
+                                            </button>
                                         }
                                         else
                                         {
-                                            <button type="button" class="btn btn-link btn-action" style="opacity:0.5; cursor:not-allowed;"><i class="material-icons">delete</i></button>
+                                            <button type="button" class="ftt-blazor-button" style="opacity:0.5; cursor:not-allowed;">
+                                                <i class="material-icons">
+                                                    delete
+                                                </i>
+                                            </button>
                                         }
                                     </td>
                                 </tr>
@@ -110,25 +156,27 @@
                 </tbody>
             </table>
         </div>
+        <div style="text-align:center; cursor:pointer; background-color: var(--brandlineminor); font-weight:700; border:none;" @onclick="@( async e => { curPage = (curPage + 1); await LoadDataAsync(true, true);})">
+            <span class="disabled">CLIQUE PARA CARREGAR MAIS ITENS</span>
+        </div>
+
         <div class="ftt-blazor-table-footer">
-            <span class="btn btn-link disabled crud-current-page">Página @curPage de @totalPages</span>
+            <span class="btn btn-link disabled crud-current-page">@ItemList?.Count().ToString() Registros mais recentes</span>
 
-            <div class="ftt-blazor-pull-right crud-pages">
-                <a class="btn btn-link" @onclick="@(e => updateList(1))">
-                    <i class="material-icons" style="cursor: pointer;">skip_previous</i>
+            <div class="ftt-blazor-pull-right crud-pages" style="width: 10rem;">
+
+                <a class="btn btn-link @(PageSize == 50 ? "ftt-blazor-currentpage" : "")" @onclick="@( async e=> { PageSize = 50; curPage = 0;await LoadDataAsync();})">
+                    50
                 </a>
 
-                @for (int i = startPage; i <= endPage; i++)
-                {
-                    var page_now = i;
-                    <a class="btn btn-link @(page_now == curPage ? "currentpage" : "")" @onclick="@(e => updateList(currentPage: page_now))">
-                        @page_now
-                    </a>
-                }
-
-                <a class="btn btn-link" @onclick="@(e => updateList(totalPages))">
-                    <i class="material-icons" style="cursor: pointer;">skip_next</i>
+                <a class="btn btn-link  @(PageSize == 100 ? "ftt-blazor-currentpage" : "")" @onclick="@( async e=> { PageSize = 100; curPage = 0;await LoadDataAsync();})">
+                    100
                 </a>
+
+                <a class="btn btn-link  @(PageSize == 0 ? "ftt-blazor-currentpage" : "")" @onclick="@(async e=> { PageSize = 0; curPage = 0;await LoadDataAsync();})">
+                    TODOS
+                </a>
+
             </div>
         </div>
     </div>
@@ -159,7 +207,7 @@
                             @if (!CanRead)
                             {
                                 <div style="height:500px;width:100%">
-                                    <div class="loading-message">Sem permissão para leitura dos dados.</div>
+                                    <div class="ftt-blazor-loading-message">Sem permissão para leitura dos dados.</div>
                                 </div>
                             }
                             else
@@ -167,7 +215,7 @@
                                 @if (!IsNew && string.IsNullOrWhiteSpace(Item.Id))
                                 {
                                     <div style="height:500px;width:100%">
-                                        <div class="loading-message">Aguarde, carregando dados.</div>
+                                        <div class="ftt-blazor-loading-message">Aguarde, carregando dados.</div>
                                     </div>
                                 }
                                 else
@@ -177,7 +225,6 @@
                             }
                         </div>
                     </div>
-
                 </div>
             </CascadingValue>
         </form>

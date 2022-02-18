@@ -20,6 +20,15 @@ namespace PokeAPI.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(Options =>
+                            Options.AddPolicy("AllowOrigion",
+                                    builder =>
+                                    {
+                                        builder.AllowAnyOrigin()
+                                                .AllowAnyHeader()
+                                                .AllowAnyMethod();
+                                    }));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -30,15 +39,6 @@ namespace PokeAPI.Server
             {
                 options.UseSqlite("Data Source = PokeAPI.db");
             });
-
-            services.AddCors(Options =>
-                            Options.AddPolicy("AllowOrigion",
-                                    builder =>
-                                    {
-                                        builder.AllowAnyOrigin()
-                                                .AllowAnyHeader()
-                                                .AllowAnyMethod();
-                                    }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,12 +52,11 @@ namespace PokeAPI.Server
             }
 
 
-
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseCors("AllowOrigion");
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
