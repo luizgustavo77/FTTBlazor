@@ -305,7 +305,7 @@
 }
 
 /*CSS Toast*/
-.toast {
+.ftt-blazor-toast {
     display: none;
     /*padding: 1.5rem;*/
     color: #fff;
@@ -320,7 +320,7 @@
     box-shadow: unset !important;
 }
 
-.toast-icon {
+.ftt-blazor-toast-icon {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -328,7 +328,7 @@
     font-size: 2.5rem;
 }
 
-.toast-body {
+.ftt-blazor-toast-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -336,26 +336,26 @@
     padding: 0 0 0 1rem;
 }
 
-.toast-visible {
+.ftt-blazor-toast-visible {
     display: flex;
     flex-direction: row;
     animation: fadein 1.5s;
     animation-fill-mode: forwards;
 }
 
-.toast-info {
+.ftt-blazor-toast-info {
     background-color: #17a2b8 !important;
 }
 
-.toast-success {
+.ftt-blazor-toast-success {
     background-color: #28a745 !important;
 }
 
-.toast-warning {
+.ftt-blazor-toast-warning {
     background-color: #ffc107 !important;
 }
 
-.toast-danger {
+.ftt-blazor-toast-danger {
     background-color: #dc3545 !important;
 }
 
@@ -1087,8 +1087,12 @@ p {
         padding-left: 8px;
     }
 
-    .ftt-blazor-crud-component table thead td {
+    /*.ftt-blazor-crud-component table thead td {
         background-color: var(--brandlineminor);
+    }*/
+
+    .ftt-blazor-crud-component table thead tr td div input {
+        border-bottom: none;
     }
 
     .ftt-blazor-crud-component table thead {

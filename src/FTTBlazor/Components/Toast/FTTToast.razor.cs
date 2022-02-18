@@ -37,22 +37,22 @@ namespace FTTBlazor.Components.Toast
             switch (level)
             {
                 case FTTToastEnum.Info:
-                    BackgroundCssClass = "toast-info";
+                    BackgroundCssClass = "ftt-blazor-toast-info";
                     IconCssClass = "info";
                     Heading = "Info";
                     break;
                 case FTTToastEnum.Success:
-                    BackgroundCssClass = "toast-success";
+                    BackgroundCssClass = "ftt-blazor-toast-success";
                     IconCssClass = "check_circle";
                     Heading = "Success";
                     break;
                 case FTTToastEnum.Warning:
-                    BackgroundCssClass = "toast-warning";
+                    BackgroundCssClass = "ftt-blazor-toast-warning";
                     IconCssClass = "warning";
                     Heading = "Warning";
                     break;
                 case FTTToastEnum.Error:
-                    BackgroundCssClass = "toast-danger";
+                    BackgroundCssClass = "ftt-blazor-toast-danger";
                     IconCssClass = "error";
                     Heading = "Error";
                     break;
