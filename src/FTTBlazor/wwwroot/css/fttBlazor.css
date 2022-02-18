@@ -493,6 +493,7 @@
         .ftt-blazor-has-float-label input:placeholder-shown:not(:focus) + *, .ftt-blazor-has-float-label select:invalid:not(:focus) + *, .ftt-blazor-has-float-label select[data-id="00000000-0000-0000-0000-000000000000"]:not(:focus) + * {
             font-size: 1rem;
             top: 30%;
+            left: 3%;
         }
 
         .ftt-blazor-has-float-label input:focus, .ftt-blazor-has-float-label select:focus, .ftt-blazor-has-float-label a:focus {
@@ -505,12 +506,13 @@
         min-height: 56px;
         color: var(--brandtext);
         border-bottom: 1px solid var(--brandline);
-        width: 96%;
+        width: 100%;
     }
 
     .ftt-blazor-has-float-label > label {
         padding-left: 16px;
         font-size: 12px;
+        left: 3%;
     }
 
 .has-float-link {
@@ -532,11 +534,12 @@
 
 .ftt-blazor-components {
     left: 0.39rem;
+    font-size: 1.5rem;
 }
 
     .ftt-blazor-components input, .ftt-blazor-components textarea {
         background-color: transparent !important;
-        padding-left: 2rem !important;
+        padding-left: 1rem !important;
     }
 
     .ftt-blazor-components a {
@@ -722,9 +725,13 @@
 }
 
 .ftt-blazor-calendar, .ftt-blazor-select {
-    width: 96%;
+    width: 100%;
     height: 100%;
 }
+
+    .ftt-blazor-select label {
+        left: 0px;
+    }
 
     .ftt-blazor-select select {
         border: 0;
@@ -747,7 +754,8 @@
 
 .ftt-blazor-select {
     border-bottom: 1px solid var(--brandline);
-    padding-left: 2rem;
+    padding-left: 1rem;
+    font-size: 1rem;
 }
 
 .sidebar .sidebar-wrapper {
@@ -785,6 +793,7 @@
 }
 
 .ftt-blazor-input {
+    padding-left: 1rem;
 }
 
 

@@ -2,6 +2,7 @@
 
 <div class="mdl-cell--@Size-col ftt-blazor-align-left">
     <div class="ftt-blazor-components ftt-blazor-select ftt-blazor-has-float-label @BorderRightCssClass">
+        
         <select style="cursor: @StyleIsReadOnly" disabled="@_IsReadOnly" aria-disabled="@_IsReadOnly" id="@_id" data-id="@data_id" @attributes="@attributes" @bind="@Value">
             @if (string.IsNullOrEmpty(Value.ToString()) || Convert.ToInt32(Value) == 0)
             {
@@ -27,5 +28,6 @@
             }
         </select>
         <label for="@_id">@Label</label>
+
     </div>
 </div>

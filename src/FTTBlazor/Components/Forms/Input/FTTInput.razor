@@ -17,7 +17,7 @@
             }
             else if (Type == InputType.Time)
             {
-                <input maxlength="5" id="@_id" type="time" disabled="@_IsReadOnly" @attributes="@attributes" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" placeholder="00:00" autocomplete="@_id" style="padding-left: 2.2rem !important; padding-top: 1.12rem !important;" />
+                <input maxlength="5" id="@_id" type="time" disabled="@_IsReadOnly" @attributes="@attributes" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" placeholder="00:00" autocomplete="@_id" style="padding-left: 1.12rem !important; padding-top: 1.59rem !important;" />
             }
             else if (Type == InputType.Phone)
             {
