@@ -19812,13 +19812,13 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     }
 }
 
-@media screen and (min-width:1024px) {
+/*@media screen and (min-width:1024px) {
     .mdl-mega-footer--drop-down-section, .mdl-mega-footer--drop-down-section:nth-child(3), .mdl-mega-footer--drop-down-section:nth-child(4), .mdl-mega-footer__drop-down-section, .mdl-mega-footer__drop-down-section:nth-child(3), .mdl-mega-footer__drop-down-section:nth-child(4) {
         width: 24%;
         float: left
     }
 }
-
+*/
 .mdl-mega-footer--heading-checkbox, .mdl-mega-footer__heading-checkbox {
     position: absolute;
     width: 100%;
@@ -20720,12 +20720,12 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
         padding-left: 40px
     }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__drawer > .mdl-layout__title, .mdl-layout__drawer > .mdl-layout-title {
         line-height: 56px;
         padding-left: 16px
     }
-}
+}*/
 
 .mdl-layout__drawer .mdl-navigation {
     -webkit-flex-direction: column;
@@ -20747,11 +20747,11 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
         color: #757575
     }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
         padding: 16px
     }
-}
+}*/
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
     background-color: #e0e0e0
@@ -20762,12 +20762,12 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     color: #000
 }
 
-@media screen and (min-width:1025px) {
+/*@media screen and (min-width:1025px) {
     .mdl-layout--fixed-drawer > .mdl-layout__drawer {
         -webkit-transform: translateX(0);
         transform: translateX(0)
     }
-}
+}*/
 
 .mdl-layout__drawer-button {
     display: block;
@@ -20863,11 +20863,11 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     width: calc(100% - 240px)
 }
 
-@media screen and (min-width:1025px) {
+/*@media screen and (min-width:1025px) {
     .mdl-layout--fixed-drawer > .mdl-layout__header .mdl-layout__header-row {
         padding-left: 40px
     }
-}
+}*/
 
 .mdl-layout__header > .mdl-layout-icon {
     position: absolute;
@@ -20880,12 +20880,12 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     display: block
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__header > .mdl-layout-icon {
         left: 16px;
         top: 12px
     }
-}
+}*/
 
 .mdl-layout.has-drawer .mdl-layout__header > .mdl-layout-icon {
     display: none
@@ -20895,17 +20895,17 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     max-height: 64px
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__header.is-compact {
         max-height: 56px
     }
-}
+}*/
 
 .mdl-layout__header.is-compact.has-tabs {
     height: 112px
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__header.is-compact.has-tabs {
         min-height: 104px
     }
@@ -20921,7 +20921,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
         display: -ms-flexbox;
         display: flex
     }
-}
+}*/
 
 .mdl-layout__header--transparent.mdl-layout__header--transparent {
     background-color: transparent;
@@ -20982,7 +20982,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     }
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__header-row {
         height: 56px;
         padding: 0 16px 0 72px
@@ -20991,7 +20991,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     .mdl-layout--no-drawer-button .mdl-layout__header-row {
         padding-left: 16px
     }
-}
+}*/
 
 .mdl-layout__header-row > * {
     -webkit-flex-shrink: 0;
@@ -21015,11 +21015,11 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     align-items: center
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__header-row .mdl-navigation {
         height: 56px
     }
-}
+}*/
 
 .mdl-layout__header-row .mdl-navigation__link {
     display: block;
@@ -21028,12 +21028,12 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     padding: 0 24px
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__header-row .mdl-navigation__link {
         line-height: 56px;
         padding: 0 16px
     }
-}
+}*/
 
 .mdl-layout__obfuscator {
     background-color: transparent;
@@ -21090,7 +21090,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     overflow: visible
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout--fixed-drawer > .mdl-layout__content {
         margin-left: 0
     }
@@ -21099,7 +21099,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
         overflow-y: auto;
         overflow-x: hidden
     }
-}
+}*/
 
 .mdl-layout__tab-bar {
     height: 96px;
@@ -21130,7 +21130,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     }
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__tab-bar {
         width: calc(100% - 60px);
         padding: 0 0 0 60px
@@ -21141,7 +21141,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
         padding-left: 4px
     }
 }
-
+*/
 .mdl-layout--fixed-tabs .mdl-layout__tab-bar {
     padding: 0;
     overflow: hidden;
@@ -21196,11 +21196,11 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
         left: -4px
     }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__tab-bar-button {
         width: 60px
     }
-}
+}*/
 
 .mdl-layout--fixed-tabs .mdl-layout__tab-bar-button {
     display: none
@@ -21246,11 +21246,11 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container, .mdl-checkbox.
     overflow: hidden
 }
 
-@media screen and (max-width:1024px) {
+/*@media screen and (max-width:1024px) {
     .mdl-layout__tab {
         padding: 0 12px
     }
-}
+}*/
 
 .mdl-layout--fixed-tabs .mdl-layout__tab {
     float: none;
