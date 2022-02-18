@@ -505,7 +505,7 @@
         min-height: 56px;
         color: var(--brandtext);
         border-bottom: 1px solid var(--brandline);
-        width: 100%;
+        width: 96%;
     }
 
     .ftt-blazor-has-float-label > label {
@@ -536,6 +536,7 @@
 
     .ftt-blazor-components input, .ftt-blazor-components textarea {
         background-color: transparent !important;
+        padding-left: 2rem !important;
     }
 
     .ftt-blazor-components a {
@@ -721,7 +722,7 @@
 }
 
 .ftt-blazor-calendar, .ftt-blazor-select {
-    width: 100%;
+    width: 96%;
     height: 100%;
 }
 
@@ -736,6 +737,7 @@
         height: 41px;
         background-color: transparent !important;
         cursor: pointer;
+        padding-top: 2rem;
     }
 
         .ftt-blazor-select select option {
@@ -745,6 +747,7 @@
 
 .ftt-blazor-select {
     border-bottom: 1px solid var(--brandline);
+    padding-left: 2rem;
 }
 
 .sidebar .sidebar-wrapper {
