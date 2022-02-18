@@ -37,30 +37,30 @@
     }
 }
 
-    <div class="mdl-cell--12-col ftt-blazor-align-left">
-        <div class="ftt-blazor-divider-header" style="display:inline-flex;">
-            @if (AddButtonIsVisible)
-            {
-                <a href="javascript:void(0);" class="btn-workflow-docs-add " style="" @onclick="@(e=> { AddButtonOnClick.InvokeAsync(true); })">
-                    <i class="material-icons">add</i>
-                </a>
-            }
+<div class="mdl-cell--12-col ftt-blazor-align-left">
+    <div class="ftt-blazor-divider-header" style="display:inline-flex;">
+        @if (AddButtonIsVisible)
+        {
+            <a href="javascript:void(0);" class="btn-workflow-docs-add " style="margin-left: 1rem;" @onclick="@(e=> { AddButtonOnClick.InvokeAsync(true); })">
+                <i class="material-icons">add</i>
+            </a>
+        }
 
-            <span style="width:100%;padding-left: 17px; font-weight:600;">@Title</span>
+        <span style="width:100%;padding-left: 17px; font-weight:600;">@Title</span>
 
-            @if (Iscollapsible)
+        @if (Iscollapsible)
+        {
+            @if (IsCollapsed)
             {
-                @if (IsCollapsed)
-                {
-                    <a @onclick="@( e=> { IsCollapsed = false; ChangeIsCollapsedCSS(); })" style="padding-right:20px;width:50px;cursor:pointer;"><i class="material-icons" style="transform: rotate(90deg);">double_arrow</i></a>
-                }
-                else
-                {
-                    <a @onclick="@( e=> { IsCollapsed = true; ChangeIsCollapsedCSS(); })" style="padding-right:20px;width:50px;cursor:pointer;"><i class="material-icons" style="transform: rotate(-90deg);">double_arrow</i></a>
-                }
+                <a @onclick="@( e=> { IsCollapsed = false; ChangeIsCollapsedCSS(); })" style="padding-right:20px;width:50px;cursor:pointer;"><i class="material-icons" style="transform: rotate(90deg);">double_arrow</i></a>
             }
-        </div>
+            else
+            {
+                <a @onclick="@( e=> { IsCollapsed = true; ChangeIsCollapsedCSS(); })" style="padding-right:20px;width:50px;cursor:pointer;"><i class="material-icons" style="transform: rotate(-90deg);">double_arrow</i></a>
+            }
+        }
     </div>
+</div>
 
 @if (ChildContent != null)
 {

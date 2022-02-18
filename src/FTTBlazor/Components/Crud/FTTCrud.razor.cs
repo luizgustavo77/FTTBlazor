@@ -1,7 +1,6 @@
 using FTTBlazor.Common.Core;
 using FTTBlazor.Components.Toast;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
@@ -150,7 +149,7 @@ namespace FTTBlazor.Components.Crud
                     ItemList = ApplyFilters();
                 }
 
-                this.StateHasChanged();
+                StateHasChanged();
             }
             catch (Exception ex)
             {
@@ -256,7 +255,7 @@ namespace FTTBlazor.Components.Crud
 
                 if (IsLoadMore)
                 {
-                    if(items.Count() == 0)
+                    if (items.Count() == 0)
                     {
                         Toaster.ShowToast("Não tem mais items!", FTTToastEnum.Warning);
                         curPage = (curPage - 1);
