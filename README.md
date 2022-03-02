@@ -98,6 +98,7 @@ This project is licensed under the terms of [MIT license](https://github.com/lui
 ---
 
 ## 💼 **Thanks**
+- Thesis advisor: Eduardo Savino Gomes
 - [Blazor](https://blazor.net)
 - [Material Design](https://material.io/components/)
 - [Macorrati](https://www.udemy.com/course/curso-blazor-essencial/)
