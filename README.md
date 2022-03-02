@@ -1,13 +1,13 @@
 <img src="https://www.evertop.pl/wp-content/uploads/2021/01/grafiki_blog_blazor-06-1024x323.jpg">
 
 # 💻 **FTT Blazor**
-> Estudo funcional do Blazor comparando com o Angular e entrega de uma biblioteca com base em Material Design
+> Functional study of Blazor WebAssembly with delivery of a library based on Material Design
 
 ---
 
-# 🧩 **Instalando**
-> Abaixo o passo a passo para instalar o componente
-1. Adicionando dependencias
+# 🧩 **Install**
+> Below is described the necessary steps to install the components
+1. Adding dependencies
 - css
 ``` html
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -41,13 +41,13 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 ``` cmd
 
 ```
-2. Adicionando biblioteca
+2. Adding libraries
 ---
 
 ## ☕ **FTTBlazor Beta**
-> Roadmap do desenvolvimento
+> Development roadmap
 
-| Componente | Relação | Entrega | Concluido | Responsavel |
+| Component | List | Committal | Done | Responsible developer |
 | --- | --- | --- | --- | --- |
 | Dialog | Dialog | Set/2021 | OK | LG |
 | Toast | Dialog | Set/2021 | OK | LG |
@@ -70,34 +70,34 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
  
 ---
   
-## 🙇🏻 **Perguntas**
-> Use o "Issues" para abrir perguntas, pode auxiliar alguem no futuro
+## 🙇🏻 **Questions / Suggestions**
+> Use git issues to report any problems and bugs. Also feel free to give us suggestions on how to improve our library
 
 ---
 
-## 📜 **Licenciado**
+## 📜 **License**
 
-Este projeto é licenciado pelos termos do [MIT license](https://github.com/luizgustavo77/FTTBlazor/blob/master/LICENSE.md).
+This project is licensed under the terms of [MIT license](https://github.com/luizgustavo77/FTTBlazor/blob/master/LICENSE.md).
 
 ---
 
-## 🚀 **Propósito**
-> Alem da entrega do TCC está é a nossa pequena contribuição sabendo que por diversas vezes encontrei exemplos e explicações na internet de maneira gratuita
+## 🚀 **Purpose**
+> In addition to the undergraduate thesis, this is our small contribution knowing that I have found examples and explanations on the internet for free on several occasions.
 
 <img src="https://cdn.dribbble.com/users/2401141/screenshots/5487982/developers-gif-showcase.gif">
 
 ---
 
-## 🙋🏻 **Membros**
+## 🙋🏻 **This project developers**
 
-- [Luiz Gustavo](https://github.com/luizgustavo77) - criador
+- [Luiz Gustavo](https://github.com/luizgustavo77) - main developer
 - [Thiago](https://github.com/thiagofernandes101)
 - [Jhonatan](https://github.com/JhonatanMatos)
 - [Paulo](https://github.com/paulopatrocinio)
 
 ---
 
-## 💼 **Agradecimentos**
+## 💼 **Thanks**
 - [Blazor](https://blazor.net)
 - [Material Design](https://material.io/components/)
 - [Macorrati](https://www.udemy.com/course/curso-blazor-essencial/)
