@@ -4,10 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>FTTBlazor</PackageId>
     <PackageIcon>logoMenu.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>https://github.com/luizgustavo77/FTTBlazor.git</RepositoryType>
     <NeutralLanguage>pt-BR</NeutralLanguage>
+    <Version>1.0.0</Version>
+    <Authors>luizgustavo77</Authors>
+    <Product>FTTBlazor</Product>
+    <PackageTags>NuGet;.NET 6;FTT</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
