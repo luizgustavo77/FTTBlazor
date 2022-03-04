@@ -15,26 +15,35 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
+        
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --no-restore
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v2.0.0      
       env:
-          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
       with:
         dotnet-version: 6.0.x
         source-url: https://github.com/luizgustavo77/FTTBlazor.git
         owner: luizgustavo77
-        config-file: 1.0.0      
+        config-file: 1.0.0
+        
     - name: Geração do package
       run: dotnet pack ${{ env.CAMINHO_PROJETO }} -c Release -o out
+      
     - name: Push no NuGet
-      run: dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_AUTH_TOKEN }} --source ${{ secrets.NUGET_SERVER }} --skip-duplicate
+      run: |
+        cd out
+        dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_AUTH_TOKEN }} --source ${{ secrets.NUGET_SERVER }} --skip-duplicate
