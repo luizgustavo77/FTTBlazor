@@ -26,7 +26,9 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v2.0.0
+      uses: actions/setup-dotnet@v2.0.0      
+      env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       with:
         dotnet-version: 6.0.x
         source-url: https://github.com/luizgustavo77/FTTBlazor.git
