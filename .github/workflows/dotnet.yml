@@ -1,30 +1,42 @@
-name: .NET + NuGet
+name: Deploy to NuGet
 
 on:
   push:
     branches: [ master ]
+    tags:
+    - 'v*'
   pull_request:
     branches: [ master ]
 
-jobs:
-  pack-push:
-    env:
-      CAMINHO_PROJETO: ./src/FTTBlazor/FTTBlazor.csproj
+env:
+  PROJECT_PATH: ./src/FTTBlazor/FTTBlazor.csproj  
+  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
       
-    runs-on: ubuntu-latest
-
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: 'windows-latest'
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Setup .NET
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
+    - name: 'Install dotnet'
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
-        
-    - name: Geração do package
-      run: dotnet pack ${{ env.CAMINHO_PROJETO }} -c Release -o out
-      
-    - name: Push no NuGet
-      run: |
-        cd out
-        dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_AUTH_TOKEN }} --source ${{ secrets.NUGET_SERVER }} --skip-duplicate
+        dotnet-version: '6.0.x'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+
+    - name: 'Get Version'
+      id: version
+      uses: battila7/get-version-action@v2
+
+    - name: 'Pack project'
+      run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+
+    - name: 'Push package'
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ ecrets.NUGET_SERVER }} 
