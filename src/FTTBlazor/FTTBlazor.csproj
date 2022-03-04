@@ -14,7 +14,7 @@
 		<Product>FTTBlazor</Product>
 		<PackageTags>NuGet;.NET 6;FTT</PackageTags>
 		<AssemblyVersion>$([System.DateTime]::Now.ToString(`yyyy.MM.dd.HHmm`))</AssemblyVersion>
-		<PackageVersion>$([System.DateTime]::Now.ToString(`yyyy.MM.dd.HHmm`))</PackageVersion>
+		<PackageVersion>1.0.0.0</PackageVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
