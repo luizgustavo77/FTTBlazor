@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 env:
-  PROJECT_PATH: ./src/FTTBlazor/FTTBlazor.csproj  
+  PROJECT_PATH: src/FTTBlazor/FTTBlazor.csproj  
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
       
 jobs:
