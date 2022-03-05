@@ -1,5 +1,3 @@
-<img src="https://www.evertop.pl/wp-content/uploads/2021/01/grafiki_blog_blazor-06-1024x323.jpg">
-
 # 💻 **FTT Blazor**
 > Estudo funcional do Blazor comparando com o Angular e entrega de uma biblioteca com base em Material Design
 
@@ -7,7 +5,6 @@
 
 # 🧩 **Instalando**
 > Abaixo o passo a passo para instalar o componente
-1. Adicionando dependencias
 - css
 ``` html
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
