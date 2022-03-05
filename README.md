@@ -36,7 +36,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 ```
 - nupkg
 ``` cmd
-Install-Package FTTBlazor -Version 1.0.0
+Install-Package FTTBlazor
 ```
 ---
 
