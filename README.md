@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor/wwwroot/img/logo.png">
+
 # 💻 **FTT Blazor**
 > Estudo funcional do Blazor comparando com o Angular e entrega de uma biblioteca com base em Material Design
 
