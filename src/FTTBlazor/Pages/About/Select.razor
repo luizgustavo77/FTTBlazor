@@ -33,41 +33,41 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para SELECT ENUM e exemplos de como usar.</h6>
+        <h4>Example</h4>
+        <h6>Below is an example of how to implement the SELECT ENUM component</h6>
     </div>
 
-    <FTTSelectEnums OnItemSelected="@(e => { Console.WriteLine("Selecionou: " + enumValue.ToString()); })"
+    <FTTSelectEnums OnItemSelected="@(e => { Console.WriteLine("Selected: " + enumValue.ToString()); })"
                     BorderRight="true"
                     @bind-Value="@enumValue"
                     T="EnumPokemons"
                     Size="4"
                     Required="true"
-                    Label="Exemplo de enum">
+                    Label="Enum example">
     </FTTSelectEnums>
 
     <div class="mdl-cell--12-col">
-        <h4>Usando</h4>
-        <h6>Adicionando na pagina</h6>
+        <h4>Example</h4>
+        <h6>How to use the component in view page</h6>
         <img src="../img/about/selectEnum1.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Codigo usado</h4>
-        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <h4>In the code</h4>
+        <h6>Below is an image of how to implement the component in your system</h6>
         <img src="../img/about/selectEnum.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
-        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
-        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
-        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
-        <h6><span style="font-weight:bold;">T:</span> Definimos o enum que vai montar o DDL</h6>
-        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
-        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
-        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
-        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h4><span style="font-weight:bold;">FTTSelectEnums</span> attributes</h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Allows calling a method when switching items</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adds a border on the right</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Binds a value to a variable that can be used in the "OnItemSelected" call</h6>
+        <h6><span style="font-weight:bold;">T:</span> Enum that will assemble the DDL (Data Definition Language)</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Sets the element size</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Boolean attribute that specifies that the field must be filled out before submitting the form</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Label text</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Boolean value that makes the element not mutable (the user can not edit it)</h6>
     </div>
 
 </div>
@@ -78,8 +78,8 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para SELECT STRING e exemplos de como usar.</h6>
+        <h4>Example</h4>
+        <h6>How to use the Select Array element using string object.</h6>
     </div>
 
     <FTTSelectArray OnItemSelected="@(e => { Console.WriteLine("Selecionou: " + stringValue); })"
@@ -92,27 +92,27 @@
     </FTTSelectArray>
 
     <div class="mdl-cell--12-col">
-        <h4>Usando</h4>
-        <h6>Adicionando na pagina</h6>
+        <h4>Example</h4>
+        <h6>How to use the component in view page</h6>
         <img src="../img/about/selectEnum1.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Codigo usado</h4>
-        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <h4>In the code</h4>
+        <h6>Below is an image of how to implement the dialog component in your system</h6>
         <img src="../img/about/selectString.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
-        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
-        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
-        <h6><span style="font-weight:bold;">bind-Value:</span> Definimos a variavel que vai receber o dado</h6>
-        <h6><span style="font-weight:bold;">Data:</span> Definimos a lista que vai montar o DDL</h6>
-        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
-        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
-        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
-        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
+        <h4><span style="font-weight:bold;">FTTSelectEnums</span> attributes</h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Allows calling a method when switching items</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adds a border on the right</h6>
+        <h6><span style="font-weight:bold;">bind-Value:</span> Binds a value to a variable that can be used in the "OnItemSelected" call</h6>
+        <h6><span style="font-weight:bold;">Data:</span> Defines the name of the variable that will assemble the DDL (Data Definition Language)</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Sets the element size</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Boolean attribute that specifies that the field must be filled out before submitting the form</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Label text</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Boolean value that makes the element not mutable (the user can not edit it)</h6>
     </div>
 
 </div>
@@ -123,8 +123,8 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para SELECT Endpoint e exemplos de como usar.</h6>
+        <h4>Example</h4>
+        <h6>Below is an example of how to implement the Select Endpoint.</h6>
     </div>
 
     <FTTSelect OnItemSelected="@(e => { Console.WriteLine("Selecionou: ID " + Id + "NAME " + Name); })"
@@ -142,32 +142,32 @@
 
     <div class="mdl-cell--12-col">
         <h4>Usando</h4>
-        <h6>Adicionando na pagina</h6>
+        <h6>How to use the component in view page</h6>
         <img src="../img/about/selectEnum1.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Codigo usado</h4>
-        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <h4>In the code</h4>
+        <h6>Below is an image of how to implement the dialog component in your system</h6>
         <img src="../img/about/selectEndpoint.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Parametros do <span style="font-weight:bold;">FTTSelectEnums</span></h4>
-        <h6><span style="font-weight:bold;">OnItemSelected:</span> Aqui podemos adicionar a chamada de um metodo ao trocar o item</h6>
-        <h6><span style="font-weight:bold;">BorderRight:</span> Adiciona uma borda a direita</h6>
-        <h6><span style="font-weight:bold;">T:</span> Definimos o objeto que vai montar o DDL</h6>
-        <h6><span style="font-weight:bold;">Size:</span> Tamanho do componente na tela</h6>
-        <h6><span style="font-weight:bold;">DataSourceEndpoint:</span> Endpoint para fazer a requisição do tipo GET</h6>
-        <h6><span style="font-weight:bold;">Required:</span> Se é obrigatorio preencher o componente ao dar um submit</h6>
-        <h6><span style="font-weight:bold;">DataSourceDescField:</span> Define o nome da variavel que vai mostrar no DDL</h6>
-        <h6><span style="font-weight:bold;">bind-DataId:</span> Definimos a variavel que vai receber o dado do ID</h6>
-        <h6><span style="font-weight:bold;">bind-DataDesc:</span> Definimos a variavel que vai receber o dado da DESCRIÇÃO</h6>
-        <h6><span style="font-weight:bold;">Label:</span> Texto do label</h6>
-        <h6><span style="font-weight:bold;">Data:</span> Definimos a lista que vai montar o DDL</h6>
-        <h6><span style="font-weight:bold;">IsReadOnly:</span> Desabilita o componente</h6>
-        <h6><span style="font-weight:bold;">TokenProvider:</span> Adiciona um JWT na requisição</h6>
-        <h6><span style="font-weight:bold;">Filter:</span> Adiciona um filtro no dado que chega</h6>
+        <h4><span style="font-weight:bold;">FTTSelectEnums</span>attributes</h4>
+        <h6><span style="font-weight:bold;">OnItemSelected:</span> Allows calling a method when switching items</h6>
+        <h6><span style="font-weight:bold;">BorderRight:</span> Adds a border on the right</h6>
+        <h6><span style="font-weight:bold;">T:</span> Enum that will assemble the DDL (Data Definition Language)</h6>
+        <h6><span style="font-weight:bold;">Size:</span> Sets the element size</h6>
+        <h6><span style="font-weight:bold;">DataSourceEndpoint:</span> Endpoint to make a GET request</h6>
+        <h6><span style="font-weight:bold;">Required:</span> Boolean attribute that specifies that the field must be filled out before submitting the form</h6>
+        <h6><span style="font-weight:bold;">DataSourceDescField:</span> Defines the name of the bariable that will show in the DDL</h6>
+        <h6><span style="font-weight:bold;">bind-DataId:</span> Binds the id veriable to the component</h6>
+        <h6><span style="font-weight:bold;">bind-DataDesc:</span> Binds the descriptions variable to the component</h6>
+        <h6><span style="font-weight:bold;">Label:</span> Label text</h6>
+        <h6><span style="font-weight:bold;">Data:</span> Defines the name of the variable that will assemble the DDL (Data Definition Language)</h6>
+        <h6><span style="font-weight:bold;">IsReadOnly:</span> Boolean value that makes the element not mutable (the user can not edit it)</h6>
+        <h6><span style="font-weight:bold;">TokenProvider:</span> Adds a JWT to the request</h6>
+        <h6><span style="font-weight:bold;">Filter:</span> Specifies a filter to return those elements for which the expression is true</h6>
     </div>
 
 </div>
