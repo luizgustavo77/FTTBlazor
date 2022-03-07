@@ -7,6 +7,9 @@ namespace FTTBlazor.Components.Forms.Input
 {
     public partial class FTTCalendar : ComponentBase
     {
+        /// <summary>
+        /// Boolean value that makes the element not mutable (the user can not edit it)
+        /// </summary>
         [Parameter]
         public bool IsReadOnly
         {
@@ -15,6 +18,9 @@ namespace FTTBlazor.Components.Forms.Input
         }
         private bool _IsReadOnly;
 
+        /// <summary>
+        /// Label text
+        /// </summary>
         [Parameter]
         public string Label
         {
@@ -23,6 +29,9 @@ namespace FTTBlazor.Components.Forms.Input
         }
         private string _label;
 
+        /// <summary>
+        /// Binds a value to a variable
+        /// </summary>
         [Parameter]
         public DateTime? Value
         {
@@ -48,19 +57,34 @@ namespace FTTBlazor.Components.Forms.Input
         }
         private DateTime _value;
 
+        /// <summary>
+        /// Method callback when value has changed
+        /// </summary>
         [Parameter]
         public EventCallback<DateTime> ValueChanged { get; set; }
 
+        /// <summary>
+        /// Determines whether filling in the field is mandatory or not
+        /// </summary>
         [Parameter]
         public bool Required { get; set; } = false;
 
+        /// <summary>
+        /// Sets the element size
+        /// </summary>
         [Parameter]
         public string Size { get; set; } = "4";
 
+        /// <summary>
+        /// Adds a border on the right
+        /// </summary>
         [Parameter]
         public bool BorderRight { get; set; }
         private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
+        /// <summary>
+        /// Validation pattern for input content
+        /// </summary>
         [Parameter]
         public string Pattern { get; set; } = "";
 

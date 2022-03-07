@@ -36,42 +36,81 @@ namespace FTTBlazor.Components.Crud
         [Inject]
         protected FTTToastService Toaster { get; set; }
 
+        /// <summary>
+        /// Modal content
+        /// </summary>
         [Parameter]
         public RenderFragment<Interface> ModalContent { get; set; }
 
+        /// <summary>
+        /// Data filter
+        /// </summary>
         [Parameter]
         public Func<Interface, bool> Filter { get; set; }
 
+        /// <summary>
+        /// Call event after creating an item
+        /// </summary>
         [Parameter]
         public Func<Interface, Task<Interface>> OnBeforeAdd { get; set; }
 
+        /// <summary>
+        /// Number of itens to show
+        /// </summary>
         [Parameter]
         public int PageSize { get; set; } = 50;
 
+        /// <summary>
+        /// API endpoint
+        /// </summary>
         [Parameter]
         public string Endpoint { get; set; }
 
+        /// <summary>
+        /// Call event before creating an item
+        /// </summary>
         [Parameter]
         public EventCallback OnAddClick { get; set; }
 
+        /// <summary>
+        /// Modal title
+        /// </summary>
         [Parameter]
         public string Title { get; set; }
 
+        /// <summary>
+        /// Permission to delete an item
+        /// </summary>
         [Parameter]
         public bool CanDelete { get; set; } = true;
 
+        /// <summary>
+        /// Permission to create an item
+        /// </summary>
         [Parameter]
         public bool CanCreate { get; set; } = true;
 
+        /// <summary>
+        /// Permission to update an item
+        /// </summary>
         [Parameter]
         public bool CanEdit { get; set; } = true;
 
+        /// <summary>
+        /// Permission to view an item
+        /// </summary>
         [Parameter]
         public bool CanRead { get; set; } = true;
 
+        /// <summary>
+        /// Columns to be displayed in the table
+        /// </summary>
         [Parameter]
         public List<FTTGridColumn> Columns { get; set; } = null;
 
+        /// <summary>
+        /// Token to use as a parameter in the request
+        /// </summary>
         [Parameter]
         public string Token { get; set; }
 

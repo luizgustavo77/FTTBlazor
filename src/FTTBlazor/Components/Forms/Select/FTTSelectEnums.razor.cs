@@ -6,20 +6,39 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Forms.Select
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T">Enum that will assemble the DDL (Data Definition Language)</typeparam>
     public partial class FTTSelectEnums<T> : ComponentBase where T : struct, IConvertible
     {
+        /// <summary>
+        /// Label text
+        /// </summary>
         [Parameter]
         public string Label { get; set; }
 
+        /// <summary>
+        /// Allows calling a method when switching items
+        /// </summary>
         [Parameter]
         public EventCallback OnItemSelected { get; set; }
 
+        /// <summary>
+        /// Sets the element size
+        /// </summary>
         [Parameter]
         public string Size { get; set; } = "4";
 
+        /// <summary>
+        /// Adds a border on the right
+        /// </summary>
         [Parameter]
         public bool BorderRight { get; set; }
 
+        /// <summary>
+        /// Boolean value that makes the element not mutable (the user can not edit it)
+        /// </summary>
         [Parameter]
         public bool IsReadOnly
         {
@@ -30,6 +49,9 @@ namespace FTTBlazor.Components.Forms.Select
 
         private string StyleIsReadOnly => _IsReadOnly ? "not-allowed" : "";
 
+        /// <summary>
+        ///  Binds a value to a variable that can be used in the "OnItemSelected" call
+        /// </summary>
         [Parameter]
         public T Value
         {
@@ -62,6 +84,9 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public EventCallback<T> ValueChanged { get; set; }
 
+        /// <summary>
+        /// Boolean attribute that specifies that the field must be filled out before submitting the form
+        /// </summary>
         [Parameter]
         public bool Required { get; set; } = false;
 

@@ -7,16 +7,28 @@ namespace FTTBlazor.Components.Forms.Select
 {
     public partial class FTTSelectArray : ComponentBase
     {
+        /// <summary>
+        /// Allows calling a method when switching items
+        /// </summary>
         [Parameter]
         public EventCallback OnItemSelected { get; set; }
 
+        /// <summary>
+        /// Sets the element size
+        /// </summary>
         [Parameter]
         public string Size { get; set; } = "4";
 
+        /// <summary>
+        /// Adds a border on the right
+        /// </summary>
         [Parameter]
         public bool BorderRight { get; set; }
         private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
+        /// <summary>
+        /// Boolean value that makes the element not mutable (the user can not edit it)
+        /// </summary>
         [Parameter]
         public bool IsReadOnly
         {
@@ -27,6 +39,9 @@ namespace FTTBlazor.Components.Forms.Select
 
         private string StyleIsReadOnly => _IsReadOnly ? "not-allowed" : "";
 
+        /// <summary>
+        /// Binds a value to a variable that can be used in the "OnItemSelected" call
+        /// </summary>
         [Parameter]
         public string Value { get; set; }
         public string _Value
@@ -63,12 +78,21 @@ namespace FTTBlazor.Components.Forms.Select
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
+        /// <summary>
+        /// Label text
+        /// </summary>
         [Parameter]
         public string Label { get; set; }
 
+        /// <summary>
+        /// Boolean attribute that specifies that the field must be filled out before submitting the form
+        /// </summary>
         [Parameter]
         public bool Required { get; set; } = false;
 
+        /// <summary>
+        /// Defines the name of the variable that will assemble the DDL (Data Definition Language)
+        /// </summary>
         [Parameter]
         public string[] Data { get; set; }
 

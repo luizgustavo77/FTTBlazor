@@ -7,6 +7,9 @@ namespace FTTBlazor.Components.Forms.Input
 {
     public partial class FTTInput : ComponentBase
     {
+        /// <summary>
+        /// Boolean value that makes the element not mutable (the user can not edit it)
+        /// </summary>
         [Parameter]
         public bool IsReadOnly
         {
@@ -15,6 +18,9 @@ namespace FTTBlazor.Components.Forms.Input
         }
         private bool _IsReadOnly;
 
+        /// <summary>
+        /// Label text
+        /// </summary>
         [Parameter]
         public string Label
         {
@@ -23,6 +29,9 @@ namespace FTTBlazor.Components.Forms.Input
         }
         private string _label;
 
+        /// <summary>
+        /// Binds a value to a variable
+        /// </summary>
         [Parameter]
         public string Value
         {
@@ -65,39 +74,72 @@ namespace FTTBlazor.Components.Forms.Input
         }
         private string _value;
 
+        /// <summary>
+        /// Method callback when value has changed
+        /// </summary>
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
+        /// <summary>
+        /// Callback method can be added to the FocusOut attribute
+        /// </summary>
         [Parameter]
         public EventCallback<string> OnFocusOut { get; set; }
 
+        /// <summary>
+        /// Callback method can be added to the OnInput attribute
+        /// </summary>
         [Parameter]
         public EventCallback<string> OnInput { get; set; }
 
+        /// <summary>
+        /// Sets the element size
+        /// </summary>
         [Parameter]
         public string Size { get; set; } = "4";
 
+        /// <summary>
+        /// Validation pattern for input content
+        /// </summary>
         [Parameter]
         public string Pattern { get; set; } = "";
 
         [Parameter]
         public string MaxLength { get; set; }
 
+        /// <summary>
+        /// Determines whether filling in the field is mandatory or not
+        /// </summary>
         [Parameter]
         public bool Required { get; set; } = false;
 
+        /// <summary>
+        /// Adds a border on the right
+        /// </summary>
         [Parameter]
         public bool BorderRight { get; set; }
 
+        /// <summary>
+        /// Determines the input type
+        /// </summary>
         [Parameter]
         public InputType Type { get; set; } = InputType.Input;
 
+        /// <summary>
+        /// Icon can be added at the end of the input
+        /// </summary>
         [Parameter]
         public string Icon { get; set; }
 
+        /// <summary>
+        /// Callback method can be added to the icon IconClick attribute
+        /// </summary>
         [Parameter]
         public EventCallback IconClick { get; set; }
 
+        /// <summary>
+        /// Add a set of styles to the component
+        /// </summary>
         [Parameter]
         public string CssClass { get; set; }
 

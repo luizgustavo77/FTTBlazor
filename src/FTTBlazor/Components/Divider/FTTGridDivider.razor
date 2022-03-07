@@ -1,24 +1,41 @@
 ﻿@code {
-
+    /// <summary>
+    /// Enable button to add an item (customizable callback event)
+    /// </summary>
     [Parameter]
     public bool AddButtonIsVisible { get; set; }
 
+    /// <summary>
+    /// Add button callback event to add an item
+    /// </summary>
     [Parameter]
     public EventCallback<bool> AddButtonOnClick { get; set; }
 
+    /// <summary>
+    /// Header text
+    /// </summary>
     [Parameter]
     public string Title { get; set; }
 
     [Parameter]
     public RenderFragment ChildContent { get; set; } = null;
 
+    /// <summary>
+    /// Determines whether or not content visibility is optional
+    /// </summary>
     [Parameter]
     public bool Iscollapsible { get; set; }
 
+    /// <summary>
+    /// Determines default visibility of the content
+    /// </summary>
     [Parameter]
     public bool IsCollapsed { get; set; } = true;
     private string IsCollapsedCSS = "display:none;";
 
+    /// <summary>
+    /// Determines if there is data input to enable the grid
+    /// </summary>
     [Parameter]
     public bool FTTFields { get; set; } = false;
 

@@ -10,29 +10,50 @@ using System.Threading.Tasks;
 
 namespace FTTBlazor.Components.Forms.Select
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T">Entity that will assemble the DDL (Data Definition Language)</typeparam>
     public partial class FTTSelect<T> : ComponentBase where T : FTTEntity
     {
+        /// <summary>
+        /// Endpoint to make a GET request
+        /// </summary>
         [Parameter]
         public string DataSourceEndpoint { get; set; }
 
+        /// <summary>
+        /// Adds a JWT to the request
+        /// </summary>
         [Parameter]
         public string TokenProvider { get; set; }
 
+        /// <summary>
+        /// Specifies a filter to return those elements for which the expression is true
+        /// </summary>
         [Parameter]
         public Func<T, bool> Filter { get; set; }
 
+        /// <summary>
+        /// Boolean value that makes the element not mutable (the user can not edit it)
+        /// </summary>
         [Parameter]
         public bool IsReadOnly
         {
             get => _IsReadOnly;
             set => _IsReadOnly = value;
         }
-
         private bool _IsReadOnly;
 
+        /// <summary>
+        /// Label text
+        /// </summary>
         [Parameter]
         public string Label { get; set; }
 
+        /// <summary>
+        /// Binds the id veriable to the component
+        /// </summary>
         [Parameter]
         public string DataId
         {
@@ -44,15 +65,20 @@ namespace FTTBlazor.Components.Forms.Select
                 ItemId = value;
             }
         }
-
         private string _dataid;
 
+        /// <summary>
+        /// Allows calling a method when switching items
+        /// </summary>
         [Parameter]
         public EventCallback OnItemSelected { get; set; }
 
         [Parameter]
         public EventCallback<string> DataIdChanged { get; set; }
 
+        /// <summary>
+        /// Binds the descriptions variable to the component
+        /// </summary>
         [Parameter]
         public string DataDesc
         {
@@ -60,26 +86,36 @@ namespace FTTBlazor.Components.Forms.Select
 
             set => _datadesc = value;
         }
-
         private string _datadesc = "";
 
+        /// <summary>
+        /// Sets the element size
+        /// </summary>
         [Parameter]
         public string Size { get; set; } = "4";
 
         [Parameter]
         public EventCallback<string> DataDescChanged { get; set; }
 
+        /// <summary>
+        /// Adds a border on the right
+        /// </summary>
         [Parameter]
         public bool BorderRight { get; set; }
-
         private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
+        /// <summary>
+        /// Defines the name of the bariable that will show in the DDL
+        /// </summary>
         [Parameter]
         public string DataSourceDescField { get; set; } = "Name";
 
         [Parameter]
         public IEnumerable<T> DataSource { get; set; }
 
+        /// <summary>
+        /// Boolean attribute that specifies that the field must be filled out before submitting the form
+        /// </summary>
         [Parameter]
         public bool Required { get; set; } = false;
 

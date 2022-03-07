@@ -19,6 +19,11 @@ namespace FTTBlazor.Components.Toast
             ToastService.OnHide += HideToast;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message">Message that will be displayed when loading the Toast component</param>
+        /// <param name="level">Notification type. The accepted notification types</param>
         private void ShowToast(string message, FTTToastEnum level)
         {
             BuildToastSettings(level, message);

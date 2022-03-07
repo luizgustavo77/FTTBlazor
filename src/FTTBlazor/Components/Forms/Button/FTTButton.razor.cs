@@ -6,7 +6,10 @@ namespace FTTBlazor.Components.Forms.Button
 {
     public partial class FTTButton : ComponentBase
     {
-        [Parameter]
+        /// <summary>
+        /// Disable the component
+        /// </summary>
+        [Parameter]        
         public bool IsReadOnly
         {
             get => _IsReadOnly;
@@ -14,6 +17,9 @@ namespace FTTBlazor.Components.Forms.Button
         }
         private bool _IsReadOnly;
 
+        /// <summary>
+        /// Label text
+        /// </summary>
         [Parameter]
         public string Label
         {
@@ -22,12 +28,21 @@ namespace FTTBlazor.Components.Forms.Button
         }
         private string _label;
 
+        /// <summary>
+        /// Add the onclick method call
+        /// </summary>
         [Parameter]
         public EventCallback OnClick { get; set; }
 
+        /// <summary>
+        /// Component size
+        /// </summary>
         [Parameter]
         public string Size { get; set; } = "4";
 
+        /// <summary>
+        /// Defines the BUTTON type
+        /// </summary>
         [Parameter]
         public ButtonType Type { get; set; } = ButtonType.button;
 
