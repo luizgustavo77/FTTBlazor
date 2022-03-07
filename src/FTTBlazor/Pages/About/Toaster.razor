@@ -2,7 +2,7 @@
 
 @inject FTTToastService toastService
 
-@code{
+@code {
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -11,49 +11,55 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
-        <h6>Clicando nos botões abaixo a notifição vai abrir, ira sobrepor tudo atras da pagina.</h6>
+        <h4>Example</h4>
+        <h6>When clicking on any of the buttons below, a notification will open overlaying the page content</h6>
     </div>
 
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de INFO", FTTToastEnum.Info))">
-            INFORMAÇÃO
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("INFO message", FTTToastEnum.Info))">
+            INFORMATION
         </button>
     </div>
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de SUCESSO", FTTToastEnum.Success))">
-            SUCESSO
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("SUCCESS message", FTTToastEnum.Success))">
+            SUCCESS
         </button>
     </div>
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ALERTA", FTTToastEnum.Warning))">
-            AVISO
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("WARNING message", FTTToastEnum.Warning))">
+            WARNING
         </button>
     </div>
     <div class="mdl-cell--3-col mdl-grid">
-        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("Mensagem de ERRO", FTTToastEnum.Error))">
+        <button class="ftt-blazor-button" @onclick="@(() => toastService.ShowToast("ERROR message", FTTToastEnum.Error))">
             ERROR
         </button>
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Usando</h4>
-        <h6>Injeção no statup</h6>
+        <h4>Examples on how to use:</h4>
+        <h6>Dependency injection on startup</h6>
         <img src="../img/about/toasterUse1.png" />
-        <h6>Injeção na pagina</h6>
+        <h6>Dependency injection on view</h6>
         <img src="../img/about/toasterUse2.png" />
     </div>
 
     <div class="mdl-cell--12-col">
         <h4>Codigo usado</h4>
-        <h6>Abaixo uma imagem de como implementar o dialog no seu sistema</h6>
+        <h6>The following image is an example on how to implement the dialog component in your system</h6>
         <img src="../img/about/toaster.png" />
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Parametros do <span style="font-weight:bold;">ShowToast</span></h4>
-        <h6><span style="font-weight:bold;">Message:</span> Aqui passamos o texto que sera mostrado ao aparecer o toaster</h6>
-
-        <h6><span style="font-weight:bold;">ToastEnum:</span> Aqui passamos o tipo da notificação</h6>
+        <h4><span style="font-weight:bold;">ShowToast</span>Parameters</h4>
+        <h6><span style="font-weight:bold;">Message:</span> Message that will be displayed when loading the Toast component</h6>
+        <h6><span style="font-weight:bold;">ToastEnum:</span> Notification type. The accepted notification types are:
+            <ul>
+                <li>Info</li>
+                <li>Success</li>
+                <li>Warning</li>
+                <li>Error</li>
+            </ul>
+        </h6>
     </div>
 </div>
