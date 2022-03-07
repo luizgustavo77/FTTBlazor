@@ -4,6 +4,12 @@
 > Functional study of Blazor WebAssembly with delivery of a library based on Material Design
 
 ---
+# 📖 **Manual**
+> You can run as a debug using IIS to see the example pages or access the link below:
+
+- [**Wiki**](https://github.com/luizgustavo77/FTTBlazor/wiki)
+
+---
 
 # 🧩 **Install**
 > Below is described the necessary steps to install the components
