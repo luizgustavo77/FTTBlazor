@@ -1,4 +1,4 @@
-<img src="https://www.evertop.pl/wp-content/uploads/2021/01/grafiki_blog_blazor-06-1024x323.jpg">
+<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor/wwwroot/img/logo.png">
 
 # 💻 **FTT Blazor**
 > Functional study of Blazor WebAssembly with delivery of a library based on Material Design
@@ -7,7 +7,7 @@
 
 # 🧩 **Install**
 > Below is described the necessary steps to install the components
-1. Adding dependencies
+
 - css
 ``` html
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -39,9 +39,11 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 ```
 - nupkg
 ``` cmd
-
+Install-Package FTTBlazor
 ```
+
 2. Adding libraries
+
 ---
 
 ## ☕ **FTTBlazor Beta**
