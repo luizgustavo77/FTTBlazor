@@ -79,7 +79,7 @@ This project is licensed under the terms of [MIT license](https://github.com/lui
 ## 🚀 **Purpose**
 > In addition to the undergraduate thesis, this is our small contribution knowing that I have found examples and explanations on the internet for free on several occasions.
 
-<img src="https://cdn.dribbble.com/users/2401141/screenshots/5487982/developers-gif-showcase.gif">
+<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor.Client/wwwroot/img/team.gif">
 
 ---
 
