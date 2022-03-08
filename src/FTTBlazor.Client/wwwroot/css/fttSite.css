@@ -6,7 +6,7 @@ body {
     height: 100%;
 }
 
-hi{
+hi {
     text-align: center;
 }
 
@@ -122,18 +122,22 @@ p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    color: rgba(255, 255, 255, 0.56);
+    color: white !important;
     font-weight: 500;
 }
 
-    .layout .navigation .mdl-navigation__link:hover {
-        background-color: #00BCD4;
-        color: #37474F;
-    }
+.navigation .mdl-navigation__link:hover {
+    color: black !important;
+}
+
+.layout .navigation .mdl-navigation__link:hover {
+    background-color: #00BCD4;
+    color: black !important;
+}
 
 .navigation .mdl-navigation__link .material-icons {
     font-size: 24px;
-    color: rgba(255, 255, 255, 0.56);
+    color: white !important;
     margin-right: 32px;
 }
 
