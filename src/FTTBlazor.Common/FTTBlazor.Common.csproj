@@ -1,7 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputType>Library</OutputType>
+		<StartupObject />
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<PackageId>FTTBlazor.Common</PackageId>
+		<RepositoryType>git</RepositoryType>
+		<NeutralLanguage>pt-BR</NeutralLanguage>
+		<Authors>luizgustavo77</Authors>
+		<Product>FTTBlazor</Product>
+		<PackageTags>NuGet;.NET 6;FTT</PackageTags>
+		<AssemblyVersion>$([System.DateTime]::Now.ToString(`yyyy.MM.dd.HHmm`))</AssemblyVersion>
+		<PackageVersion>1.0.2</PackageVersion>
+		<Description>Dependency for FTTBlazor</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/luizgustavo77/FTTBlazor.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/luizgustavo77/FTTBlazor/wiki</PackageProjectUrl>
+		<PackageIcon>logoMenu.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\nupkg\</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\nupkg\logoMenu.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\..\nupkg\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>

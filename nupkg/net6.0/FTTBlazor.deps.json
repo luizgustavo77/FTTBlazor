@@ -8,18 +8,18 @@
     ".NETCoreApp,Version=v6.0": {
       "FTTBlazor/1.0.0": {
         "dependencies": {
-          "FTTBlazor.Common": "1.0.1",
+          "FTTBlazor.Common": "1.0.2",
           "Microsoft.AspNetCore.Components.Web": "6.0.2"
         },
         "runtime": {
           "FTTBlazor.dll": {}
         }
       },
-      "FTTBlazor.Common/1.0.1": {
+      "FTTBlazor.Common/1.0.2": {
         "runtime": {
           "lib/net6.0/FTTBlazor.Common.dll": {
-            "assemblyVersion": "2022.3.7.1926",
-            "fileVersion": "2022.3.7.1926"
+            "assemblyVersion": "2022.3.8.1920",
+            "fileVersion": "2022.3.8.1920"
           }
         }
       },
@@ -159,12 +159,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FTTBlazor.Common/1.0.1": {
+    "FTTBlazor.Common/1.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EK1YffOWPQ1Rj+ZY5rWGD0t+oh5xnXI4Ph7UgrdSlgbVYBFBHzHk+3EYe7UFB9pZhTsv6Jtf6a0YIHO7HN4IzA==",
-      "path": "fttblazor.common/1.0.1",
-      "hashPath": "fttblazor.common.1.0.1.nupkg.sha512"
+      "sha512": "sha512-JQoyT0QdOtCCqwzlddY4nJGRTcjlOvuvtTb+mVAUtgwf+UpxAjmZ3vlIWkXbE/+ad3P2ZetCeBP9q3fUH6ENSg==",
+      "path": "fttblazor.common/1.0.2",
+      "hashPath": "fttblazor.common.1.0.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/6.0.2": {
       "type": "package",
