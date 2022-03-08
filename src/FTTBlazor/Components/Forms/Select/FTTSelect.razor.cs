@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Components.Forms.Select
+namespace FTTBlazor
 {
     /// <summary>
     /// 

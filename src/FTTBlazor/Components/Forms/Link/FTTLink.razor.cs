@@ -2,7 +2,7 @@ using FTTBlazor.Common.Core;
 using Microsoft.AspNetCore.Components;
 using System;
 
-namespace FTTBlazor.Components.Forms.Link
+namespace FTTBlazor
 {
     public partial class FTTLink<T> : ComponentBase where T : FTTEntity
     {

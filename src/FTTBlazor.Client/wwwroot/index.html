@@ -13,11 +13,11 @@
 
     <link href="css/fttSite.css" rel="stylesheet" />
 
-    <link href="css/fttBlazor.css" rel="stylesheet" />
+    <link rel="stylesheet" href="_content/FTTBlazor/fttBlazor.css" />
 
-    <link href="fttManifest.json" rel="manifest" />
+    <link href="manifest.json" rel="manifest" />
 
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.ico" />
 
     <link href="css/material/material-components-web.min.css" rel="stylesheet">
 </head>
@@ -25,9 +25,16 @@
 <body>
     <div style="height: 100%;" id="app">Loading...</div>
 
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
-    <script src="js/fttBlazor.js"></script>
+
+    <script src="_content/FTTBlazor/fttBlazor.js"></script>
 </body>
 
 </html>

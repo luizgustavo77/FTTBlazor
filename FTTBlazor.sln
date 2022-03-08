@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor", "src\FTTBlazor\FTTBlazor.csproj", "{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PokeAPI", "PokeAPI", "{DEB785FB-05D7-40EA-AE3C-91D45B17DB57}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Server", "src\PokeAPI\PokeAPI.Server\PokeAPI.Server.csproj", "{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}"
@@ -15,16 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Service", "src\Poke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokeAPI.Data", "src\PokeAPI\PokeAPI.Data\PokeAPI.Data.csproj", "{75439C8D-12EF-4911-8448-E9043AF95958}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor", "src\FTTBlazor\FTTBlazor.csproj", "{8C4F1465-3259-47F1-AFF4-391705B48BF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTTBlazor.Client", "src\FTTBlazor.Client\FTTBlazor.Client.csproj", "{046DAE36-BE98-4A18-956B-711E07DE156E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCEB03C3-13BF-4DE3-A183-88F0F274A58D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57D5D6A9-BD2C-415C-B226-4E6EA7CBF4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +39,14 @@ Global
 		{75439C8D-12EF-4911-8448-E9043AF95958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75439C8D-12EF-4911-8448-E9043AF95958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75439C8D-12EF-4911-8448-E9043AF95958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4F1465-3259-47F1-AFF4-391705B48BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4F1465-3259-47F1-AFF4-391705B48BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4F1465-3259-47F1-AFF4-391705B48BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4F1465-3259-47F1-AFF4-391705B48BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046DAE36-BE98-4A18-956B-711E07DE156E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046DAE36-BE98-4A18-956B-711E07DE156E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046DAE36-BE98-4A18-956B-711E07DE156E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046DAE36-BE98-4A18-956B-711E07DE156E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

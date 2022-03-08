@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Components.Forms.Select
+namespace FTTBlazor
 {
     public partial class FTTSelectArray : ComponentBase
     {

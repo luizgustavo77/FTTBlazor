@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Components.Forms.Button
+namespace FTTBlazor
 {
     public partial class FTTButton : ComponentBase
     {

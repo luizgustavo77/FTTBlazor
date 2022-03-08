@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Components.Dialog
+namespace FTTBlazor
 {
     public abstract class FTTBaseDialog : ComponentBase, IDisposable
     {

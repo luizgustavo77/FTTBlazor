@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 
-namespace FTTBlazor.Components.Toast
+namespace FTTBlazor
 {
     public partial class FTTToast : ComponentBase, IDisposable
     {

@@ -1,5 +1,4 @@
 using FTTBlazor.Common.Core;
-using FTTBlazor.Components.Toast;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
@@ -10,7 +9,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace FTTBlazor.Components.Crud
+namespace FTTBlazor
 {
     public partial class FTTCrud<Interface> : ComponentBase where Interface : FTTEntity
     {
@@ -371,7 +370,7 @@ namespace FTTBlazor.Components.Crud
             {
                 if (col.FieldType == FTTFieldType.Money)
                 {
-                    ret = "R$ " + FTTBlazor.Components.Forms.Input.FTTInput.FormatMoney(item.GetType().GetProperty(col.FieldName).GetValue(item).ToString());
+                    ret = "R$ " + FTTInput.FormatMoney(item.GetType().GetProperty(col.FieldName).GetValue(item).ToString());
                     //ret = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "R$ {0:#.###,##}", item.GetType().GetProperty(col.FieldName).GetValue(item).ToString());
                 }
                 else if (item.GetType().GetProperty(col.FieldName).PropertyType == typeof(DateTime))

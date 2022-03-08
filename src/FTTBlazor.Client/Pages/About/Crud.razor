@@ -1,7 +1,7 @@
 ﻿@page "/crud"
 
 @code {
-    public List<FTTBlazor.Components.Crud.FTTGridColumn> cols = new List<FTTBlazor.Components.Crud.FTTGridColumn>();
+    public List<FTTBlazor.FTTGridColumn> cols = new List<FTTBlazor.FTTGridColumn>();
 #if DEBUG
     string endpoint = "https://localhost:44306/Pokemon";
 #else
@@ -10,8 +10,8 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        cols.Add(new FTTBlazor.Components.Crud.FTTGridColumn() { FieldName = "Id", FieldDescription = "Id" });
-        cols.Add(new FTTBlazor.Components.Crud.FTTGridColumn() { FieldName = "Name", FieldDescription = "Nome" });
+        cols.Add(new FTTBlazor.FTTGridColumn() { FieldName = "Id", FieldDescription = "Id" });
+        cols.Add(new FTTBlazor.FTTGridColumn() { FieldName = "Name", FieldDescription = "Nome" });
     }
 }
 
@@ -27,11 +27,11 @@
 
     <div style="height: 30rem; margin-bottom: -5rem;">
 
-        <FTTBlazor.Components.Crud.FTTCrud Interface="Common.PokeAPI.PokemonDTO" Columns="cols" Endpoint="@endpoint" Title="Pokemons">
+        <FTTCrud Interface="Common.PokeAPI.PokemonDTO" Columns="cols" Endpoint="@endpoint" Title="Pokemons">
             <ModalContent>
                 <FTTInput Label="Nome" @bind-Value="@context.Name" Size="12"></FTTInput>
             </ModalContent>
-        </FTTBlazor.Components.Crud.FTTCrud>
+        </FTTCrud>
 
     </div>
 
