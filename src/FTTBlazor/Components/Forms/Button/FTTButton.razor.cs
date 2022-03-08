@@ -9,7 +9,7 @@ namespace FTTBlazor
         /// <summary>
         /// Disable the component
         /// </summary>
-        [Parameter]        
+        [Parameter]
         public bool IsReadOnly
         {
             get => _IsReadOnly;
