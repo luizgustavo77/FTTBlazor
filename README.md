@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor/wwwroot/img/logo.png">
+<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor.Client/wwwroot/img/logoMenu.png">
 
 # 💻 **FTT Blazor**
 > Functional study of Blazor WebAssembly with delivery of a library based on Material Design
