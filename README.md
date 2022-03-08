@@ -46,7 +46,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 | --- | --- | --- | --- | --- |
 | Dialog | Dialog | Set/2021 | OK | LG |
 | Toast | Dialog | Set/2021 | OK | LG |
-| Grid Divider | Dialog/2021 | Out | OK | LG |
+| Grid Divider | Dialog | Out/2021 | OK | LG |
 | Input | Forms | Set/2021 | OK | LG |
 | Select Type T  | Forms | Set/2021 | OK | LG |
 | Select Enum  | Forms | Set/2021 | OK | LG |
