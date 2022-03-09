@@ -4,7 +4,7 @@
     --brandtwo: #4b7199;
     --brandcard: #f6f6f6;
     --brandbackground: #f2f2f2;
-    --brandmenu: #494949;
+    --brandmenu: #37474f !important;
     --brandtext: #455a64;
     --brandmenutext: #eee;
     --brandmenusuperior: #37b;
@@ -20,288 +20,80 @@
 
 
 /*CSS DO DIALOG*/
-.ftt-blazor-dialog, .ftt-blazor-dialog__scrim {
+
+
+.ftt-blazor {
     position: fixed;
-    top: 0;
     left: 0;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+    top: 0;
     width: 100%;
-    height: 100%
-}
-
-.ftt-blazor-dialog {
-    display: none;
-    z-index: 7
-}
-
-    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
-        background-color: #fff;
-        background-color: var(--ftt-blazor-theme-surface, #fff)
-    }
-
-    .ftt-blazor-dialog .ftt-blazor-dialog__scrim {
-        background-color: rgba(0,0,0,.32)
-    }
-
-    .ftt-blazor-dialog .ftt-blazor-dialog__title {
-        color: rgba(0,0,0,.87)
-    }
-
-    .ftt-blazor-dialog .ftt-blazor-dialog__content {
-        color: rgba(0,0,0,.6)
-    }
-
-    .ftt-blazor-dialog.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__title, .ftt-blazor-dialog.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__actions {
-        border-color: rgba(0,0,0,.12)
-    }
-
-    .ftt-blazor-dialog .ftt-blazor-dialog__content {
-        padding: 20px 24px 20px 24px
-    }
-
-    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
-        min-width: 280px
-    }
-
-@media(max-width: 592px) {
-    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
-        max-width: calc(100vw - 32px)
-    }
-}
-
-@media(min-width: 592px) {
-    .ftt-blazor-dialog .ftt-blazor-dialog__surface {
-        max-width: 560px
-    }
-}
-
-.ftt-blazor-dialog .ftt-blazor-dialog__surface {
-    max-height: calc(100% - 32px)
-}
-
-.ftt-blazor-dialog .ftt-blazor-dialog__surface {
-    border-radius: 4px;
-    border-radius: var(--ftt-blazor-shape-medium, 4px)
-}
-
-.ftt-blazor-dialog__scrim {
-    opacity: 0;
-    z-index: -1
-}
-
-.ftt-blazor-dialog__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    box-sizing: border-box;
     height: 100%;
-    transform: scale(0.8);
-    opacity: 0;
-    pointer-events: none
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050 !important;
 }
 
-.ftt-blazor-dialog__surface {
-    position: relative;
-    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0,0,0,.12);
-    display: flex;
-    flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: auto;
-    overflow-y: auto
+.ftt-blazor-content {
+    width: 650px;
+    margin: auto;
+    margin-top: 150px;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 6px 4px 38px -21px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 4px 38px -21px rgba(0,0,0,0.75);
+    box-shadow: 6px 4px 38px -21px rgba(0,0,0,0.75);
+    overflow: hidden;
+    background-color: var(--brandmodal);
 }
 
-    .ftt-blazor-dialog__surface
-    .ftt-blazor-elevation-overlay {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0
-    }
-
-.ftt-blazor-dialog[dir=rtl] .ftt-blazor-dialog__surface, [dir=rtl] .ftt-blazor-dialog .ftt-blazor-dialog__surface {
-    text-align: right
-}
-
-.ftt-blazor-dialog__title {
+.show {
     display: block;
-    margin-top: 0;
-    line-height: normal;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: Roboto, sans-serif;
-    font-family: var(--ftt-blazor-typography-headline6-font-family, var(--ftt-blazor-typography-font-family, Roboto, sans-serif));
-    font-size: 1.25rem;
-    font-size: var(--ftt-blazor-typography-headline6-font-size, 1.25rem);
-    line-height: 2rem;
-    line-height: var(--ftt-blazor-typography-headline6-line-height, 2rem);
-    font-weight: 500;
-    font-weight: var(--ftt-blazor-typography-headline6-font-weight, 500);
-    letter-spacing: 0.0125em;
-    letter-spacing: var(--ftt-blazor-typography-headline6-letter-spacing, 0.0125em);
-    text-decoration: inherit;
-    text-decoration: var(--ftt-blazor-typography-headline6-text-decoration, inherit);
-    text-transform: inherit;
-    text-transform: var(--ftt-blazor-typography-headline6-text-transform, inherit);
-    position: relative;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0 24px 9px;
-    border-bottom: 1px solid transparent
+    animation-name: show-animation;
+    animation-duration: 1s;
 }
 
-    .ftt-blazor-dialog__title::before {
-        display: inline-block;
-        width: 0;
-        height: 40px;
-        content: "";
-        vertical-align: 0
+@keyframes show-animation {
+    from {
+        opacity: 0
     }
 
-.ftt-blazor-dialog[dir=rtl] .ftt-blazor-dialog__title, [dir=rtl] .ftt-blazor-dialog .ftt-blazor-dialog__title {
-    text-align: right
-}
-
-.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__title {
-    padding-bottom: 15px
-}
-
-.ftt-blazor-dialog__content {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: Roboto, sans-serif;
-    font-family: var(--ftt-blazor-typography-body1-font-family, var(--ftt-blazor-typography-font-family, Roboto, sans-serif));
-    font-size: 1rem;
-    font-size: var(--ftt-blazor-typography-body1-font-size, 1rem);
-    line-height: 1.5rem;
-    line-height: var(--ftt-blazor-typography-body1-line-height, 1.5rem);
-    font-weight: 400;
-    font-weight: var(--ftt-blazor-typography-body1-font-weight, 400);
-    letter-spacing: 0.03125em;
-    letter-spacing: var(--ftt-blazor-typography-body1-letter-spacing, 0.03125em);
-    text-decoration: inherit;
-    text-decoration: var(--ftt-blazor-typography-body1-text-decoration, inherit);
-    text-transform: inherit;
-    text-transform: var(--ftt-blazor-typography-body1-text-transform, inherit);
-    flex-grow: 1;
-    box-sizing: border-box;
-    margin: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch
-}
-
-    .ftt-blazor-dialog__content > :first-child {
-        margin-top: 0
-    }
-
-    .ftt-blazor-dialog__content > :last-child {
-        margin-bottom: 0
-    }
-
-.ftt-blazor-dialog__title + .ftt-blazor-dialog__content {
-    padding-top: 0
-}
-
-.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__title + .ftt-blazor-dialog__content {
-    padding-top: 8px;
-    padding-bottom: 8px
-}
-
-.ftt-blazor-dialog__content .ftt-blazor-list:first-child:last-child {
-    padding: 6px 0 0
-}
-
-.ftt-blazor-dialog--scrollable .ftt-blazor-dialog__content .ftt-blazor-list:first-child:last-child {
-    padding: 0
-}
-
-.ftt-blazor-dialog__actions {
-    display: flex;
-    position: relative;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    box-sizing: border-box;
-    min-height: 52px;
-    margin: 0;
-    padding: 8px;
-    border-top: 1px solid transparent
-}
-
-.ftt-blazor-dialog--stacked .ftt-blazor-dialog__actions {
-    flex-direction: column;
-    align-items: flex-end
-}
-
-.ftt-blazor-dialog__button {
-    margin-left: 8px;
-    margin-right: 0;
-    max-width: 100%;
-    text-align: right
-}
-
-    [dir=rtl] .ftt-blazor-dialog__button, .ftt-blazor-dialog__button[dir=rtl] {
-        margin-left: 0;
-        margin-right: 8px
-    }
-
-    .ftt-blazor-dialog__button:first-child {
-        margin-left: 0;
-        margin-right: 0
-    }
-
-        [dir=rtl] .ftt-blazor-dialog__button:first-child, .ftt-blazor-dialog__button:first-child[dir=rtl] {
-            margin-left: 0;
-            margin-right: 0
-        }
-
-.ftt-blazor-dialog[dir=rtl] .ftt-blazor-dialog__button, [dir=rtl] .ftt-blazor-dialog .ftt-blazor-dialog__button {
-    text-align: left
-}
-
-.ftt-blazor-dialog--stacked .ftt-blazor-dialog__button:not(:first-child) {
-    margin-top: 12px
-}
-
-.ftt-blazor-dialog--open, .ftt-blazor-dialog--opening, .ftt-blazor-dialog--closing {
-    display: flex
-}
-
-    .ftt-blazor-dialog--opening .ftt-blazor-dialog__scrim {
-        transition: opacity 150ms linear
-    }
-
-    .ftt-blazor-dialog--opening .ftt-blazor-dialog__container {
-        transition: opacity 75ms linear,transform 150ms 0ms cubic-bezier(0, 0, 0.2, 1)
-    }
-
-    .ftt-blazor-dialog--closing .ftt-blazor-dialog__scrim, .ftt-blazor-dialog--closing .ftt-blazor-dialog__container {
-        transition: opacity 75ms linear
-    }
-
-    .ftt-blazor-dialog--closing .ftt-blazor-dialog__container {
-        transform: none
-    }
-
-    .ftt-blazor-dialog--open .ftt-blazor-dialog__scrim {
+    to {
         opacity: 1
     }
+}
 
-    .ftt-blazor-dialog--open .ftt-blazor-dialog__container {
-        transform: none;
-        opacity: 1
+.hide {
+    display: none;
+}
+
+.ftt-blazor-header {
+    background-color: var(--brandmenu) !important;
+    padding: 15px;
+    color: white;
+}
+
+.ftt-blazor-title {
+    margin: 5px;
+    display: inline-block;
+}
+
+.ftt-blazor-close-button {
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+
+    .ftt-blazor-close-button:hover {
+        color: red;
     }
 
-.ftt-blazor-dialog-scroll-lock {
-    overflow: hidden
+.ftt-blazor-body {
+    padding: 10px;
+    background-color: var(--brandmodal);
+}
+
+.ftt-blazor-footer {
+    background-color: var(--brandmodal);
+    padding: 10px;
 }
 
 /*CSS Toast*/

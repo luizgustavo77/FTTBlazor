@@ -23,11 +23,7 @@ Install-Package FTTBlazor.Common
    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
    <link rel="stylesheet" href="_content/FTTBlazor/fttBlazor.css" />
 ````
-- js
-``` html
-   <script src="_content/FTTBlazor/fttBlazor.js"></script>
-```
-   - startup
+- startup
 ``` c#
 builder.Services.AddScoped<FTTToastService>();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });

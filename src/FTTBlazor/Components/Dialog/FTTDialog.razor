@@ -1,19 +1,37 @@
 ﻿@namespace FTTBlazor
-@inherits FTTDialogComponent
 
-<div class="@ClassMapper.AsString()"
-     style="@StyleMapper.AsString()"
-     @ref="Ref"
-     @attributes="Attributes"
-     Id="@Id"
-     role="alertdialog"
-     aria-modal="true"
-     aria-labelledby="ftt-blazor-dialog-title"
-     aria-describedby="ftt-blazor-dialog-content">
-    <div class="ftt-blazor-dialog__container">
-        <div class="@SurfaceClassMapper.AsString()" style="@SurfaceStyleMapper.AsString()">
-            @ChildContent
+@code {
+    [Parameter]
+    public RenderFragment FTTDialogTitle { get; set; }
+
+    [Parameter]
+    public RenderFragment FTTDialogContent { get; set; }
+
+    [Parameter]
+    public RenderFragment FTTDialogActions { get; set; }
+
+    [Parameter]
+    public bool IsOpened { get; set; }
+
+    string cssClass => IsOpened ? "show" : "hide";
+}
+
+<div class="ftt-blazor @cssClass" tabindex="-1" role="dialog">
+    <div class="ftt-blazor-content">
+        <div class="ftt-blazor-header">
+            <div class="ftt-blazor-pull-right">
+                <button type="button" @onclick="@(async () => { IsOpened = false; })">X</button>
+            </div>
+            @FTTDialogTitle
+        </div>
+        <div class="ftt-blazor-body">
+            @FTTDialogContent
+        </div>
+        <div class="ftt-blazor-footer">
+            <div class="ftt-blazor-pull-right">
+                <button type="button" class="ftt-blazor-button" @onclick="@(async () => { IsOpened = false; })">Fechar</button>
+            </div>
+            @FTTDialogActions
         </div>
     </div>
-    <div class="ftt-blazor-dialog__scrim"></div>
 </div>

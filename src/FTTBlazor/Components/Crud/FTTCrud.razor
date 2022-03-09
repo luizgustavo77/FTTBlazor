@@ -183,7 +183,7 @@
     </div>
 </form>
 
-<FTTDialog @bind-IsOpen="@ModalDeleteIsOpen">
+<FTTDialog IsOpened="@ModalDeleteIsOpen">
     <FTTDialogTitle>Excluir </FTTDialogTitle>
     <FTTDialogContent>
 
@@ -197,7 +197,7 @@
 </FTTDialog>
 
 
-<FTTDialog @bind-IsOpen="ModalIsOpen">
+<FTTDialog IsOpened="ModalIsOpen">
     <FTTDialogTitle> @Title </FTTDialogTitle>
     <FTTDialogContent>
         <form action="#0" @onsubmit="@(async () => await Save())" class="basemodal" autocomplete="off">
@@ -231,30 +231,21 @@
         </form>
     </FTTDialogContent>
     <FTTDialogActions>
-        <div class="ftt-blazor-modal-buttons">
-            <div class="ftt-blazor-pull-left">
-                @if (!IsNew)
+        <div class="ftt-blazor-pull-left">
+            @if (!IsNew)
+            {
+                if (CanDelete)
                 {
-                    if (CanDelete)
-                    {
-                        <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OpenDialogDelete(Item); })">Excluir</button>
-                    }
+                    <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OpenDialogDelete(Item); })">Excluir</button>
                 }
-            </div>
-
-            @if (CanEdit)
-            {
-                <div class="ftt-blazor-pull-right">
-                    <button type="button" class="ftt-blazor-button" @onclick="@(async () => { ModalIsOpen = false; })">Fechar</button>
-                    <button type="submit" class="ftt-blazor-button" @onclick="@(async () => { await Save(); })">Salvar</button>
-                </div>
-            }
-            else
-            {
-                <div class="ftt-blazor-pull-right">
-                    <button type="button" class="ftt-blazor-button" @onclick="@(async () => { ModalIsOpen = false; })">Fechar</button>
-                </div>
             }
         </div>
+
+        @if (CanEdit)
+        {
+            <div class="ftt-blazor-pull-right">
+                <button type="submit" class="ftt-blazor-button" @onclick="@(async () => { await Save(); })">Salvar</button>
+            </div>
+        }
     </FTTDialogActions>
 </FTTDialog>
