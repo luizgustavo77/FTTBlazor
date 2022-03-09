@@ -9,9 +9,7 @@ using System.Collections.Generic;
 namespace PokeAPI.Server.Controllers
 {
     // Todo:
-    // Criar uma camada no Common para ficar os Endpoint
     // Melhorar o microserviço para ser mais genérico
-    // Poderia criar a entidade no Select
 
     [ApiController]
     [Route("[controller]")]

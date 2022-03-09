@@ -1,6 +1,12 @@
 ﻿@page "/select"
 
 @code{
+#if DEBUG
+    string endpoint = "https://localhost:44306/Pokemon";
+#else
+    string endpoint = "https://localhost:44306/Pokemon";
+#endif
+
     enum EnumPokemons
     {
         Pikachu = 1,
@@ -12,16 +18,16 @@
     EnumPokemons enumValue;
 
     string[] ListPokemons = new string[]
-    {   "Pikachu",
+    {   
+        "Pikachu",
         "Bulbasaur",
         "Charmander",
-        "Squirtle"};
+        "Squirtle"
+    };
 
     string stringValue { get; set; }
-
-    string endpoint = "https://localhost:44306/Pokemon";
     string Id { get; set; }
-    string Name { get; set; }
+    string Name { get; set; }    
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">

@@ -1,12 +1,13 @@
 ﻿@page "/crud"
 
 @code {
-    public List<FTTBlazor.FTTGridColumn> cols = new List<FTTBlazor.FTTGridColumn>();
 #if DEBUG
     string endpoint = "https://localhost:44306/Pokemon";
 #else
     string endpoint = "https://localhost:44306/Pokemon";
 #endif
+
+    public List<FTTBlazor.FTTGridColumn> cols = new List<FTTBlazor.FTTGridColumn>();
 
     protected override async Task OnParametersSetAsync()
     {
