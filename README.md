@@ -75,21 +75,25 @@ This project is licensed under the terms of [MIT license](https://github.com/lui
 ## 🚀 **Purpose**
 > In addition to the undergraduate thesis, this is our small contribution knowing that I have found examples and explanations on the internet for free on several occasions.
 
-- **Technology**
-   - Blazor
-   - Framework
-   - .NET 6.0
-   - C#
-   - REST
-   - Material Design
-   - CSS
-   - HTML
-   - SQLLite
-   - Entity Framework
-   - Auto Mapper
-
 <img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor.Client/wwwroot/img/team.gif">
 
+---
+
+## 🛸 **Technology**
+> Below is the set of technologies that make up this open source project
+
+- Blazor
+- Framework
+- .NET 6.0
+- C#
+- REST
+- Material Design
+- CSS
+- HTML
+- SQLLite
+- Entity Framework
+- Auto Mapper
+   
 ---
 
 ## 🙋🏻 **This project developers**
