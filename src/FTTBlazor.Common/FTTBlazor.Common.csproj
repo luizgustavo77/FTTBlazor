@@ -19,9 +19,6 @@
 		<PackageProjectUrl>https://github.com/luizgustavo77/FTTBlazor/wiki</PackageProjectUrl>
 		<PackageIcon>logoMenu.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\nupkg\</OutputPath>
 	</PropertyGroup>
 

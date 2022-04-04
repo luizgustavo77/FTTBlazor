@@ -13,16 +13,13 @@
 		<Product>FTTBlazor</Product>
 		<PackageTags>NuGet;.NET 6;FTT</PackageTags>
 		<AssemblyVersion>$([System.DateTime]::Now.ToString(`yyyy.MM.dd.HHmm`))</AssemblyVersion>
-		<PackageVersion>2.1.5</PackageVersion>
+		<PackageVersion>2.1.6</PackageVersion>
 		<Description>Functional study of Blazor WebAssembly with delivery of a library based on Material Design</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/luizgustavo77/FTTBlazor.git</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/luizgustavo77/FTTBlazor/wiki</PackageProjectUrl>
 		<PackageIcon>logoMenu.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\nupkg\</OutputPath>
 	</PropertyGroup>
 
