@@ -96,6 +96,17 @@ This project is licensed under the terms of [MIT license](https://github.com/lui
    
 ---
 
+## ⚙️ **Example**
+> In the solution we have an example of how to install and use the library, below the step by step to run this example
+
+- **Step by step**
+  - Solution 'FTTBlazor' > Properties
+  - Multiple startup projects 
+
+<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor.Client/wwwroot/img/exemplo.png">
+
+---
+
 ## 🙋🏻 **This project developers**
 
 - [Luiz Gustavo](https://github.com/luizgustavo77) - main developer
