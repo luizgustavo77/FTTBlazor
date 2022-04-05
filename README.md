@@ -20,9 +20,9 @@ Install-Package FTTBlazor.Common
 ```
 - css
 ``` html
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-   <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
-   <link rel="stylesheet" href="_content/FTTBlazor/fttBlazor.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+<link rel="stylesheet" href="_content/FTTBlazor/fttBlazor.css" />
 ````
 - startup
 ``` c#
@@ -90,7 +90,7 @@ This project is licensed under the terms of [MIT license](https://github.com/lui
 - Material Design
 - CSS
 - HTML
-- SQLLite
+- SQLite
 - Entity Framework
 - Auto Mapper
    
