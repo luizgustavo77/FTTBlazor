@@ -19,9 +19,9 @@ Install-Package FTTBlazor.Common
 ```
 - css
 ``` html
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-   <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
-   <link rel="stylesheet" href="_content/FTTBlazor/fttBlazor.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+<link rel="stylesheet" href="_content/FTTBlazor/fttBlazor.css" />
 ````
 - startup
 ``` c#
@@ -63,16 +63,45 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 ## 🙇🏻 **Questions / Suggestions**
 > Use git issues to report any problems and bugs. Also feel free to give us suggestions on how to improve our library
 
+- [**Issues**](https://github.com/luizgustavo77/FTTBlazor/issues)
+
 ---
 
 ## 📜 **License**
-
-This project is licensed under the terms of [MIT license](https://github.com/luizgustavo77/FTTBlazor/blob/master/LICENSE.md).
+> This project is licensed under the terms of [MIT license](https://github.com/luizgustavo77/FTTBlazor/blob/master/LICENSE.md).
 
 ---
 
 ## 🚀 **Purpose**
 > In addition to the undergraduate thesis, this is our small contribution knowing that I have found examples and explanations on the internet for free on several occasions.
+
+---
+
+## 🛸 **Technology**
+> Below is the set of technologies that make up this open source project
+
+- Blazor
+- Framework
+- .NET 6.0
+- C#
+- REST
+- Material Design
+- CSS
+- HTML
+- SQLite
+- Entity Framework
+- Auto Mapper
+   
+---
+
+## ⚙️ **Example**
+> In the solution we have an example of how to install and use the library, below the step by step to run this example
+
+- **Step by step**
+  - Solution 'FTTBlazor' > Properties
+  - Multiple startup projects:
+      - PokeAPI.Server
+      - FTTBlazor.Client
 
 ---
 
