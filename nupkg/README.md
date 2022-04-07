@@ -32,6 +32,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 ``` c#
 @using FTTBlazor
 ```
+
 ---
 
 ## ☕ **FTTBlazor Beta**
@@ -91,17 +92,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 - SQLite
 - Entity Framework
 - Auto Mapper
-   
----
-
-## ⚙️ **Example**
-> In the solution we have an example of how to install and use the library, below the step by step to run this example
-
-- **Step by step**
-  - Solution 'FTTBlazor' > Properties
-  - Multiple startup projects:
-      - PokeAPI.Server
-      - FTTBlazor.Client
 
 ---
 
