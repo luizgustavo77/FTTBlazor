@@ -11,26 +11,30 @@
     public RenderFragment FTTDialogActions { get; set; }
 
     [Parameter]
-    public bool IsOpened { get; set; }
-
+    public bool IsOpened
+    {
+        get { return _IsOpened; }
+        set
+        {
+            _IsOpened = value;
+            IsOpenedChanged.InvokeAsync(value);
+        }
+    }
+    private bool _IsOpened { get; set; }
+    [Parameter]
+    public EventCallback<bool> IsOpenedChanged { get; set; }
     string cssClass => IsOpened ? "show" : "hide";
 }
 
 <div class="ftt-blazor @cssClass" tabindex="-1" role="dialog">
     <div class="ftt-blazor-content">
         <div class="ftt-blazor-header">
-            <div class="ftt-blazor-pull-right">
-                <button type="button" @onclick="@(async () => { IsOpened = false; })">X</button>
-            </div>
             @FTTDialogTitle
         </div>
         <div class="ftt-blazor-body">
             @FTTDialogContent
         </div>
         <div class="ftt-blazor-footer">
-            <div class="ftt-blazor-pull-right">
-                <button type="button" class="ftt-blazor-button" @onclick="@(async () => { IsOpened = false; })">Fechar</button>
-            </div>
             @FTTDialogActions
         </div>
     </div>

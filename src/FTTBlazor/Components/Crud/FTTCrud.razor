@@ -45,9 +45,9 @@
                             }
 
                             <td width="80" style="text-align:center;">
-                           @*     <button type="button" class="ftt-blazor-button" style="border:1px solid var(--brandline);" @onclick="@(e => { DownloadFile(); })">
+                                @*     <button type="button" class="ftt-blazor-button" style="border:1px solid var(--brandline);" @onclick="@(e => { DownloadFile(); })">
                                     <i class="material-icons" style="cursor: pointer;">save_alt</i>
-                                </button>*@
+                                    </button>*@
                             </td>
                         }
                         else
@@ -184,21 +184,37 @@
 </form>
 
 <FTTDialog IsOpened="@ModalDeleteIsOpen">
-    <FTTDialogTitle>Excluir </FTTDialogTitle>
+    <FTTDialogTitle>
+        Excluir
+        <div class="ftt-blazor-pull-right">
+            <button type="button" @onclick="@(async () => { ModalDeleteIsOpen = false; })">X</button>
+        </div>
+    </FTTDialogTitle>
     <FTTDialogContent>
 
         <p>&nbsp; Tem certeza que deseja excluir este registro?</p>
 
     </FTTDialogContent>
     <FTTDialogActions>
-        <button type="button" class="ftt-blazor-button" @onclick="@(async () => { closeWindow(); })">Cancelar</button>
-        <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OkClickDelete(); })">Excluir</button>
+
+        <div class="ftt-blazor-pull-left">
+            <button type="button" class="ftt-blazor-button" @onclick="@(async () => { closeWindow(); })">Cancelar</button>
+        </div>
+
+        <div class="ftt-blazor-pull-right">
+            <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OkClickDelete(); })">Excluir</button>
+        </div>
     </FTTDialogActions>
 </FTTDialog>
 
 
 <FTTDialog IsOpened="ModalIsOpen">
-    <FTTDialogTitle> @Title </FTTDialogTitle>
+    <FTTDialogTitle>
+        @Title
+        <div class="ftt-blazor-pull-right">
+            <button type="button" @onclick="@(async () => { ModalIsOpen = false; })">X</button>
+        </div>
+    </FTTDialogTitle>
     <FTTDialogContent>
         <form action="#0" @onsubmit="@(async () => await Save())" class="basemodal" autocomplete="off">
             <CascadingValue Value="@this" Name="modal">
@@ -232,20 +248,18 @@
     </FTTDialogContent>
     <FTTDialogActions>
         <div class="ftt-blazor-pull-left">
-            @if (!IsNew)
-            {
-                if (CanDelete)
-                {
-                    <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OpenDialogDelete(Item); })">Excluir</button>
-                }
-            }
+            <button type="button" class="ftt-blazor-button" @onclick="@(async () => { closeWindow(); })">Cancelar</button>
         </div>
 
-        @if (CanEdit)
-        {
-            <div class="ftt-blazor-pull-right">
+        <div class="ftt-blazor-pull-right">
+            @if (!IsNew && CanDelete)
+            {
+                <button type="button" class="ftt-blazor-button" @onclick="@(async () => { OpenDialogDelete(Item); })">Excluir</button>
+            }
+            @if (CanEdit)
+            {
                 <button type="submit" class="ftt-blazor-button" @onclick="@(async () => { await Save(); })">Salvar</button>
-            </div>
-        }
+            }
+        </div>
     </FTTDialogActions>
 </FTTDialog>

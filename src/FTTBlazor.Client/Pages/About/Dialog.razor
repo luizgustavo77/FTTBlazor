@@ -1,6 +1,6 @@
 ﻿@page "/dialog"
 
-@code{
+@code {
     bool dialogIsOpen { get; set; } = false;
 
 }
@@ -38,6 +38,10 @@
 <FTTDialog IsOpened="@dialogIsOpen">
     <FTTDialogTitle>
         DialogTitle region
+
+        <div class="ftt-blazor-pull-right">
+            <button type="button" @onclick="@(async () => { dialogIsOpen = false; })">X</button>
+        </div>
     </FTTDialogTitle>
     <FTTDialogContent>
         DialogContent region
@@ -45,5 +49,9 @@
     </FTTDialogContent>
     <FTTDialogActions>
         DialogActions region
+
+        <div class="ftt-blazor-pull-right">
+            <button type="button" class="ftt-blazor-button" @onclick="@(async () => { dialogIsOpen = false; })">Cancelar</button>
+        </div>
     </FTTDialogActions>
 </FTTDialog>
