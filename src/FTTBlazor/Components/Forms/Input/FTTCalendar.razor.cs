@@ -40,14 +40,13 @@ namespace FTTBlazor
             {
                 if (value.HasValue)
                 {
-
-
                     if (_value == value.Value)
                     {
                         return;
                     }
 
                     _value = value.Value;
+                    ValueChanged.InvokeAsync(value.Value);
                 }
                 else
                 {
@@ -114,5 +113,22 @@ namespace FTTBlazor
         protected override async Task OnParametersSetAsync()
         {
         }
+
+        protected void TryGet(ChangeEventArgs input)
+        {
+            if (input != null && input.Value != null)
+            {
+                Console.WriteLine("CALENDAR " + input.Value);
+
+                try
+                {
+                    DateTime date = Convert.ToDateTime(input.Value.ToString());
+                    Value = date;
+                    ValueChanged.InvokeAsync(date);
+                }
+                catch { }
+            }
+        }
+
     }
 }

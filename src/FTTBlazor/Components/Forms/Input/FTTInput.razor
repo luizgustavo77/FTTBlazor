@@ -7,11 +7,11 @@
 
             @if (Type == InputType.Input)
             {
-                <input maxlength="@MaxLength" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { OnInput.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
+                <input maxlength="@MaxLength" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
             }
             else if (Type == InputType.TextArea)
             {
-                <textarea maxlength="@MaxLength" cols="40" rows="5" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { OnInput.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id"></textarea>
+                <textarea maxlength="@MaxLength" cols="40" rows="5" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id"></textarea>
             }
             else if (Type == InputType.Color)
             {
@@ -27,29 +27,29 @@
             }
             else if (Type == InputType.Money)
             {
-                <input maxlength="@MaxLength" id="@_id" type="text" disabled="@_IsReadOnly" @attributes="@attributes" pattern="((\d{1,3}\.?)+(,\d{2}))" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(async(e) => { Value = (string)e.Value; await ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(async(e) => { Value = (string)e.Value; })" placeholder="0.000,00" autocomplete="@_id" />
+                <input maxlength="@MaxLength" id="@_id" type="text" disabled="@_IsReadOnly" @attributes="@attributes" pattern="((\d{1,3}\.?)+(,\d{2}))" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(async(e) => { Value = (string)e.Value; await ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(async(e) => { Value = (string)e.Value; ValueChanged.InvokeAsync((string)e.Value); })" placeholder="0.000,00" autocomplete="@_id" />
             }
             else if (Type == InputType.Email)
             {
                 var pattern = "^[^ ]+@[^ ]+\\.[a-z]{2,6}$";
 
-                <input maxlength="@MaxLength" id="@_id" type="email" disabled="@_IsReadOnly" @attributes="@attributes" pattern="@pattern" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(e=> { ValueChanged.InvokeAsync((string)e.Value); })" placeholder="email@dominio.com" autocomplete="@_id" />
+                <input maxlength="@MaxLength" id="@_id" type="email" disabled="@_IsReadOnly" @attributes="@attributes" pattern="@pattern" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(e=> { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); })"  placeholder="email@dominio.com" autocomplete="@_id" />
             }
             else if (Type == InputType.CNPJ)
             {
-                <input maxlength="19" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { OnInput.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
+                <input maxlength="19" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
             }
             else if (Type == InputType.CPF)
             {
-                <input maxlength="14" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { OnInput.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
+                <input maxlength="14" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
             }
             else if (Type == InputType.Percentage)
             {
-                <input maxlength="7" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { OnInput.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
+                <input maxlength="7" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
             }
             else if (Type == InputType.CEP)
             {
-                <input maxlength="9" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { OnInput.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
+                <input maxlength="9" id="@_id" disabled="@_IsReadOnly" @onfocusout="@(e => { OnFocusOut.InvokeAsync((string)Value); })" @attributes="@attributes" class="@BorderRightCssClass @CssClass" value="@Value" @onchange="@(e => { ValueChanged.InvokeAsync((string)e.Value); })" @oninput="@(e => { ValueChanged.InvokeAsync((string)e.Value); OnInput.InvokeAsync((string)e.Value); })" placeholder=" " autocomplete="@_id" />
             }
 
             <label for="@_id">

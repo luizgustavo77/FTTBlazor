@@ -4,6 +4,13 @@
     string Texto { get; set; }
     string Color { get; set; }
     string Time { get; set; }
+
+    bool dialogIsOpen { get; set; } = false;
+
+    void OpenDialog()
+    {
+        dialogIsOpen = true;
+    }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -12,21 +19,18 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para Divider e exemplos de como usar.</h6>
+        <h4>Example</h4>
+        <h6>How to use the component in view page</h6>
+        <img src="../img/about/divider1.png" />
+        <br />
     </div>
 
-    <FTTGridDivider Iscollapsible="true" FTTFields="true" IsCollapsed="true" Title="Divider" AddButtonIsVisible="true">
+    <FTTGridDivider Iscollapsible="true" FTTFields="true" IsCollapsed="true" Title="Divider" AddButtonIsVisible="true" AddButtonOnClick="OpenDialog">
         <FTTInput BorderRight="true" Size="4" Label="Input" @bind-Value="Texto"></FTTInput>
         <FTTInput Type="InputType.Color" BorderRight="true" Size="4" Label="Color" @bind-Value="Color"></FTTInput>
         <FTTInput Type="InputType.Time" BorderRight="true" Size="4" Label="Time" @bind-Value="Time"></FTTInput>
     </FTTGridDivider>
 
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/divider1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>
@@ -45,3 +49,24 @@
     </div>
 
 </div>
+
+<FTTDialog IsOpened="@dialogIsOpen">
+    <FTTDialogTitle>
+        DialogTitle region
+
+        <div class="ftt-blazor-pull-right">
+            <button type="button" @onclick="@(async () => { dialogIsOpen = false; })">X</button>
+        </div>
+    </FTTDialogTitle>
+    <FTTDialogContent>
+        DialogContent region
+        <hr />
+    </FTTDialogContent>
+    <FTTDialogActions>
+        DialogActions region
+
+        <div class="ftt-blazor-pull-right">
+            <button type="button" class="ftt-blazor-button" @onclick="@(async () => { dialogIsOpen = false; })">Cancelar</button>
+        </div>
+    </FTTDialogActions>
+</FTTDialog>

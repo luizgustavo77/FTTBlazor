@@ -5,7 +5,7 @@
     <div class="mdl-cell--@Size-col ftt-blazor-align-left">
         <div class="ftt-blazor-components ftt-blazor-input ftt-blazor-has-float-label">
 
-            <input maxlength="@MaxLength" id="@_id" type="number" disabled="@_IsReadOnly" @attributes="@attributes" pattern="[0-9]" min="0" class=" @BorderRightCssClass @CssClass" value="@Value" @onchange="@(e=> { ValueChanged.InvokeAsync((int)e.Value); })" placeholder="0" autocomplete="@_id" />
+            <input maxlength="@MaxLength" id="@_id" type="number" disabled="@_IsReadOnly" @attributes="@attributes" pattern="[0-9]" min="0" class=" @BorderRightCssClass @CssClass" value="@Value" @oninput="@(e => { TryGet(e); })" placeholder="0" autocomplete="@_id" />
 
             <label for="@_id">
                 @_label

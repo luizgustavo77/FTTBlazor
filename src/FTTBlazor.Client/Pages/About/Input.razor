@@ -1,6 +1,6 @@
 ﻿@page "/input"
 
-@code{
+@code {
     string Texto { get; set; }
     string TextArea { get; set; }
     string Color { get; set; }
@@ -16,6 +16,8 @@
     DateTime date { get; set; }
     bool check { get; set; }
 
+    string checkTexto { get { if (check) { return "Sim"; } else { return "Não"; } } }
+
     int Number { get; set; }
 }
 
@@ -25,8 +27,9 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
-        <h6>Abaixo uma serie de opções para INPUT e exemplos de como usar.</h6>
+        <h4>Example @Texto</h4>
+        <h6>Below is an example of how to implement the INPUT(string) input.</h6>
+        <img src="../img/about/input1.png" />
     </div>
 
     <FTTInput BorderRight="true" Size="4" Label="Input" @bind-Value="Texto"></FTTInput>
@@ -44,12 +47,6 @@
     <FTTInput Type="InputType.CEP" BorderRight="true" Size="4" Label="CEP" @bind-Value="CEP"></FTTInput>
 
     <FTTInput Type="InputType.TextArea" BorderRight="true" Size="12" Label="Text area" @bind-Value="TextArea"></FTTInput>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/input1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>Types</h4>
@@ -90,17 +87,11 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>Below is an example of how to implement the INPUT input.</h6>
+        <h4>Example @Number</h4>
+        <h6>Below is an example of how to implement the INPUT(int) input.</h6>
     </div>
 
     <FTTNumber BorderRight="true" Size="4" Label="Input" @bind-Value="Number"></FTTNumber>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/input1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>
@@ -133,17 +124,11 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
+        <h4>Exemplo @date.ToString("dd/MM/yyyy")</h4>
         <h6>Below is an example of how to implement the CALENDAR input.</h6>
     </div>
 
     <FTTCalendar BorderRight="true" Size="4" Label="Check" @bind-Value="date"></FTTCalendar>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/input1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>
@@ -171,17 +156,11 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Exemplo</h4>
+        <h4>Exemplo @checkTexto</h4>
         <h6>Below is an example of how to implement the CECKBOX input.</h6>
     </div>
 
     <FTTCheckbox BorderRight="true" Size="4" Label="Check" @bind-Value="check"></FTTCheckbox>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/input1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>

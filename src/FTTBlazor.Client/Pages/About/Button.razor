@@ -1,11 +1,17 @@
 ﻿@page "/button"
 
 @code{
+    int click = 0;
+
+    void Click()
+    {
+        ++click;
+    }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
     <div class="mdl-cell--12-col">
-        <h1>Button</h1>
+        <h1>Button Click @click</h1>
     </div>
 
     <div class="mdl-cell--12-col">
@@ -13,7 +19,7 @@
         <h6>Below is an example of how to implement the BUTTON component.</h6>
     </div>
 
-    <FTTButton Size="4" Label="Button"></FTTButton>
+    <FTTButton Size="4" Label="Button" OnClick="Click"></FTTButton>
 
     <div class="mdl-cell--12-col">
         <h4>Example</h4>

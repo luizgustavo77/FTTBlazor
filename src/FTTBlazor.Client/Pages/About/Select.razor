@@ -1,6 +1,6 @@
 ﻿@page "/select"
 
-@code{
+@code {
 #if DEBUG
     string endpoint = "https://localhost:44306/Pokemon";
 #else
@@ -9,6 +9,7 @@
 
     enum EnumPokemons
     {
+        Nenhum,
         Pikachu = 1,
         Bulbasaur,
         Charmander,
@@ -18,16 +19,16 @@
     EnumPokemons enumValue;
 
     string[] ListPokemons = new string[]
-    {   
+            {
         "Pikachu",
         "Bulbasaur",
         "Charmander",
         "Squirtle"
-    };
+            };
 
     string stringValue { get; set; }
     string Id { get; set; }
-    string Name { get; set; }    
+    string Name { get; set; }
 }
 
 <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
@@ -36,7 +37,7 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Example</h4>
+        <h4>Example @enumValue.ToString() </h4>
         <h6>Below is an example of how to implement the SELECT ENUM component</h6>
     </div>
 
@@ -48,12 +49,6 @@
                     Required="true"
                     Label="Enum example">
     </FTTSelectEnums>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/selectEnum1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>
@@ -81,7 +76,7 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Example</h4>
+        <h4>Example @stringValue</h4>
         <h6>How to use the Select Array element using string object.</h6>
     </div>
 
@@ -93,12 +88,6 @@
                     Required="true"
                     Label="Sstring array example">
     </FTTSelectArray>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/selectEnum1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>
@@ -126,7 +115,7 @@
     </div>
 
     <div class="mdl-cell--12-col">
-        <h4>Example</h4>
+        <h4>Example @Name</h4>
         <h6>Below is an example of how to implement the Select Endpoint.</h6>
     </div>
 
@@ -142,12 +131,6 @@
                Label="String endpoint example"
                Filter="(x => !string.IsNullOrWhiteSpace(x.Name))">
     </FTTSelect>
-
-    <div class="mdl-cell--12-col">
-        <h4>Example</h4>
-        <h6>How to use the component in view page</h6>
-        <img src="../img/about/selectEnum1.png" />
-    </div>
 
     <div class="mdl-cell--12-col">
         <h4>In the code</h4>

@@ -47,6 +47,7 @@ namespace FTTBlazor
                 ValueChanged.InvokeAsync(value);
             }
         }
+
         private int _value;
 
         /// <summary>
@@ -144,6 +145,21 @@ namespace FTTBlazor
         protected override async Task OnParametersSetAsync()
         {
 
+        }
+
+        protected void TryGet(ChangeEventArgs input)
+        {
+            if (input != null && input.Value != null)
+            {
+                Console.WriteLine("NUMBER " + input.Value);
+
+                try
+                {
+                    int number = Convert.ToInt16(input.Value.ToString());
+                    ValueChanged.InvokeAsync(number);
+                }
+                catch { }
+            }
         }
     }
 }

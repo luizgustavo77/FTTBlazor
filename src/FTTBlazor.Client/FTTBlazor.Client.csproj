@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FTTBlazor" Version="2.2.0" />
+		<PackageReference Include="FTTBlazor" Version="2.2.6" />
 		<PackageReference Include="FTTBlazor.Common" Version="1.0.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />

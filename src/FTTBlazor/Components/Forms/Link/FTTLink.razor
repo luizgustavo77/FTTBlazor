@@ -36,6 +36,10 @@
         </div>
     </FTTDialogContent>
     <FTTDialogActions>
+        <div class="ftt-blazor-pull-left">
+            <button type="button" class="ftt-blazor-button" @onclick="@(async () => { DialogIsOpen = false; })">Cancelar</button>
+        </div>
+
         @Footer
     </FTTDialogActions>
 </FTTDialog>
