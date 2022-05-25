@@ -127,7 +127,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 > We verify code integrity and security. We look for Bugs and Vulnerabilities.
 
-- [**SonarCloud**]("https://sonarcloud.io/project/overview?id=luizgustavo77_FTTBlazor")
+- [**SonarCloud**](https://sonarcloud.io/project/overview?id=luizgustavo77_FTTBlazor)
 
 ---
 
