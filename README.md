@@ -39,14 +39,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 ## ⚙️ **Example**
 > In the solution we have an example of how to install and use the library, below the step by step to run this example
 
-- **Step by step**
-  - Solution 'FTTBlazor' > Properties
-  - Multiple startup projects:
-      - PokeAPI.Server
-      - FTTBlazor.Client
-
-<img src="https://raw.githubusercontent.com/luizgustavo77/FTTBlazor/master/src/FTTBlazor.Client/wwwroot/img/exemplo.png">
-
+- [**Link**](https://github.com/luizgustavo77/FTTBlazor-Exemple)
 ---
 
 ## ☕ **FTTBlazor Beta**
