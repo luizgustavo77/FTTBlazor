@@ -36,6 +36,24 @@ namespace FTTBlazor
         protected FTTToastService Toaster { get; set; }
 
         /// <summary>
+        /// New icon to read
+        /// </summary>
+        [Parameter]
+        public RenderFragment<Interface> NewRead { get; set; }
+
+        /// <summary>
+        /// Css modal
+        /// </summary>
+        [Parameter]
+        public string CssDialog { get; set; }
+
+        /// <summary>
+        /// Css modal
+        /// </summary>
+        [Parameter]
+        public string CssContent { get; set; }
+
+        /// <summary>
         /// Modal content
         /// </summary>
         [Parameter]

@@ -18,36 +18,35 @@
                             }
                             else
                             {
-                                <button type="button" class="ftt-blazor-button" style="opacity:0.5; cursor:not-allowed;">
-                                    <i class="material-icons" style="font-weight: 600; cursor: not-allowed;">
-                                        add
-                                    </i>
-                                </button>
+                                <div>
+                                </div>
                             }
                         </td>
 
                         @if (Columns != null)
                         {
+                            var Size = Math.Floor(Convert.ToDecimal(12 / Columns.Count)).ToString();
                             foreach (var col in Columns)
                             {
                                 var classCss = "ftt-blazor-grid-header-input";
-                                var id = new Guid();
+                                var id = Guid.NewGuid();
 
-                                <td class="@classCss ftt-blazor-align-left">
+                                <div class="mdl-cell--@Size-col ftt-blazor-align-left">
                                     <div class="ftt-blazor-components ftt-blazor-input ftt-blazor-has-float-label">
-                                        <input id="@id" @oninput="@(e => AddFilter(e.Value.ToString(), col.FieldName))" class="ftt-blazor-border-right" autocomplete="@id" />
+                                        <input style="border: none;" id="@id" @oninput="@(e => AddFilter(e.Value.ToString(), col.FieldName))" autocomplete="@id" placeholder=" " />
 
                                         <label for="@id">
                                             @col.FieldDescription
                                         </label>
                                     </div>
-                                </td>
+                                </div>
+
                             }
 
                             <td width="80" style="text-align:center;">
                                 @*     <button type="button" class="ftt-blazor-button" style="border:1px solid var(--brandline);" @onclick="@(e => { DownloadFile(); })">
-                                    <i class="material-icons" style="cursor: pointer;">save_alt</i>
-                                    </button>*@
+                            <i class="material-icons" style="cursor: pointer;">save_alt</i>
+                            </button>*@
                             </td>
                         }
                         else
@@ -101,11 +100,18 @@
                                     @if (CanRead)
                                     {
                                         <td width="80" style="text-align:center;padding-left:8px!important; cursor: pointer;">
-                                            <button type="button" class="ftt-blazor-button" @onclick="@( e => { OpenDialog(item); })">
-                                                <i class="material-icons">
-                                                    remove_red_eye
-                                                </i>
-                                            </button>
+                                            @if (NewRead != null)
+                                            {
+                                                @NewRead(null)
+                                            }
+                                            else
+                                            {
+                                                <button type="button" class="ftt-blazor-button" @onclick="@( e => { OpenDialog(item); })">
+                                                    <i class="material-icons">
+                                                        remove_red_eye
+                                                    </i>
+                                                </button>
+                                            }
                                         </td>
                                     }
                                     else
@@ -143,11 +149,7 @@
                                         }
                                         else
                                         {
-                                            <button type="button" class="ftt-blazor-button" style="opacity:0.5; cursor:not-allowed;">
-                                                <i class="material-icons">
-                                                    delete
-                                                </i>
-                                            </button>
+                                            <div></div>
                                         }
                                     </td>
                                 </tr>
@@ -208,7 +210,7 @@
 </FTTDialog>
 
 
-<FTTDialog IsOpened="ModalIsOpen">
+<FTTDialog IsOpened="ModalIsOpen" CssDialog="@CssDialog" CssContent="@CssContent">
     <FTTDialogTitle>
         @Title
         <div class="ftt-blazor-pull-right">
@@ -219,7 +221,7 @@
         <form action="#0" @onsubmit="@(async () => await Save())" class="basemodal" autocomplete="off">
             <CascadingValue Value="@this" Name="modal">
                 <div class="ftt-blazor-crud-modal-content">
-                    <div style="padding: 3px !important; padding-bottom: 0px !important; min-width: 1024px; max-width: 1024px;">
+                    <div>
                         <div class="ftt-blazor-layout-grid-inner" style="grid-gap:0px!important;">
                             @if (!CanRead)
                             {

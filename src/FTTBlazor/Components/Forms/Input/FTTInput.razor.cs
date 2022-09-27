@@ -117,7 +117,7 @@ namespace FTTBlazor
         /// Adds a border on the right
         /// </summary>
         [Parameter]
-        public bool BorderRight { get; set; }
+        public bool BorderRight { get; set; } = true;
 
         /// <summary>
         /// Determines the input type

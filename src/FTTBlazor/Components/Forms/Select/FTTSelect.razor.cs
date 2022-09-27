@@ -101,7 +101,7 @@ namespace FTTBlazor
         /// Adds a border on the right
         /// </summary>
         [Parameter]
-        public bool BorderRight { get; set; }
+        public bool BorderRight { get; set; } = true;
         private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         /// <summary>

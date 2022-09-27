@@ -85,7 +85,7 @@ namespace FTTBlazor
         /// Binds a value to a variable
         /// </summary>
         [Parameter]
-        public bool BorderRight { get; set; }
+        public bool BorderRight { get; set; } = true;
         private string BorderRightCssClass => BorderRight ? "ftt-blazor-border-right" : "";
 
         private List<KeyValuePair<string, object>> attributes;

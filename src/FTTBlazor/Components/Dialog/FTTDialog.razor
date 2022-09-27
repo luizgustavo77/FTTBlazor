@@ -23,11 +23,18 @@
     private bool _IsOpened { get; set; }
     [Parameter]
     public EventCallback<bool> IsOpenedChanged { get; set; }
-    string cssClass => IsOpened ? "show" : "hide";
+
+    [Parameter]
+    public string CssDialog { get; set; }
+
+    [Parameter]
+    public string CssContent { get; set; }
+
+    string cssClassOpen => IsOpened ? "show" : "hide";
 }
 
-<div class="ftt-blazor @cssClass" tabindex="-1" role="dialog">
-    <div class="ftt-blazor-content">
+<div class="ftt-blazor @cssClassOpen @CssDialog" tabindex="-1" role="dialog">
+    <div class="ftt-blazor-content @CssContent">
         <div class="ftt-blazor-header">
             @FTTDialogTitle
         </div>

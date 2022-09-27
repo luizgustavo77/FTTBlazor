@@ -34,7 +34,7 @@ namespace FTTBlazor
         /// Adds a border on the right
         /// </summary>
         [Parameter]
-        public bool BorderRight { get; set; }
+        public bool BorderRight { get; set; } = true;
 
         /// <summary>
         /// Boolean value that makes the element not mutable (the user can not edit it)
