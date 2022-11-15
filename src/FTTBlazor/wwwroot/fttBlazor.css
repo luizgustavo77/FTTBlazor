@@ -87,7 +87,7 @@
     }
 
 .ftt-blazor-body {
-    padding: 10px;
+    /*padding: 10px;*/
     background-color: var(--brandmodal);
 }
 
@@ -325,7 +325,7 @@
 }
 
 .ftt-blazor-components {
-    left: 0.39rem;
+    /*left: 0.39rem;*/
     font-size: 1.5rem;
 }
 
@@ -588,6 +588,7 @@
 
 .ftt-blazor-input {
     /*padding-left: 1rem;*/
+    border-left: 1px solid var(--brandline);
 }
 
 
